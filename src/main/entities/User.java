@@ -1,4 +1,4 @@
-package main.model;
+package main.entities;
 
 public class User {
     private String id;
