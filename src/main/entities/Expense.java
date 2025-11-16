@@ -9,6 +9,7 @@ public class Expense {
     private String description;
     private User paidBy;
     private List<User> participants;
+    private boolean settled = false;
 
     public Expense(String id, double amount, String description, User paidBy) {
         this.id = id;
