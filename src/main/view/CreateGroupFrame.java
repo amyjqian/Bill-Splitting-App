@@ -19,7 +19,7 @@ public class CreateGroupFrame extends JFrame {
 
         JLabel groupNameLabel = new JLabel("Group Name: ", JLabel.LEFT);
         JTextField nameField = new JTextField(5);
-        JLabel groupID = new  JLabel("Group ID: ", JLabel.LEFT);
+        JLabel groupID = new  JLabel("Your Group ID is: ", JLabel.LEFT);
 
         JButton submitButton = new JButton("Submit");
 
