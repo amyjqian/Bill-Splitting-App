@@ -1,4 +1,4 @@
-package main.view;
+package view;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ public class CreateGroupFrame extends JFrame {
 
             JLabel newGroupLabel = new JLabel("New Group: ", JLabel.LEFT);
 
-        JLabel groupNameLabel = new JLabel("Group Name: ", JLabel.LEFT);
+        JLabel groupNameLabel = new JLabel("Set Group Name: ", JLabel.LEFT);
         JTextField nameField = new JTextField(5);
         JLabel groupID = new  JLabel("Your Group ID is: ", JLabel.LEFT);
 

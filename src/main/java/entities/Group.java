@@ -1,4 +1,4 @@
-package main.entities;
+package entities;
 
 import java.util.*;
 
@@ -8,8 +8,8 @@ public class Group {
     private String groupName;
 
     // Members and relationships
-    private List<User> members;
-    private List<Expense> expenses;
+    private ArrayList<User> members;
+    private ArrayList<Expense> expenses;
     private Map<User, Double> balances; // Track who owes whom
 
 
@@ -17,9 +17,24 @@ public class Group {
         this.groupId = groupId;
         this.groupName = groupName;
         this.members = new ArrayList<>();
-        this.expenses = new ArrayList<>();
+        this.expenses = new ArrayList<Expense>();
         this.balances = new HashMap<>();
 
 
     }
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public ArrayList<Expense> getExpenses(){
+        return this.expenses;
+    }
+
+
+
 }

@@ -1,17 +1,18 @@
-package main.entities;
+package entities;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Expense {
     private String id;
+    private String name;
     private double amount;
     private String description;
     private User paidBy;
     private List<User> participants;
     private boolean settled = false;
 
-    public Expense(String id, double amount, String description, User paidBy) {
+    public Expense(String id, String name, double amount, String description, User paidBy) {
         this.id = id;
         this.amount = amount;
         this.description = description;

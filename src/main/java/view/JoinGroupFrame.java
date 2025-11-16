@@ -1,9 +1,6 @@
-package main.view;
+package view;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class JoinGroupFrame extends JFrame {
     int CODE_LENGTH = 15;
