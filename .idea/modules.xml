@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Bill-Splitting-App.iml" filepath="$PROJECT_DIR$/.idea/Bill-Splitting-App.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/bill-splitter-app.iml" filepath="$PROJECT_DIR$/bill-splitter-app.iml" />
->>>>>>> 62d198c (Save AutoSave panel changes.:)
     </modules>
   </component>
 </project>
