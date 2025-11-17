@@ -9,6 +9,7 @@ public class Expense {
     private String description;
     private User paidBy;
     private List<User> participants;
+    private String category; // stores what category the expense should be
 
     public Expense(String id, double amount, String description, User paidBy) {
         this.id = id;
@@ -35,4 +36,6 @@ public class Expense {
         if (participants.isEmpty()) return 0;
         return amount / participants.size();
     }
+
+    public String getCategory() { return category;}
 }
