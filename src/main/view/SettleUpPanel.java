@@ -21,15 +21,17 @@ public class SettleUpPanel extends JFrame {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        JTextArea suggestions = new JTextArea(stringBuilder.toString());
-        suggestions.setEditable(false);
-        suggestions.setMargin(new Insets(10, 10, 10, 10));
-        add(new JScrollPane(suggestions), BorderLayout.CENTER);
+        String settlement = stringBuilder.toString();
+        JLabel settlementLabel = new JLabel(settlement);
+        JPanel textPanel = new JPanel();
+        textPanel.add(settlementLabel);
+        add(textPanel, BorderLayout.CENTER);
 
         JButton backButton = new JButton("Back");
-        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        bottomPanel.add(backButton);
-        add(bottomPanel, BorderLayout.SOUTH);
+        backButton.setPreferredSize(new Dimension(100, 20));
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(backButton);
+        add(buttonPanel, BorderLayout.SOUTH);
     }
 
     public static void main(String[] args) {
