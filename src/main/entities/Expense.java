@@ -40,4 +40,8 @@ public class Expense {
     public boolean isSettled() {
         return settled;
     }
+
+    public void setSettled() {
+        this.settled = true;
+    }
 }
