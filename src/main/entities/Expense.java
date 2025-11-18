@@ -26,6 +26,7 @@ public class Expense {
     public User getPaidBy() { return paidBy; }
     public List<User> getParticipants() { return participants; }
 
+
     public void addParticipant(User user) {
         if (!participants.contains(user)) {
             participants.add(user);
@@ -44,4 +45,5 @@ public class Expense {
     public void setSettled() {
         this.settled = true;
     }
+
 }
