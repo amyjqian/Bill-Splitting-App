@@ -2,6 +2,7 @@ package main.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Map;
 
 public class ExpenseDesc extends JFrame {
 
@@ -10,6 +11,8 @@ public class ExpenseDesc extends JFrame {
     }
 
     private void initializeUI() {
+
+
         setTitle("Add Expense");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 300);
@@ -20,11 +23,14 @@ public class ExpenseDesc extends JFrame {
         JTextField descField = new JTextField(10);
         JTextField participantsField = new JTextField(10);
 
+        String[] options = {"Utility", "Food", "Gifts"};
+        JComboBox<String> comboBox = new JComboBox<>(options);
+
         JButton submitButton = new JButton("Submit");
 
         // Simple panel with components
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(8, 1, 10, 10));
+        panel.setLayout(new GridLayout(10, 1, 10, 8));
 
         panel.add(titleLabel);
         panel.add(new JLabel("Amount:"));
@@ -33,6 +39,8 @@ public class ExpenseDesc extends JFrame {
         panel.add(descField);
         panel.add(new JLabel("Participants:"));
         panel.add(participantsField);
+        panel.add(new JLabel("Category"));
+        panel.add(comboBox);
         panel.add(submitButton);
         add(panel);
     }

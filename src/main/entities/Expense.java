@@ -36,4 +36,6 @@ public class Expense {
         if (participants.isEmpty()) return 0;
         return amount / participants.size();
     }
+
+    public String getCategory() { return category;}
 }
