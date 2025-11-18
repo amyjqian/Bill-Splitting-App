@@ -19,7 +19,9 @@ public class Group {
         this.members = new ArrayList<>();
         this.expenses = new ArrayList<>();
         this.balances = new HashMap<>();
+    }
 
-
+    public List<Expense> getExpenses() {
+        return expenses;
     }
 }
