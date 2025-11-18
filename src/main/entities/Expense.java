@@ -9,6 +9,7 @@ public class Expense {
     private String description;
     private User paidBy;
     private List<User> participants;
+    private String category; // stores what category the expense should be
     private boolean settled;
 
     public Expense(String id, double amount, String description, User paidBy) {
@@ -38,11 +39,5 @@ public class Expense {
         return amount / participants.size();
     }
 
-    public boolean isSettled() {
-        return settled;
-    }
-
-    public void setSettled() {
-        this.settled = true;
-    }
+    public String getCategory() { return category;}
 }
