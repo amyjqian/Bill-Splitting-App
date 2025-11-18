@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" afterDir="false" />
-    </list>
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="changed participants to checkbox menu" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +18,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
@@ -31,7 +29,8 @@
     "Application.ExpenseFrame.executor": "Run",
     "Application.GroupViewFrame.executor": "Run",
     "Application.MainFrame.executor": "Run",
-    "git-widget-placeholder": "categorization",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "feat/participants",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -40,5 +39,20 @@
 }]]></component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changed participants to checkbox menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed participants to checkbox menu" />
   </component>
 </project>
