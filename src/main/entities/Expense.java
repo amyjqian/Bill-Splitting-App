@@ -10,6 +10,7 @@ public class Expense {
     private User paidBy;
     private List<User> participants;
     private String category; // stores what category the expense should be
+    private boolean settled;
 
     public Expense(String id, double amount, String description, User paidBy) {
         this.id = id;

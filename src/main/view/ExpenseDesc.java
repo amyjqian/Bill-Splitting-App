@@ -11,8 +11,6 @@ public class ExpenseDesc extends JFrame {
     }
 
     private void initializeUI() {
-
-
         setTitle("Add Expense");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 400);
@@ -26,19 +24,16 @@ public class ExpenseDesc extends JFrame {
         String[] options = {"Utility", "Food", "Gifts"};
         JComboBox<String> comboBox = new JComboBox<>(options);
 
-        String[] options = {"Utility", "Food", "Gifts"};
-        JComboBox<String> comboBox = new JComboBox<>(options);
-
         JButton submitButton = new JButton("Submit");
 
         // Create checkboxes for participants
         JLabel participantsLabel = new JLabel("Participants:");
         JCheckBox participant1 = new JCheckBox("Amy");
-        JCheckBox participant2 = new JCheckBox("Katie");
-        JCheckBox participant3 = new JCheckBox("Tan");
+        JCheckBox participant2 = new JCheckBox("Tan");
+        JCheckBox participant3 = new JCheckBox("Katie");
         JCheckBox participant4 = new JCheckBox("Patricia");
-        JCheckBox participant5 = new JCheckBox("Lucy");
-        JCheckBox participant6 = new JCheckBox("Angela");
+        JCheckBox participant5 = new JCheckBox("Angela");
+        JCheckBox participant6 = new JCheckBox("Lucy");
 
         // Panel for checkboxes with grid layout
         JPanel participantsPanel = new JPanel();
@@ -52,7 +47,8 @@ public class ExpenseDesc extends JFrame {
 
         // Main panel with components
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(10, 1, 10, 8));
+        panel.setLayout(new GridLayout(0, 1, 10, 8));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
 
         panel.add(titleLabel);
         panel.add(new JLabel("Expense Name:"));
@@ -61,10 +57,10 @@ public class ExpenseDesc extends JFrame {
         panel.add(amountField);
         panel.add(new JLabel("Description:"));
         panel.add(descField);
-        panel.add(new JLabel("Participants:"));
-        panel.add(participantsField);
-        panel.add(new JLabel("Category"));
+        panel.add(new JLabel("Category:"));
         panel.add(comboBox);
+        panel.add(participantsLabel);
+        panel.add(participantsPanel);
         panel.add(submitButton);
 
         add(panel);
