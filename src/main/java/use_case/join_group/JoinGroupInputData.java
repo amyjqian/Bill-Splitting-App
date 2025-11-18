@@ -1,4 +1,4 @@
-package use_cases.join_group;
+package use_case.join_group;
 
 public class JoinGroupInputData {
     private final String code;

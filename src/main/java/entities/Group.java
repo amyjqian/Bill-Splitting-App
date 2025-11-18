@@ -13,7 +13,7 @@ public class Group {
     private Map<User, Double> balances; // Track who owes whom
 
 
-    public Group(String groupId, String groupName) {
+    public Group(String groupId) {
         this.groupId = groupId;
         this.groupName = groupName;
         this.members = new ArrayList<>();
