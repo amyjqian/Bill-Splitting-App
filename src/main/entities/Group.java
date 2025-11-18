@@ -22,4 +22,8 @@ public class Group {
 
 
     }
+
+    public List<Expense> getExpenses() {
+        return expenses;
+    }
 }

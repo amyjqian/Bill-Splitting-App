@@ -11,6 +11,8 @@ public class ExpenseDesc extends JFrame {
     }
 
     private void initializeUI() {
+
+
         setTitle("Add Expense");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 400);
@@ -20,6 +22,9 @@ public class ExpenseDesc extends JFrame {
         JTextField nameField = new JTextField(10);
         JTextField amountField = new JTextField(10);
         JTextField descField = new JTextField(10);
+
+        String[] options = {"Utility", "Food", "Gifts"};
+        JComboBox<String> comboBox = new JComboBox<>(options);
 
         String[] options = {"Utility", "Food", "Gifts"};
         JComboBox<String> comboBox = new JComboBox<>(options);
@@ -47,8 +52,7 @@ public class ExpenseDesc extends JFrame {
 
         // Main panel with components
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(0, 1, 10, 8));
-        panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        panel.setLayout(new GridLayout(10, 1, 10, 8));
 
         panel.add(titleLabel);
         panel.add(new JLabel("Expense Name:"));
@@ -57,10 +61,10 @@ public class ExpenseDesc extends JFrame {
         panel.add(amountField);
         panel.add(new JLabel("Description:"));
         panel.add(descField);
-        panel.add(new JLabel("Category:"));
+        panel.add(new JLabel("Participants:"));
+        panel.add(participantsField);
+        panel.add(new JLabel("Category"));
         panel.add(comboBox);
-        panel.add(participantsLabel);
-        panel.add(participantsPanel);
         panel.add(submitButton);
 
         add(panel);

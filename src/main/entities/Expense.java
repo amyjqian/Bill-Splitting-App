@@ -17,6 +17,7 @@ public class Expense {
         this.description = description;
         this.paidBy = paidBy;
         this.participants = new ArrayList<>();
+        this.settled = false;
     }
 
     // Getters and setters
