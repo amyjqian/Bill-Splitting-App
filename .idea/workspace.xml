@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="852a6bd0-1620-4b14-ab23-5e2550b8e854" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveInputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveInteractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveRequestModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveResponseModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/usecase/FileAutoSaveGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Bill-Splitting-App.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Bill-Splitting-App.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/interface_adapters/AutoSaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/data/AutoSaveGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/AutoSaveResponseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/FileAutoSaveGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/data/FileAutoSaveGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/view/AutoSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/AutoSave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +53,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "AutoSaveGUI",
     "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
@@ -63,8 +62,24 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main" />
+    </key>
   </component>
   <component name="RunManager">
+    <configuration name="AutoSaveDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.view.AutoSaveDemo" />
+      <module name="Bill-Splitting-App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Bill-Splitting-App" />
       <method v="2">
@@ -76,6 +91,11 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AutoSaveDemo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

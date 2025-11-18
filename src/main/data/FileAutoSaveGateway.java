@@ -1,4 +1,4 @@
-package data;
+package main.data;
 
 import java.io.*;
 
@@ -18,7 +18,7 @@ public class FileAutoSaveGateway implements AutoSaveGateway {
     public String loadDraft() {
         if (!file.exists()) return "";
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            return read.readLine();
+            return reader.readLine();
         } catch (IOException e) {
             throw new RuntimeException("Failed to load draft", e);
         }

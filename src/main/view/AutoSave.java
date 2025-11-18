@@ -1,8 +1,9 @@
 package main.view;
 
-import interface_adapters.AutoSaveController;
-import usecase.AutoSaveInteractor;
-import data.FileAutoSaveGateway;
+import main.interface_adapters.AutoSaveController;
+import main.usecase.AutoSaveInteractor;
+import main.data.FileAutoSaveGateway;
+import main.data.AutoSaveGateway;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,7 @@ import java.awt.*;
 public class AutoSave extends JPanel {
 
     private JLabel saveStatus;
+    private AutoSaveController controller;
 
     public AutoSave() {
         setLayout(new BorderLayout());
@@ -18,13 +20,13 @@ public class AutoSave extends JPanel {
         saveStatus.setForeground(Color.GREEN);
         add(saveStatus, BorderLayout.SOUTH);
 
-        FileAutoSaveGateway gateway = new FileAutoSaveGateway();
+        AutoSaveGateway gateway = new FileAutoSaveGateway();
         AutoSaveInteractor interactor = new AutoSaveInteractor(gateway);
         controller = new AutoSaveController(interactor);
 
         String draft = controller.loadDraft();
         if (!draft.isEmpty()) {
-            setSaveStatus("Load previous draft.", color.BLUE);
+            setSaveStatus("Load previous draft.", Color.BLUE);
         }
     }
 

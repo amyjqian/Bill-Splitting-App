@@ -1,4 +1,4 @@
-package usecase;
+package main.usecase;
 
 public class AutoSaveRequestModel {
     private final String content;

@@ -1,11 +1,11 @@
-package usecase;
+package main.usecase;
 
-import data.AutoSaveGateway;
+import main.data.AutoSaveGateway;
 
 public class AutoSaveInteractor implements AutoSaveInputBoundary {
-    private final AutoSaveInteractor gateway;
+    private final AutoSaveGateway gateway;
 
-    public AutoSaveInteractor(AutoSaveInteractor gateway) {
+    public AutoSaveInteractor(AutoSaveGateway gateway) {
         this.gateway = gateway;
     }
 

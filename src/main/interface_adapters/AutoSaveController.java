@@ -1,6 +1,8 @@
-package interface_adapters;
+package main.interface_adapters;
 
-import usecase.*;
+import main.usecase.AutoSaveInputBoundary;
+import main.usecase.AutoSaveRequestModel;
+import main.usecase.AutoSaveResponseModel;
 
 public class AutoSaveController{
 

@@ -1,6 +1,6 @@
-package usecase;
+package main.usecase;
 
 public interface AutoSaveInputBoundary {
-    AutoSaveResponseModel save(AutoSaveRequest Model requestModel);
+    AutoSaveResponseModel save(AutoSaveRequestModel requestModel);
     AutoSaveResponseModel load();
 }
