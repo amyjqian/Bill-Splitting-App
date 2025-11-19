@@ -33,15 +33,13 @@ public class CreateGroupFrame extends JFrame {
         JButton submitButton = new JButton("Submit");
 
         submitButton.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        if (evt.getSource().equals(submitButton)) {
-                            final CreateGroupState currentState = createGroupViewModel.getState();
+                evt -> {
+                    if (evt.getSource().equals(submitButton)) {
+                        final CreateGroupState currentState = createGroupViewModel.getState();
 
-                            CreateGroupController.execute(
-                                    //tbd
-                            );
-                        }
+                        CreateGroupController.execute(
+                                //tbd
+                        );
                     }
                 }
         );
@@ -57,7 +55,6 @@ public class CreateGroupFrame extends JFrame {
         panel.add(groupID);
         panel.add(submitButton);
         add(panel);
-
+        }
 
     }
-}
