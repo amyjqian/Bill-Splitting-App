@@ -13,4 +13,9 @@ public class SettleUpController {
         SettleUpInputData inputData = new SettleUpInputData(group);
         interactor.settleUp(inputData);
     }
+
+    public void onPaidPressed(Group group) {
+        SettleUpInputData inputData = new SettleUpInputData(group);
+        interactor.markAsSettled(inputData);
+    }
 }

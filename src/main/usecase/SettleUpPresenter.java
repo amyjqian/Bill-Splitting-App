@@ -4,11 +4,6 @@ public class SettleUpPresenter implements SettleUpOutputBoundary{
     private String message;
     private boolean allSettled;
 
-    public SettleUpPresenter(String message) {
-        this.message = message;
-        this.allSettled = false;
-    }
-
     @Override
     public void present(SettleUpOutputData outputData) {
         this.message = outputData.getPayments();
