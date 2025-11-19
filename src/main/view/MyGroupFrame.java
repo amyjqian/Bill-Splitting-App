@@ -21,7 +21,7 @@ public class MyGroupFrame extends JFrame {
         titleLabel.setFont(new Font("SansSerif", Font.BOLD, 18));
         titleRow.add(titleLabel, BorderLayout.CENTER);
 
-        // group name + back buttone
+        // group name + back button
         JPanel groupPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
         groupPanel.add(groupLabel);
         groupField.setEditable(false);

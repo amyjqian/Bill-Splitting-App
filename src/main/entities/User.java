@@ -1,5 +1,5 @@
-package main.entities;
-
+package entities;
+//changed this entity
 public class User {
     private String id;
     private String name;

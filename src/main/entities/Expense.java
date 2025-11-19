@@ -1,17 +1,19 @@
-package main.entities;
-
+package entities;
+//changed this entity
 import java.util.ArrayList;
 import java.util.List;
 
 public class Expense {
     private String id;
+    private String name;
     private double amount;
     private String description;
-    private main.entities.User paidBy;
-    private List<main.entities.User> participants;
-    private String date;
+    private User paidBy;
+    private List<User> participants;
+    private boolean settled = false;
+    private String date; // creation date
 
-    public Expense(String id, double amount, String description, main.entities.User paidBy, String date) {
+    public Expense(String id, double amount, String description, User paidBy, String date) {
         this.id = id;
         this.amount = amount;
         this.description = description;
@@ -24,11 +26,11 @@ public class Expense {
     public String getId() { return id; }
     public double getAmount() { return amount; }
     public String getDescription() { return description; }
-    public main.entities.User getPaidBy() { return paidBy; }
-    public List<main.entities.User> getParticipants() { return participants; }
+    public User getPaidBy() { return paidBy; }
+    public List<User> getParticipants() { return participants; }
     public String getDate() { return date; }
 
-    public void addParticipant(main.entities.User user) {
+    public void addParticipant(User user) {
         if (!participants.contains(user)) {
             participants.add(user);
         }

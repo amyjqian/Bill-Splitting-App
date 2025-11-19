@@ -1,4 +1,4 @@
-package main.entities;
+package entities;
 
 import java.util.*;
 
@@ -22,4 +22,12 @@ public class Group {
 
 
     }
+    public void addMember(User user) {
+        this.members.add(user);
+    }
+
+    public List<Expense> getExpenses() {
+        return expenses;
+    }
+
 }

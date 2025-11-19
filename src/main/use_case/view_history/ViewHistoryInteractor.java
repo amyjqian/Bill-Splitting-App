@@ -24,30 +24,23 @@ public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
 
             //history is empty
             if (expenses.isEmpty()) {
-                ViewHistoryOutputData outputData = new ViewHistoryOutputData(List.of(), "No expenses recorded.");
+                ViewHistoryOutputData outputData = new ViewHistoryOutputData(List.of(),
+                        "No expenses recorded.", true);
+                viewHistoryOutputBoundary.prepareSuccessView(outputData);
                 return;
             }
 
             // api call to expense data
-            // String id, String name, double amount, String description, User paidBy, String date
-            List<Expense> dtoList = expenses.stream()
-                    .map(e -> new Expense(
-                            e.getId(),
-                            e.getAmount(),
-                            e.getDescription(),
-                            e.getPaidBy(),
-                            e.getDate()
-                    ))
-                    .toList();
+            List<Expense> dtoList = expenses;
 
             // successful output
             ViewHistoryOutputData outputData =
-                    new ViewHistoryOutputData(dtoList, "");
+                    new ViewHistoryOutputData(expenses, "Success", true);
             viewHistoryOutputBoundary.prepareSuccessView(outputData);
             } catch (Exception e) {
                 // api failed
                 ViewHistoryOutputData outputData =
-                        new ViewHistoryOutputData(List.of(), "Failed to fetch history.");
+                        new ViewHistoryOutputData(List.of(), "API Call Failed", false);
 
                 viewHistoryOutputBoundary.prepareFailedView(outputData);
             }
