@@ -5,36 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="added use cases">
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupOutputBoundary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/GroupDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_cases/create_group/CreateGroupDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_cases/create_group/CreateGroupInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_cases/create_group/CreateGroupOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_cases/join_group/JoinGroupInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_cases/join_group/JoinGroupOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_cases/view_my_group/ViewMyGroupInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_my_group/ViewMyGroupInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_cases/view_my_group/ViewMyGroupOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_my_group/ViewMyGroupOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/JoinGroupInteractorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/use_case/create_group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/use_case/join_group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/use_case/view_group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/CreateGroupFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/GroupViewFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/JoinGroupFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/MyGroupFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,33 +52,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CreateGroupFrame.executor": "Run",
-    "Application.CreateGroupInteractorTest.executor": "Run",
-    "Application.ExpenseDesc.executor": "Run",
-    "Application.ExpenseFrame.executor": "Run",
-    "Application.GroupViewFrame.executor": "Run",
-    "Application.JoinGroupFrame.executor": "Run",
-    "Application.MyGroupFrame.executor": "Run",
-    "Application.SettleUpPanel.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "group__use-cases",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CreateGroupFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateGroupInteractorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExpenseDesc.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExpenseFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GroupViewFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JoinGroupFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyGroupFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SettleUpPanel.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;group__use-cases&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="view" />
+      <recent name="interface_adapter.create_group" />
       <recent name="use_case.create_group" />
     </key>
   </component>
@@ -186,6 +163,7 @@
       <updated>1762785916007</updated>
       <workItem from="1763309660689" duration="12287000" />
       <workItem from="1763411832090" duration="13809000" />
+      <workItem from="1763591464171" duration="1749000" />
     </task>
     <task id="LOCAL-00001" summary="Changed UI text">
       <option name="closed" value="true" />
