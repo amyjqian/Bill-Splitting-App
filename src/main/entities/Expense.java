@@ -11,14 +11,16 @@ public class Expense {
     private List<User> participants;
     private String category; // stores what category the expense should be
     private boolean settled;
+    private String date; // creation date
 
-    public Expense(String id, double amount, String description, User paidBy) {
+    public Expense(String id, double amount, String description, User paidBy, String date) {
         this.id = id;
         this.amount = amount;
         this.description = description;
         this.paidBy = paidBy;
         this.participants = new ArrayList<>();
         this.settled = false;
+        this.date = date;
     }
 
     // Getters and setters
@@ -27,6 +29,7 @@ public class Expense {
     public String getDescription() { return description; }
     public User getPaidBy() { return paidBy; }
     public List<User> getParticipants() { return participants; }
+    public String getDate() { return date; }
 
     public void addParticipant(User user) {
         if (!participants.contains(user)) {
