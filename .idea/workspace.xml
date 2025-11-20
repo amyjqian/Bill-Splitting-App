@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="CreateGroupViewModel created">
+    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="CreateGroup controller, interactor, state and view model updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +176,8 @@
       <updated>1762785916007</updated>
       <workItem from="1763309660689" duration="12287000" />
       <workItem from="1763411832090" duration="13809000" />
-      <workItem from="1763591464171" duration="5950000" />
+      <workItem from="1763591464171" duration="11967000" />
+      <workItem from="1763666891766" duration="4662000" />
     </task>
     <task id="LOCAL-00001" summary="Changed UI text">
       <option name="closed" value="true" />
@@ -229,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763595297472</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CreateGroup controller, interactor, state and view model updated">
+      <option name="closed" value="true" />
+      <created>1763597550230</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763597550230</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +247,8 @@
     <MESSAGE value="Interface adapters added" />
     <MESSAGE value="Generic ViewModel created" />
     <MESSAGE value="CreateGroupViewModel created" />
-    <option name="LAST_COMMIT_MESSAGE" value="CreateGroupViewModel created" />
+    <MESSAGE value="CreateGroup controller, interactor, state and view model updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="CreateGroup controller, interactor, state and view model updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

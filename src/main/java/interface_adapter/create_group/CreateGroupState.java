@@ -1,7 +1,7 @@
 package interface_adapter.create_group;
 
 /**
- * The state for the Login View Model.
+ * The state for the Create Group View Model.
  */
 public class CreateGroupState {
     private String name = "";

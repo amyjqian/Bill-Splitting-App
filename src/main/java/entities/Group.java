@@ -8,8 +8,8 @@ public class Group {
     private String groupName;
 
     // Members and relationships
-    private ArrayList<User> members;
-    private ArrayList<Expense> expenses;
+    private List<User> members;
+    private List<Expense> expenses;
     private Map<User, Double> balances; // Track who owes whom
 
 
@@ -31,7 +31,7 @@ public class Group {
         return groupName;
     }
 
-    public ArrayList<Expense> getExpenses(){
+    public List<Expense> getExpenses(){
         return this.expenses;
     }
 
