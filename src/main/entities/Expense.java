@@ -28,6 +28,7 @@ public class Expense {
     public User getPaidBy() { return paidBy; }
     public List<User> getParticipants() { return participants; }
 
+
     public void addParticipant(User user) {
         if (!participants.contains(user)) {
             participants.add(user);
@@ -37,6 +38,14 @@ public class Expense {
     public double calculateEqualShare() {
         if (participants.isEmpty()) return 0;
         return amount / participants.size();
+    }
+
+    public boolean isSettled() {
+        return settled;
+    }
+
+    public void setSettled() {
+        this.settled = true;
     }
 
     public String getCategory() { return category;}

@@ -19,8 +19,18 @@ public class Group {
         this.members = new ArrayList<>();
         this.expenses = new ArrayList<>();
         this.balances = new HashMap<>();
+    }
 
+    public List<Expense> getExpenses() {
+        return expenses;
+    }
 
+    public void addExpense(Expense expense) {
+        this.expenses.add(expense);
+    }
+
+    public void addMember(User user) {
+        this.members.add(user);
     }
 
     public List<Expense> getExpenses() {
