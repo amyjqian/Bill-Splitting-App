@@ -35,7 +35,7 @@ public class SettleUpInteractor implements SettleUpInputBoundary {
         }
         String message = calculator.suggestedPayment(group);
         presenter.present( new SettleUpOutputData(
-                true,
+                false,
                 true,
                 message));
     }
