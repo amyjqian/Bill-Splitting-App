@@ -28,7 +28,8 @@ public class AddExpenseInteractor implements AddExpenseInputBoundary {
                     addExpenseInputData.getDescription(),
                     addExpenseInputData.getAmount(),
                     addExpenseInputData.getCategory(),
-                    addExpenseInputData.getParticipants());
+                    addExpenseInputData.getParticipants(),
+                    addExpenseInputData.getPaidBy());
 
             expenseDataAccessObject.save(expense);
 

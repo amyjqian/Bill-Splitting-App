@@ -10,6 +10,7 @@ public class AddExpenseInputData {
     private float amount;
     private String category;
     private ArrayList<User> participants;
+    private User paidBy;
 
     public AddExpenseInputData(String expense_name,
                                String description,
@@ -28,4 +29,8 @@ public class AddExpenseInputData {
     public float getAmount() {return amount; }
     public String getCategory() {return category; }
     public ArrayList<User> getParticipants() {return participants; }
+    public User getPaidBy() {
+        User amy = new User("10", "amy");
+        return amy;
+    }
 }
