@@ -39,5 +39,14 @@ public class Expense {
         return amount / participants.size();
     }
 
+    public boolean isSettled() {
+        return settled;
+    }
+
+    public void setSettled() {
+        this.settled = true;
+    }
+
     public String getCategory() { return category;}
 }
+
