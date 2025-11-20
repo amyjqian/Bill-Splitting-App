@@ -2,6 +2,7 @@ package interface_adapter.view_history;
 
 import use_case.view_history.ViewHistoryInputBoundary;
 import use_case.view_history.ViewHistoryInputData;
+import use_case.view_history.ViewHistoryInteractor;
 
 public class ViewHistoryController {
 

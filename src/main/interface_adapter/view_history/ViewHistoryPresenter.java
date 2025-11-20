@@ -7,9 +7,8 @@ public class ViewHistoryPresenter implements ViewHistoryOutputBoundary {
     private final MyGroupViewModel viewModel;
     private ViewHistoryOutputData outputData;
 
-    public ViewHistoryPresenter(MyGroupViewModel viewModel, ViewHistoryOutputData outputData) {
+    public ViewHistoryPresenter(MyGroupViewModel viewModel) {
         this.viewModel = viewModel;
-        this.outputData = outputData;
     }
 
     public void prepareSuccessView(ViewHistoryOutputData outputData) {
