@@ -8,8 +8,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
-public class CreateGroupFrame extends JFrame {
+public class CreateGroupFrame extends JFrame implements ActionListener, PropertyChangeListener {
 
     private final CreateGroupViewModel createGroupViewModel;
 
@@ -33,13 +35,15 @@ public class CreateGroupFrame extends JFrame {
         JButton submitButton = new JButton("Submit");
 
         submitButton.addActionListener(
-                evt -> {
-                    if (evt.getSource().equals(submitButton)) {
-                        final CreateGroupState currentState = createGroupViewModel.getState();
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent evt) {
+                        if (evt.getSource().equals(submitButton)) {
+                            final CreateGroupState currentState = createGroupViewModel.getState();
 
-                        CreateGroupController.execute(
-                                //tbd
-                        );
+                            CreateGroupController.execute(
+                                    //tbd
+                            );
+                        }
                     }
                 }
         );
@@ -54,7 +58,28 @@ public class CreateGroupFrame extends JFrame {
         panel.add(nameField);
         panel.add(groupID);
         panel.add(submitButton);
-        add(panel);
+        this.add(panel);
         }
 
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            new CreateGroupFrame(new CreateGroupViewModel()).setVisible(true);
+        });
     }
+    /**
+     * React to a button click that results in evt.
+     * @param evt the ActionEvent to react to
+     */
+    public void actionPerformed(ActionEvent evt) {
+        System.out.println("Click " + evt.getActionCommand());
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        final CreateGroupState state = (CreateGroupState) evt.getNewValue();
+        setFields(state);
+    }
+
+    private void setFields(CreateGroupState state) {
+    }
+}

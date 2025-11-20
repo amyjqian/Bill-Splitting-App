@@ -3,7 +3,7 @@ package interface_adapter.create_group;
 import interface_adapter.ViewModel;
 
 /**
- * The View Model for the Login View.
+ * The View Model for the CreateGroup View.
  */
 public class CreateGroupViewModel extends ViewModel<CreateGroupState> {
 
