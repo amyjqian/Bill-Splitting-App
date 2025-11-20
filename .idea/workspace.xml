@@ -4,16 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="changed participants to checkbox menu" />
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="changed group entity">
+      <change afterPath="$PROJECT_DIR$/src/main/api/SplidDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/api/SplidDatabaseCalls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/controller/AddExpenseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseDataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseInputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseInputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseInteractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseOutputBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseOutputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/view/AddExpensePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Group.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="add_expense" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,22 +49,39 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="35f3DDOSX0cqY7EjtvfmyTNezfp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CreateGroupFrame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExpenseDesc.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ExpenseFrame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GroupViewFrame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainFrame.executor&quot;: &quot;Run&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/participants&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CreateGroupFrame.executor": "Run",
+    "Application.ExpenseDesc.executor": "Run",
+    "Application.ExpenseFrame.executor": "Run",
+    "Application.GroupViewFrame.executor": "Run",
+    "Application.MainFrame.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "add__expense",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -50,8 +95,37 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="changed participants to checkbox menu" />
+      <created>1763487177185</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763487177185</updated>
+      <workItem from="1763487178523" duration="5550000" />
+    </task>
+    <task id="LOCAL-00001" summary="expense frame">
+      <option name="closed" value="true" />
+      <created>1763487319069</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763487319069</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changed group entity">
+      <option name="closed" value="true" />
+      <created>1763488331072</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763488331072</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -66,6 +140,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed participants to checkbox menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed participants to checkbox menu" />
+    <MESSAGE value="expense frame" />
+    <MESSAGE value="changed group entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed group entity" />
   </component>
 </project>
