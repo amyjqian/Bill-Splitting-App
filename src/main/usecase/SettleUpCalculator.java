@@ -46,19 +46,21 @@ public class SettleUpCalculator implements SettlementCalculator{
                     double payment;
                     payment = Math.min(receiver.getValue(), -payer.getValue());
                     messageBuilder.append(payer.getKey().getName());
-                    messageBuilder.append(" owes");
+                    messageBuilder.append(" owes ");
                     messageBuilder.append(receiver.getKey().getName());
                     messageBuilder.append(" $");
                     messageBuilder.append(String.format("%.2f", payment));
                     messageBuilder.append(".\n");
+                    messageBuilder.append(System.lineSeparator());
                     receiver.setValue(receiver.getValue() - payment);
                     payer.setValue(payer.getValue() + payment);
                 }
             }
         }
-        if (messageBuilder.isEmpty()){
+        String message = messageBuilder.toString();
+        if (message.length() == 0){
             return "No payments required";
         }
-        return messageBuilder.toString();
+        return message;
     }
 }
