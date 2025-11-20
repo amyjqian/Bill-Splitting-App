@@ -1,7 +1,7 @@
-package use_case.view_history;
+package src.main.use_case.view_history;
 
 import entities.Expense;
-import entities.User;
+import src.main.use_case.view_history.*;
 
 import java.util.List;
 
