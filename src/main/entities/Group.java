@@ -24,4 +24,12 @@ public class Group {
     public List<Expense> getExpenses() {
         return expenses;
     }
+
+    public void addExpense(Expense expense) {
+        this.expenses.add(expense);
+    }
+
+    public void addMember(User user) {
+        this.members.add(user);
+    }
 }

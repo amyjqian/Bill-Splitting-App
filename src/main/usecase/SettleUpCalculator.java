@@ -51,7 +51,6 @@ public class SettleUpCalculator implements SettlementCalculator{
                     messageBuilder.append(" $");
                     messageBuilder.append(String.format("%.2f", payment));
                     messageBuilder.append(".\n");
-                    messageBuilder.append(System.lineSeparator());
                     receiver.setValue(receiver.getValue() - payment);
                     payer.setValue(payer.getValue() + payment);
                 }
