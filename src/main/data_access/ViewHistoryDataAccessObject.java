@@ -4,6 +4,7 @@ import entities.Expense;
 import entities.User;
 import okhttp3.*;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import use_case.view_history.ViewHistoryDataAccessInterface;
 
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class ViewHistoryDataAccessObject implements ViewHistoryDataAccessInterface {
 
-    private static final String BASE_URL = "https://secure.splitwise.com/api/v3.0/get_group/";
+    private static final String BASE_URL = "https://secure.splitwise.com/api/v3.0/get_expenses?group_id=";
 
     private final OkHttpClient client = new OkHttpClient();
     private final String apiKey;
@@ -34,65 +35,104 @@ public class ViewHistoryDataAccessObject implements ViewHistoryDataAccessInterfa
 
         try {
             Response response = client.newCall(request).execute();
+            String responseString = response.body().string();
 
             if (!response.isSuccessful()) {
-                throw new RuntimeException("API Error: " + response.code());
+                // throw new RuntimeException("API Error: " + response.code());
+                int code = response.code();
+
+                if (code == 404) {
+                    throw new IOException("Group not found");
+                } else if (code == 401) {
+                    throw new IOException("Unauthorized: invalid API key");
+                } else if (code == 403) {
+                    throw new IOException("Forbidden: not allowed to view this group");
+                } else if (code >= 500) {
+                    throw new IOException("Splitwise server error (" + code + ")");
+                } else {
+                    throw new IOException("API request failed (" + code + ")");
+                }
             }
 
-            JSONObject root = new JSONObject(response.body().string());
-            JSONObject groupObj = root.getJSONObject("group");
-            JSONArray expenseArray = groupObj.getJSONArray("expenses");
+            JSONObject root = new JSONObject(responseString);
+            JSONArray expenseArray = root.optJSONArray("expenses");
+            if (expenseArray == null) {
+                return result; // no expenses
+            }
 
             for (int i = 0; i < expenseArray.length(); i++) {
-                JSONObject e = expenseArray.getJSONObject(i);
-                result.add(parseExpense(e));
+                JSONObject e = expenseArray.optJSONObject(i);
+                if (e != null) {
+                    Expense exp = parseExpense(e);
+                    if (exp != null) {
+                        result.add(exp);
+                    }
+                }
             }
 
             return result;
 
         } catch (IOException e) {
-            throw new RuntimeException("Network failure: " + e.getMessage());
+            throw new RuntimeException("Network failure: " + e.getMessage(),e);
         }
     }
 
     private Expense parseExpense(JSONObject json) {
-        String id = json.getString("id");
-        double amount = json.getDouble("cost");
-        String description = json.getString("description");
-        String date = json.getString("date");
+            try {
+            String id = json.optString("id", "no id");
+            double amount = json.optDouble("cost",0.0);
+            String description = json.optString("description","(no description)");
+            String date = json.optString("date", "(no date)");
 
-        // Who paid?
-        JSONObject createdBy = json.getJSONObject("created_by");
-        User paidBy = new User(
-                String.valueOf(createdBy.getInt("id")),
-                createdBy.getString("first_name"),
-                "");
+            // Who paid?
+            JSONObject createdByObj = json.optJSONObject("created_by");
+            User paidBy;
 
-        // Participants
-        List<User> participants = new ArrayList<>();
-        JSONArray userShares = json.getJSONArray("users");
+            if (createdByObj != null) {
+                paidBy = new User(
+                        String.valueOf(createdByObj.optInt("id", 0)),
+                        createdByObj.optString("first_name", "Unknown"),
+                        ""
+                );
+            } else {
+                paidBy = new User("0", "Unknown", "");
+            }
 
-        for (int i = 0; i < userShares.length(); i++) {
-            JSONObject u = userShares.getJSONObject(i).getJSONObject("user");
+            // Participants
+            JSONArray userShares = json.optJSONArray("users");
+            List<User> participants = new ArrayList<>();
 
-            // participants need to change to get users
-            User participant = new User(
-                    String.valueOf(u.getInt("id")),
-                    u.getString("first_name"),
-                    ""
-            );
+            if (userShares != null) {
+                for (int i = 0; i < userShares.length(); i++) {
+                    JSONObject shareEntry = userShares.optJSONObject(i);
+                    if (shareEntry == null) continue;
 
-            participants.add(participant);
-        }
+                    JSONObject u = shareEntry.optJSONObject("user");
+                    if (u == null) continue;
 
-        // Build Expense using your constructor
-        Expense exp = new Expense(id, amount, description, paidBy, date);
+                    User participant = new User(
+                            String.valueOf(u.optInt("id", 0)),
+                            u.optString("first_name", "Unknown"),
+                            ""
+                    );
+                    participants.add(participant);
+                }
+            }
 
-        // Add participants through provided method
-        for (User u : participants) {
-            exp.addParticipant(u);
-        }
+            // build expense entity
+            Expense exp = new Expense(id, amount, description, paidBy, date);
 
-        return exp;
+            // Add participants
+            for (User u : participants) {
+                exp.addParticipant(u);
+            }
+
+            return exp;
+        }  catch (JSONException e) {
+                // unexpected missing field
+                System.err.println("Failed to parse expense: " + e.getMessage());
+                return null;
+            }
     }
+
 }
