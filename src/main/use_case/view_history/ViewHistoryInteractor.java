@@ -29,7 +29,7 @@ public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
 
             // successful output
             ViewHistoryOutputData outputData =
-                    new ViewHistoryOutputData(expenses, "Success", true);
+                    new ViewHistoryOutputData(expenses,"", true);
 
             viewHistoryOutputBoundary.prepareSuccessView(outputData);
 
