@@ -1,103 +1,100 @@
 package view;
 
-import data_access.ViewHistoryDataAccessObject;
 import interface_adapter.view_history.MyGroupViewModel;
-import interface_adapter.view_history.ViewHistoryPresenter;
-import use_case.view_history.ViewHistoryDataAccessInterface;
-import use_case.view_history.ViewHistoryInputData;
 import interface_adapter.view_history.ViewHistoryController;
-import use_case.view_history.ViewHistoryInteractor;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class MyGroupFrame extends JFrame {
 
-    private final ViewHistoryController viewHistoryController;
+    private final MyGroupViewModel myGroupViewModel;
 
-    JLabel titleLabel = new JLabel("My Group", SwingConstants.CENTER);
-    JLabel groupLabel = new JLabel("Group:");
     JTextField groupField = new JTextField("group14", 15);
-    JButton backButton = new JButton("Back");
-    JButton refreshHistoryButton = new JButton("Refresh History");
     JLabel errorLabel = new JLabel("", SwingConstants.CENTER);
+
     JTable expenseTable;
-    JButton newExpenseButton = new JButton("New Expense");
-    JButton settleUpButton = new JButton("Settle Up");
+    DefaultTableModel tableModel;
 
     public MyGroupFrame(MyGroupViewModel myGroupViewModel, ViewHistoryController viewHistoryController) {
-        this.viewHistoryController = viewHistoryController;
+        this.myGroupViewModel = myGroupViewModel;
+
         setTitle("My Group");
         setLayout(new BorderLayout(10, 10));
 
-        JPanel titleRow = new JPanel(new BorderLayout());
-        titleLabel.setFont(new Font("SansSerif", Font.BOLD, 18));
-        titleRow.add(titleLabel, BorderLayout.CENTER);
+        // top section: groupName, Back, Refresh
+        JLabel titleLabel = new JLabel("My Group", SwingConstants.CENTER);
+        JLabel groupLabel = new JLabel("Group:");
+        groupField.setEditable(false);
 
-        // group name + back button
+        JButton backButton = new JButton("Back");
+        JButton refreshHistoryButton = new JButton("Refresh History");
+
         JPanel groupPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
         groupPanel.add(groupLabel);
-        groupField.setEditable(false);
         groupPanel.add(groupField);
-        groupPanel.add(backButton);
         groupPanel.add(refreshHistoryButton);
-        add(groupPanel,BorderLayout.BEFORE_FIRST_LINE);
+        groupPanel.add(backButton);
 
-        // errorLabel
+        errorLabel.setForeground(Color.RED);
+
         JPanel northPanel = new JPanel();
         northPanel.setLayout(new BoxLayout(northPanel, BoxLayout.Y_AXIS));
         northPanel.add(groupPanel);
-
-        errorLabel.setForeground(Color.RED);
-        errorLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         northPanel.add(errorLabel);
 
         add(northPanel, BorderLayout.NORTH);
 
-        // table
-        expenseTable = new JTable(new Object[][]{}, new String[]{"Expenses", "Amount", "Date Added"});
-        JScrollPane scrollPane = new JScrollPane(expenseTable);
-        expenseTable.setFillsViewportHeight(true);
-        add(scrollPane, BorderLayout.CENTER);
+        // table section
+        tableModel = new DefaultTableModel(new String[]{"Description", "Amount", "Date"}, 0);
+        expenseTable = new JTable(tableModel);
+        add(new JScrollPane(expenseTable), BorderLayout.CENTER);
 
-        // lower buttons
+        // bottom buttons
+        JButton newExpenseButton = new JButton("New Expense");
+        JButton settleUpButton = new JButton("Settle Up");
+
         JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 50, 10));
-        newExpenseButton.setPreferredSize(new Dimension(150, 35));
-        settleUpButton.setPreferredSize(new Dimension(150, 35));
         footerPanel.add(newExpenseButton);
         footerPanel.add(settleUpButton);
+
         add(footerPanel, BorderLayout.SOUTH);
 
+        // event listeners
         refreshHistoryButton.addActionListener(e -> {
             viewHistoryController.execute(groupField.getText());
         });
 
-        // show error code
+        // ViewModel listener
         myGroupViewModel.addPropertyChangeListener(evt -> {
-            var state = myGroupViewModel.getState();
-            errorLabel.setText(state.getMessage());
+            SwingUtilities.invokeLater(() -> {
+                updateErrorLabel();
+                updateExpenseTable();
+            });
+        });
+    }
+
+    // helpers
+    private void updateErrorLabel() {
+        errorLabel.setText(myGroupViewModel.getMessage());
+    }
+
+    private void updateExpenseTable() {
+        // Clear table
+        tableModel.setRowCount(0);
+
+        myGroupViewModel.getExpenses().forEach(exp -> {
+            Object[] row = {
+                    exp.getDescription(),
+                    exp.getAmount(),
+                    exp.getDate()
+            };
+            tableModel.addRow(row);
         });
     }
 
     public String getViewName() {
         return "groupView";
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            MyGroupViewModel vm = new MyGroupViewModel("groupView");
-
-            // you must construct interactor & presenter too
-            ViewHistoryPresenter presenter = new ViewHistoryPresenter(vm);
-            ViewHistoryDataAccessInterface dao = new ViewHistoryDataAccessObject("0"); // need to update api
-            ViewHistoryInteractor interactor = new ViewHistoryInteractor(dao, presenter);
-            ViewHistoryController controller = new ViewHistoryController(interactor);
-
-            MyGroupFrame frame = new MyGroupFrame(vm, controller);
-
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(600, 400);
-            frame.setVisible(true);
-        });
     }
 }

@@ -7,29 +7,24 @@ import java.util.List;
 import entities.Expense;
 
 public class MyGroupViewModel {
-
-    private final String viewName;
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
     private MyGroupState state = new MyGroupState();
 
-    public MyGroupViewModel(String viewName) {
-        this.viewName = viewName;
-    }
+    public MyGroupViewModel() {}
+    public MyGroupViewModel(String viewName) {}
 
-    public MyGroupState getState() {
-        return this.state;
-    }
+    public MyGroupState getState() { return this.state; }
 
-    public void setExpenses(List<Expense> expenses) {
-        state.setExpenses(expenses);
-    }
+    public List<Expense> getExpenses() { return state.getExpenses(); }
 
-    public void setMessage(String message) {
-        state.setMessage(message);
-    }
+    public String getMessage() { return state.getMessage();}
+
+    public void setExpenses(List<Expense> expenses) { state.setExpenses(List.copyOf(expenses));}
+
+    public void setMessage(String message) {state.setMessage(message);}
 
     public void firePropertyChanged() {
-        support.firePropertyChange("state", null, this.state);
+        support.firePropertyChange("state", null, new MyGroupState(state));
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

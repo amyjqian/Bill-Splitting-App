@@ -5,7 +5,6 @@ import use_case.view_history.ViewHistoryOutputData;
 
 public class ViewHistoryPresenter implements ViewHistoryOutputBoundary {
     private final MyGroupViewModel viewModel;
-    private ViewHistoryOutputData outputData;
 
     public ViewHistoryPresenter(MyGroupViewModel viewModel) {
         this.viewModel = viewModel;
@@ -18,7 +17,6 @@ public class ViewHistoryPresenter implements ViewHistoryOutputBoundary {
     }
 
     public void prepareFailedView(ViewHistoryOutputData outputData) {
-        viewModel.setExpenses(outputData.getExpenses());
         viewModel.setMessage(outputData.getMessage());
         viewModel.firePropertyChanged();
     }
