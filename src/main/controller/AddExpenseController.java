@@ -1,10 +1,6 @@
 package main.controller;
 
-import main.entities.User;
-import main.usecase.AddExpenseInputBoundary;
-import main.usecase.AddExpenseInputData;
-
-import java.util.ArrayList;
+import main.usecase.*;
 
 public class AddExpenseController {
     private final AddExpenseInputBoundary addExpenseInteractor;
@@ -13,11 +9,14 @@ public class AddExpenseController {
         this.addExpenseInteractor = addExpenseInteractor;
     }
 
-    public void execute(String expenseName, String description, float amount,
-                        String category, ArrayList<User> participants) {
+    public void execute(String expenseName,
+                        String description,
+                        float amount,
+                        String category,
+                        java.util.ArrayList<main.entities.User> participants,
+                        Long groupId) {
         AddExpenseInputData inputData = new AddExpenseInputData(
-                expenseName, description, amount, category, participants
-        );
+                expenseName, description, amount, category, participants, groupId);
         addExpenseInteractor.execute(inputData);
     }
 }

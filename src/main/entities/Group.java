@@ -1,32 +1,52 @@
 package main.entities;
 
-import java.util.*;
+import java.util.List;
 
 public class Group {
-    // Core properties
-    private String groupId;
-    private String groupName;
-
-    // Members and relationships
+    private Long id;
+    private String name;
     private List<User> members;
-    private List<Expense> expenses;
-    private Map<User, Double> balances; // Track who owes whom
 
-
-    public Group(String groupId, String groupName) {
-        this.groupId = groupId;
-        this.groupName = groupName;
-        this.members = new ArrayList<>();
-        this.expenses = new ArrayList<>();
-        this.balances = new HashMap<>();
-
-
+    public Group(Long id, String name, List<User> members) {
+        this.id = id;
+        this.name = name;
+        this.members = members;
     }
+
+    public Group(String name, String description) {
+        this.id = null;
+        this.name = name;
+        this.members = new java.util.ArrayList<>();
+    }
+
+    public Group() {
+        this.members = new java.util.ArrayList<>();
+    }
+
+    public Long getId() { return id; }
+    public String getName() { return name; }
+    public List<User> getMembers() { return members; }
+
+    public void setId(Long id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
+    public void setMembers(List<User> members) { this.members = members; }
+
     public void addMember(User user) {
-        this.members.add(user);
+        if (!members.contains(user)) {
+            members.add(user);
+        }
     }
 
-    public List<Expense> getExpenses() {
-        return expenses;
+    public void removeMember(User user) {
+        members.remove(user);
+    }
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", members=" + members +
+                '}';
     }
 }

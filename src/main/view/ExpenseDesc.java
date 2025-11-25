@@ -2,6 +2,8 @@ package main.view;
 
 import main.controller.AddExpenseController;
 import main.entities.User;
+import main.entities.Group;
+import main.dataaccess.SplitwiseDataAccess;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,9 +18,14 @@ public class ExpenseDesc extends JFrame {
     private JTextField descField;
     private JComboBox<String> comboBox;
     private List<JCheckBox> participantCheckboxes;
+    private JPanel participantsPanel;
+    private SplitwiseDataAccess dataAccess;
+    private Group currentGroup; // Assuming we're already in a specific group
 
     public ExpenseDesc() {
+        this.dataAccess = new SplitwiseDataAccess();
         initializeUI();
+        loadParticipants();
     }
 
     private void initializeUI() {
@@ -33,27 +40,16 @@ public class ExpenseDesc extends JFrame {
         amountField = new JTextField(20);
         descField = new JTextField(20);
 
-        String[] options = {"Utility", "Food", "Gifts"};
+        String[] options = {"Utility", "Food", "Gifts", "Transportation", "Entertainment", "Other"};
         comboBox = new JComboBox<>(options);
 
         JButton submitButton = new JButton("Submit");
         submitButton.addActionListener(new SubmitButtonListener());
 
-        // Create checkboxes for participants
-        JLabel participantsLabel = new JLabel("Participants:");
+        // Create panel for participants
         participantCheckboxes = new ArrayList<>();
-
-        String[] participantNames = {"Amy", "Tan", "Katie", "Patricia", "Angela", "Lucy"};
-        for (String name : participantNames) {
-            participantCheckboxes.add(new JCheckBox(name));
-        }
-
-        // Panel for checkboxes with grid layout
-        JPanel participantsPanel = new JPanel();
-        participantsPanel.setLayout(new GridLayout(3, 2, 5, 5));
-        for (JCheckBox checkbox : participantCheckboxes) {
-            participantsPanel.add(checkbox);
-        }
+        participantsPanel = new JPanel();
+        participantsPanel.setLayout(new GridLayout(0, 2, 5, 5));
 
         // Scroll pane for participants
         JScrollPane participantsScrollPane = new JScrollPane(participantsPanel);
@@ -73,16 +69,76 @@ public class ExpenseDesc extends JFrame {
         panel.add(descField);
         panel.add(new JLabel("Category:"));
         panel.add(comboBox);
-        panel.add(participantsLabel);
+        panel.add(new JLabel("Participants:"));
         panel.add(participantsScrollPane);
         panel.add(submitButton);
 
         add(panel);
     }
 
+    // Load participants for the current group
+    private void loadParticipants() {
+        try {
+            participantsPanel.removeAll();
+            participantCheckboxes.clear();
+
+            // Get the current group - you'll need to set this based on your application context
+            if (currentGroup == null) {
+                // For demo purposes, create a default group or get it from your application state
+                currentGroup = new Group(12345L, "Current Group", new ArrayList<>());
+            }
+
+            // Fetch actual group members from Splitwise API
+            Group fullGroup = dataAccess.getGroup(currentGroup.getId());
+
+            if (fullGroup != null && fullGroup.getMembers() != null && !fullGroup.getMembers().isEmpty()) {
+                for (User member : fullGroup.getMembers()) {
+                    JCheckBox checkbox = new JCheckBox(member.getFirstName() + " " + member.getLastName());
+                    checkbox.putClientProperty("user", member);
+                    participantCheckboxes.add(checkbox);
+                    participantsPanel.add(checkbox);
+                }
+            } else {
+                // Fallback if no members found
+                loadPlaceholderParticipants();
+            }
+
+            participantsPanel.revalidate();
+            participantsPanel.repaint();
+
+        } catch (Exception e) {
+            showError("Failed to load participants: " + e.getMessage());
+            loadPlaceholderParticipants();
+        }
+    }
+
+    // Fallback method if API fails
+    private void loadPlaceholderParticipants() {
+        participantsPanel.removeAll();
+        participantCheckboxes.clear();
+
+        String[] placeholderNames = {"Amy", "Tan", "Katie", "Patricia", "Angela", "Lucy"};
+        for (String name : placeholderNames) {
+            JCheckBox checkbox = new JCheckBox(name);
+            User placeholderUser = new User(name, name.toLowerCase(), name.toLowerCase() + "@example.com");
+            checkbox.putClientProperty("user", placeholderUser);
+            participantCheckboxes.add(checkbox);
+            participantsPanel.add(checkbox);
+        }
+
+        participantsPanel.revalidate();
+        participantsPanel.repaint();
+    }
+
     // Set the controller for this view
     public void setController(AddExpenseController controller) {
         this.controller = controller;
+    }
+
+    // Set the current group (call this before showing the window)
+    public void setCurrentGroup(Group group) {
+        this.currentGroup = group;
+        loadParticipants(); // Reload participants when group changes
     }
 
     private class SubmitButtonListener implements ActionListener {
@@ -124,9 +180,10 @@ public class ExpenseDesc extends JFrame {
                 ArrayList<User> participants = new ArrayList<>();
                 for (JCheckBox checkbox : participantCheckboxes) {
                     if (checkbox.isSelected()) {
-                        // Create user objects with name and email
-                        participants.add(new User(checkbox.getText(),
-                                checkbox.getText().toLowerCase() + "@example.com"));
+                        User user = (User) checkbox.getClientProperty("user");
+                        if (user != null) {
+                            participants.add(user);
+                        }
                     }
                 }
 
@@ -136,8 +193,15 @@ public class ExpenseDesc extends JFrame {
                     return;
                 }
 
-                // Call controller to execute the use case
-                controller.execute(expenseName, description, amount, category, participants);
+                // Validate current group is set
+                if (currentGroup == null) {
+                    showError("No group selected");
+                    return;
+                }
+
+                // Call controller to execute the use case with group ID
+                controller.execute(expenseName, description, amount, category,
+                        participants, currentGroup.getId());
 
             } catch (Exception ex) {
                 showError("Error: " + ex.getMessage());
@@ -162,53 +226,42 @@ public class ExpenseDesc extends JFrame {
         amountField.setText("");
         descField.setText("");
         comboBox.setSelectedIndex(0);
-        for (JCheckBox checkbox : participantCheckboxes) {
-            checkbox.setSelected(false);
-        }
-        nameField.requestFocus(); // Set focus back to first field
+        nameField.requestFocus();
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            // For demo purposes - in a real app, this would be properly dependency injected
-            ExpenseDesc view = new ExpenseDesc();
+        // Simple main method without UIManager
+        ExpenseDesc view = new ExpenseDesc();
 
-            // Create a simple presenter that connects to the view
-            main.usecase.AddExpenseOutputBoundary presenter = new main.usecase.AddExpenseOutputBoundary() {
-                @Override
-                public void prepareSuccessView(main.usecase.AddExpenseOutputData outputData) {
-                    view.showSuccess(outputData.getMessage());
-                }
+        // Create presenter
+        main.usecase.AddExpenseOutputBoundary presenter = new main.usecase.AddExpenseOutputBoundary() {
+            @Override
+            public void prepareSuccessView(main.usecase.AddExpenseOutputData outputData) {
+                view.showSuccess(outputData.getMessage());
+            }
 
-                @Override
-                public void prepareFailView(String errorMessage) {
-                    view.showError(errorMessage);
-                }
-            };
+            @Override
+            public void prepareFailView(String errorMessage) {
+                view.showError(errorMessage);
+            }
+        };
 
-            // Create simple data access and factory for demo
-            main.usecase.AddExpenseDataAccessInterface dataAccess = new main.usecase.AddExpenseDataAccessInterface() {
-                @Override
-                public void save(main.entities.Expense expense) {
-                    System.out.println(
-                            "Demo: Saving expense - " + expense.getExpenseName() +
-                            ", Description: " + expense.getDescription() +
-                            ", Amount: " + expense.getAmount() +
-                            ", Participants: " + expense.getParticipants());
-                }
-            };
+        // Create data access
+        SplitwiseDataAccess dataAccess = new SplitwiseDataAccess();
+        main.entities.ExpenseFactory expenseFactory = new main.entities.ExpenseFactory();
 
-            main.entities.ExpenseFactory expenseFactory = new main.entities.ExpenseFactory();
+        // Create interactor and controller
+        main.usecase.AddExpenseInteractor interactor = new main.usecase.AddExpenseInteractor(
+                dataAccess, presenter, expenseFactory
+        );
 
-            // Create interactor and controller
-            main.usecase.AddExpenseInteractor interactor = new main.usecase.AddExpenseInteractor(
-                    dataAccess, presenter, expenseFactory
-            );
+        AddExpenseController controller = new AddExpenseController(interactor);
+        view.setController(controller);
 
-            AddExpenseController controller = new AddExpenseController(interactor);
-            view.setController(controller);
+        // Set a default group for demo purposes
+        Group defaultGroup = new Group(12345L, "Roommates", new ArrayList<>());
+        view.setCurrentGroup(defaultGroup);
 
-            view.setVisible(true);
-        });
+        view.setVisible(true);
     }
 }

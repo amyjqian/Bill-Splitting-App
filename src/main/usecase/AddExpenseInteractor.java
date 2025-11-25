@@ -2,6 +2,7 @@ package main.usecase;
 
 import main.entities.Expense;
 import main.entities.ExpenseFactory;
+import main.entities.User;
 
 public class AddExpenseInteractor implements AddExpenseInputBoundary {
     private final AddExpenseDataAccessInterface expenseDataAccessObject;
@@ -18,11 +19,31 @@ public class AddExpenseInteractor implements AddExpenseInputBoundary {
 
     @Override
     public void execute(AddExpenseInputData addExpenseInputData) {
-        if (addExpenseInputData.getAmount() <= 0) {
-            expensePresenter.prepareFailView("Amount must be positive");
-        } else if (addExpenseInputData.getParticipants().isEmpty()) {
-            expensePresenter.prepareFailView("At least one participant is required");
-        } else {
+        try {
+            // Validate input
+            if (addExpenseInputData.getAmount() <= 0) {
+                expensePresenter.prepareFailView("Amount must be positive");
+                return;
+            } else if (addExpenseInputData.getParticipants().isEmpty()) {
+                expensePresenter.prepareFailView("At least one participant is required");
+                return;
+            } else if (addExpenseInputData.getGroupId() == null) {
+                expensePresenter.prepareFailView("Group ID is required");
+                return;
+            }
+
+            // Get current user from Splitwise API to set as paidBy
+            User currentUser = expenseDataAccessObject.getCurrentUser();
+            addExpenseInputData.setPaidBy(currentUser);
+
+            // Verify group exists and get group details
+            main.entities.Group group = expenseDataAccessObject.getGroup(addExpenseInputData.getGroupId());
+            if (group == null) {
+                expensePresenter.prepareFailView("Group not found");
+                return;
+            }
+
+            // Create expense entity
             final Expense expense = expenseFactory.create(
                     addExpenseInputData.getExpenseName(),
                     addExpenseInputData.getDescription(),
@@ -31,11 +52,20 @@ public class AddExpenseInteractor implements AddExpenseInputBoundary {
                     addExpenseInputData.getParticipants(),
                     addExpenseInputData.getPaidBy());
 
-            expenseDataAccessObject.save(expense);
+            // Save to Splitwise API
+            Expense createdExpense = expenseDataAccessObject.save(expense, addExpenseInputData.getGroupId());
 
+            // Prepare success response
             final AddExpenseOutputData addExpenseOutputData = new AddExpenseOutputData(
-                    expense.getExpenseName(), "Expense added successfully");
+                    createdExpense.getExpenseName(),
+                    "Expense added successfully to Splitwise",
+                    createdExpense.getAmount(),
+                    createdExpense.getParticipants().size());
+
             expensePresenter.prepareSuccessView(addExpenseOutputData);
+
+        } catch (Exception e) {
+            expensePresenter.prepareFailView("Failed to add expense: " + e.getMessage());
         }
     }
 }

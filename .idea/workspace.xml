@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="added use cases">
-      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dataaccess/SplitwiseDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplidDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplidDatabaseCalls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controller/AddExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controller/AddExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseDataAccessInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseInputData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/AddExpenseOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Group.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
