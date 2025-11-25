@@ -1,13 +1,13 @@
 package entities;
 
 public class User {
-    private final String id;
+    private final int id;
     private final String password;
     private final String email;
     private final String first_name;
     private final String last_name;
 
-    public User(String id, String first_name, String last_name, String email, String password) {
+    public User(int id, String first_name, String last_name, String email, String password) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -16,7 +16,7 @@ public class User {
     }
 
     // Getters
-    public String getId() { return id; }
+    public int getId() { return id; }
     public String getEmail() {
         return email;
     }
@@ -32,6 +32,7 @@ public class User {
     public String toString() {
         return first_name + " " + last_name;
     }
+
 
 
 }

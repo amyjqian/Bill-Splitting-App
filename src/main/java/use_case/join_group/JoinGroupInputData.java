@@ -1,13 +1,20 @@
 package use_case.join_group;
 
 public class JoinGroupInputData {
-    private final String code;
+    private final int userID;
+    private final int groupID;
 
-    public JoinGroupInputData(String code) {
-        this.code = code;
+    public JoinGroupInputData(int userID, int groupID) {
+        this.userID = userID;
+        this.groupID = groupID;
     }
 
-    public String getCode() {
-        return code;
+    public int getUserID() {
+        return userID;
+    }
+
+    public int getGroupID() {
+        return groupID;
     }
 }
+

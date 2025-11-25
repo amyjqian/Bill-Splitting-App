@@ -8,6 +8,7 @@ public interface CreateGroupInputBoundary {
     /**
      * Executes the create_group use case. After this executes,
      * a new group will be created.
+     * @param createGroupInputData the input data
      */
-    void execute();
+    void execute(CreateGroupInputData createGroupInputData);
 }

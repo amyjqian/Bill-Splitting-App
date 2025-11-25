@@ -6,11 +6,13 @@ public class Group {
     // Core properties - parameters we need to send to the API
     private final String groupName;
     private final String groupType;
-    private final User groupCreator; // the user who created the group, we will need to access their properties to create a group
+    private final User groupCreator; // the user who created the group, we
+                                        // will need to access their properties to create a group
 
 
     //properties the API will generate
     private int groupId;
+    private String invite_link;
     private final List<User> members;
     private final List<Expense> originalDebts;
     private final List<Expense> simplifiedDebts;
@@ -22,6 +24,7 @@ public class Group {
         this.groupName = groupName;
         this.groupType = groupType;
         this.groupCreator = groupCreator;
+        this.groupId = 20; //this is a placeholder -> will be redundant eventually
 
         this.members = new ArrayList<>();
         this.originalDebts = new ArrayList<>();
@@ -53,4 +56,15 @@ public class Group {
         return simplifiedDebts;
     }
 
+    public String getInvite_link() {
+        return invite_link;
+    }
+
+    public void addMember(User newMember) {
+        members.add(newMember);
+    }
+
+    public void removeMember(User newMember) {
+        members.remove(newMember);
+    }
 }

@@ -1,15 +1,21 @@
 package use_case.create_group;
 
 import data_access.InMemoryGroupDataAccessObject;
+import entities.User;
 
-//import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CreateGroupInteractorTest {
-    void mockTest(){
+    public static void mockTest(){
         InMemoryGroupDataAccessObject userRepository = new InMemoryGroupDataAccessObject();
         CreateGroupOutputBoundary testPresenter = new CreateGroupOutputBoundary();
         CreateGroupInputBoundary interactor = new CreateGroupInteractor(userRepository, testPresenter);
-        interactor.execute();
+        User creator = new User(100, "Katie", "Fruitman", "kfruitman@yahoo.ca", "123movies");
+        CreateGroupInputData inputData = new CreateGroupInputData("CSC207", "accomodation", creator);
+        interactor.execute(inputData);
+        assertEquals("CSC207", inputData.getGroupName());
+        assertEquals("accomodation", inputData.getGroupType());
+        assertEquals(creator, inputData.getGroupCreator());
 
     }
 

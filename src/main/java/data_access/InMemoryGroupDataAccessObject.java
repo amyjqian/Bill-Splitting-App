@@ -1,46 +1,50 @@
 package data_access;
 
 import entities.Group;
+import entities.User;
 import use_case.create_group.CreateGroupDataAccessInterface;
+import use_case.join_group.JoinGroupDataAccessInterface;
 
 import java.util.*;
 
-public class InMemoryGroupDataAccessObject implements CreateGroupDataAccessInterface {
-    private HashMap<String, Group> groupMap; //private hashmap to test DAO
-    private String groupName;
+public class InMemoryGroupDataAccessObject implements CreateGroupDataAccessInterface, JoinGroupDataAccessInterface {
+    private final HashMap<Integer, Group> groupMap; //private hashmap to test DAO
+    private final HashMap<Integer, User> userMap; //private hashmap of users
+
     public InMemoryGroupDataAccessObject(){
         groupMap = new HashMap<>();
+        userMap = new HashMap<>();
+    }
+
+
+    @Override
+    public Group createGroup(String name, String groupType, User groupCreator) {
+        Group newGroup = new Group(name, groupType, groupCreator);
+        groupMap.put(newGroup.getGroupId(), newGroup);
+        return newGroup;
     }
 
     @Override
-    public Group createGroup(String groupID) {
-        //create a new group
-        Group g = new Group(groupID);
-
-        //POST it to the db
-        groupMap.put(groupID, null);
-
-        return g;
-    }
-
-    @Override
-    public Group getGroup(String groupID) {
-        //GET a group from the db by its id
+    public Group getGroup(int groupID) {
         return groupMap.get(groupID);
     }
 
     @Override
-    public void setNewGroup(String id, Group group) {
-        //POST a corresponding group to an id
-        groupMap.replace(id, group);
-    }
-
-    @Override
     public void delete(String groupID) {
-        //remove a group from the db
         groupMap.remove(groupID);
     }
 
+    @Override
+    public void addUserToGroup(int groupID, int userID) {
+        Group group = groupMap.get(groupID);
+        User newUser = userMap.get(userID);
+        group.addMember(newUser);
+    }
 
-
+    @Override
+    public void removeUserFromGroup(int groupID, int userID) {
+        Group group = groupMap.get(groupID);
+        User newUser = userMap.get(userID);
+        group.removeMember(newUser);
+    }
 }
