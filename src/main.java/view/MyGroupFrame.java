@@ -24,7 +24,7 @@ public class MyGroupFrame extends JFrame {
         setLayout(new BorderLayout(10, 10));
 
         // top section: groupName, Back, Refresh
-        JLabel titleLabel = new JLabel("My Group", SwingConstants.CENTER);
+        // JLabel titleLabel = new JLabel("My Group", SwingConstants.CENTER);
         JLabel groupLabel = new JLabel("Group:");
         groupField.setEditable(false);
 
@@ -83,6 +83,12 @@ public class MyGroupFrame extends JFrame {
     private void updateExpenseTable() {
         // Clear table
         tableModel.setRowCount(0);
+
+        if (myGroupViewModel.getExpenses().isEmpty()) {
+            errorLabel.setText("No history found.");
+            return;
+        }
+
 
         myGroupViewModel.getExpenses().forEach(exp -> {
             Object[] row = {

@@ -27,6 +27,14 @@ public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
             // dao
             List<Expense> expenses = viewHistoryDataAccessInterface.getGroupExpenses(groupId);
 
+            // empty expense
+            if (expenses == null) {
+                ViewHistoryOutputData outputData =
+                        new ViewHistoryOutputData(null, "No history found.", false);
+                viewHistoryOutputBoundary.prepareFailedView(outputData);
+                return;
+            }
+
             // successful output
             ViewHistoryOutputData outputData =
                     new ViewHistoryOutputData(expenses,"", true);
