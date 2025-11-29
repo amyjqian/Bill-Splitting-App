@@ -7,6 +7,8 @@ import main.usecase.AddExpenseDataAccessInterface;
 import main.api.SplitwiseAPI;
 import main.api.SplitwiseAPIImpl;
 
+import java.util.List;
+
 public class SplitwiseDataAccess implements AddExpenseDataAccessInterface {
     private final SplitwiseAPI splitwiseAPI;
 
@@ -43,6 +45,13 @@ public class SplitwiseDataAccess implements AddExpenseDataAccessInterface {
             return splitwiseAPI.getGroup(groupId);
         } catch (Exception e) {
             throw new RuntimeException("Failed to get group from Splitwise: " + e.getMessage(), e);
+        }
+    }
+    public List<Group> getGroups() {
+        try {
+            return splitwiseAPI.getGroups();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to get groups: " + e.getMessage(), e);
         }
     }
 }

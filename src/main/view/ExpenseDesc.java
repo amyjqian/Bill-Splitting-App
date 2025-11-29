@@ -20,12 +20,14 @@ public class ExpenseDesc extends JFrame {
     private List<JCheckBox> participantCheckboxes;
     private JPanel participantsPanel;
     private SplitwiseDataAccess dataAccess;
-    private Group currentGroup; // Assuming we're already in a specific group
+    private Group currentGroup;
+    private JComboBox<Group> groupComboBox;
 
     public ExpenseDesc() {
         this.dataAccess = new SplitwiseDataAccess();
         initializeUI();
-        loadParticipants();
+        initializeUI();
+        loadRealGroups();
     }
 
     private void initializeUI() {
@@ -51,6 +53,18 @@ public class ExpenseDesc extends JFrame {
         participantsPanel = new JPanel();
         participantsPanel.setLayout(new GridLayout(0, 2, 5, 5));
 
+        // Add group selection
+        JLabel groupLabel = new JLabel("Select Group:");
+        groupComboBox = new JComboBox<>();
+        groupComboBox.addActionListener(e -> {
+            Group selectedGroup = (Group) groupComboBox.getSelectedItem();
+            if (selectedGroup != null) {
+                currentGroup = selectedGroup;
+                loadParticipants();
+                setTitle("Add Expense - " + currentGroup.getName());
+            }
+        });
+
         // Scroll pane for participants
         JScrollPane participantsScrollPane = new JScrollPane(participantsPanel);
         participantsScrollPane.setPreferredSize(new Dimension(400, 120));
@@ -67,6 +81,8 @@ public class ExpenseDesc extends JFrame {
         panel.add(amountField);
         panel.add(new JLabel("Description:"));
         panel.add(descField);
+        panel.add(groupLabel);
+        panel.add(groupComboBox);
         panel.add(new JLabel("Category:"));
         panel.add(comboBox);
         panel.add(new JLabel("Participants:"));
@@ -77,40 +93,60 @@ public class ExpenseDesc extends JFrame {
     }
 
     // Load participants for the current group
+    private void loadRealGroups() {
+        try {
+            List<Group> groups = dataAccess.getGroups();
+
+            if (groups.isEmpty()) {
+                showError("No groups found in your Splitwise account.");
+            } else {
+                for (Group group : groups) {
+                    groupComboBox.addItem(group);
+                }
+
+                // Auto-select the first group
+                if (groupComboBox.getItemCount() > 0) {
+                    groupComboBox.setSelectedIndex(0);
+                }
+            }
+
+        } catch (Exception e) {
+            showError("Failed to load groups: " + e.getMessage());
+        }
+    }
+
     private void loadParticipants() {
         try {
             participantsPanel.removeAll();
             participantCheckboxes.clear();
 
-            // Get the current group - you'll need to set this based on your application context
-            if (currentGroup == null) {
-                // For demo purposes, create a default group or get it from your application state
-                currentGroup = new Group(12345L, "Current Group", new ArrayList<>());
-            }
+            if (currentGroup != null && currentGroup.getMembers() != null) {
 
-            // Fetch actual group members from Splitwise API
-            Group fullGroup = dataAccess.getGroup(currentGroup.getId());
-
-            if (fullGroup != null && fullGroup.getMembers() != null && !fullGroup.getMembers().isEmpty()) {
-                for (User member : fullGroup.getMembers()) {
+                for (User member : currentGroup.getMembers()) {
                     JCheckBox checkbox = new JCheckBox(member.getFirstName() + " " + member.getLastName());
                     checkbox.putClientProperty("user", member);
                     participantCheckboxes.add(checkbox);
                     participantsPanel.add(checkbox);
+
+                    // Auto-select all participants by default
+                    checkbox.setSelected(true);
                 }
+
             } else {
-                // Fallback if no members found
-                loadPlaceholderParticipants();
+                JLabel noMembersLabel = new JLabel("No members in this group");
+                noMembersLabel.setHorizontalAlignment(SwingConstants.CENTER);
+                participantsPanel.add(noMembersLabel);
             }
 
             participantsPanel.revalidate();
             participantsPanel.repaint();
 
         } catch (Exception e) {
-            showError("Failed to load participants: " + e.getMessage());
-            loadPlaceholderParticipants();
+            System.out.println("Error loading participants: " + e.getMessage());
+//            loadPlaceholderParticipants();
         }
     }
+
 
     // Fallback method if API fails
     private void loadPlaceholderParticipants() {
@@ -257,10 +293,6 @@ public class ExpenseDesc extends JFrame {
 
         AddExpenseController controller = new AddExpenseController(interactor);
         view.setController(controller);
-
-        // Set a default group for demo purposes
-        Group defaultGroup = new Group(12345L, "Roommates", new ArrayList<>());
-        view.setCurrentGroup(defaultGroup);
 
         view.setVisible(true);
     }

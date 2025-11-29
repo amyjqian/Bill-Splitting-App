@@ -32,7 +32,13 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
 
     // Load API key from environment variable
     public static String getAPIKey() {
-        return System.getenv("SPLITWISE_API_KEY");
+        String apiKey = System.getenv("SPLITWISE_API_KEY");
+
+        if (apiKey == null || apiKey.isEmpty()) {
+            return "smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA";
+        }
+
+        return apiKey.trim();
     }
 
     @Override
@@ -53,25 +59,33 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
 
         try {
             final Response response = client.newCall(request).execute();
-            final JSONObject responseBody = new JSONObject(response.body().string());
+            final String responseBodyString = response.body().string();
+            System.out.println("DEBUG - Create Expense Response: " + responseBodyString);
 
-            // Check for errors in response
-            if (responseBody.has(ERRORS) && responseBody.getJSONArray(ERRORS).length() > 0) {
-                throw new RuntimeException("Failed to create expense: " +
-                        responseBody.getJSONArray(ERRORS).getJSONObject(0).getString("message"));
+            final JSONObject responseBody = new JSONObject(responseBodyString);
+
+            // Check for errors first
+            if (responseBody.has("errors") && !responseBody.getJSONObject("errors").isEmpty()) {
+                JSONObject errors = responseBody.getJSONObject("errors");
+                if (errors.has("base")) {
+                    throw new RuntimeException("Failed to create expense: " + errors.getJSONArray("base").getString(0));
+                } else {
+                    throw new RuntimeException("Failed to create expense: " + errors.toString());
+                }
             }
 
-            if (response.isSuccessful()) {
-                final JSONObject expenseJson = responseBody.getJSONObject("expense");
+            // If we get here, the response was successful
+            if (responseBody.has("expenses") && responseBody.getJSONArray("expenses").length() > 0) {
+                final JSONObject expenseJson = responseBody.getJSONArray("expenses").getJSONObject(0);
                 return parseExpenseFromJson(expenseJson);
             } else {
-                throw new RuntimeException("Failed to create expense. HTTP " + response.code());
+                throw new RuntimeException("No expense object in response");
             }
+
         } catch (IOException | JSONException event) {
-            throw new RuntimeException(event);
+            throw new RuntimeException("API call failed: " + event.getMessage(), event);
         }
     }
-
     @Override
     public Group getGroup(Long groupId) throws JSONException {
         final OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -135,39 +149,50 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
     /**
      * Builds the JSON request body for creating an expense
      */
+    /**
+     * Builds the JSON request body for creating an expense
+     */
     private JSONObject buildExpenseRequestBody(Expense expense, Long groupId) throws JSONException {
         JSONObject requestBody = new JSONObject();
 
         // Required fields
         requestBody.put("cost", String.format("%.2f", expense.getAmount()));
         requestBody.put("description", expense.getDescription());
+        requestBody.put("details", expense.getDescription());
 
-        // Group ID (optional but recommended for group expenses)
+        // Group ID
         if (groupId != null) {
             requestBody.put("group_id", groupId);
         }
 
-        // Category (if available)
+        // Category
         if (expense.getCategory() != null && !expense.getCategory().isEmpty()) {
-            // You might need to map your category to Splitwise category IDs
-            // This is a simplified version - you may need to adjust based on your categories
             requestBody.put("category_id", getCategoryId(expense.getCategory()));
         }
-
-        // Paid by user (the person who paid)
-        requestBody.put("users__0__user_id", expense.getPaiedBy().getId());
-        requestBody.put("users__0__paid_share", String.format("%.2f", expense.getAmount()));
 
         // Calculate equal shares for participants
         double shareAmount = expense.calculateEqualShare();
         List<User> participants = expense.getParticipants();
 
-        // Add participants and their shares
-        for (int i = 0; i < participants.size(); i++) {
-            User participant = participants.get(i);
-            requestBody.put("users__" + (i + 1) + "__user_id", participant.getId());
-            requestBody.put("users__" + (i + 1) + "__owed_share", String.format("%.2f", shareAmount));
+        // Start with the person who paid (index 0)
+        requestBody.put("users__0__user_id", expense.getPaidBy().getId());
+        requestBody.put("users__0__paid_share", String.format("%.2f", expense.getAmount()));
+        requestBody.put("users__0__owed_share", String.format("%.2f", shareAmount));
+
+        // Add other participants (excluding the person who paid if they're in the list)
+        int userIndex = 1;
+        for (User participant : participants) {
+            // Skip if this is the same user who paid (they're already added at index 0)
+            if (!participant.getId().equals(expense.getPaidBy().getId())) {
+                requestBody.put("users__" + userIndex + "__user_id", participant.getId());
+                requestBody.put("users__" + userIndex + "__paid_share", "0.00");
+                requestBody.put("users__" + userIndex + "__owed_share", String.format("%.2f", shareAmount));
+                userIndex++;
+            }
         }
+
+        // Debug logging
+        System.out.println("DEBUG - Request Body: " + requestBody.toString(2));
 
         return requestBody;
     }
@@ -191,21 +216,49 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
     /**
      * Parses a JSON response into an Expense object
      */
+    /**
+     * Parses a JSON response into an Expense object
+     */
     private Expense parseExpenseFromJson(JSONObject expenseJson) throws JSONException {
         // Extract expense details from JSON response
         String description = expenseJson.getString("description");
         double cost = Double.parseDouble(expenseJson.getString("cost"));
         String date = expenseJson.getString("date");
 
-        // Note: You might need to adjust this based on what data you want to store
-        // from the Splitwise response
+        // Get category name if available
+        String category = "Other";
+        if (expenseJson.has("category")) {
+            JSONObject categoryObj = expenseJson.getJSONObject("category");
+            category = categoryObj.getString("name");
+        }
+
+        // Parse participants from users array
+        List<User> participants = new ArrayList<>();
+        if (expenseJson.has("users")) {
+            JSONArray usersArray = expenseJson.getJSONArray("users");
+            for (int i = 0; i < usersArray.length(); i++) {
+                JSONObject userObj = usersArray.getJSONObject(i);
+                JSONObject userDetails = userObj.getJSONObject("user");
+                User user = parseUserFromJson(userDetails);
+                participants.add(user);
+            }
+        }
+
+        // Get the user who created the expense (paid by)
+        User paidBy = null;
+        if (expenseJson.has("created_by")) {
+            JSONObject createdBy = expenseJson.getJSONObject("created_by");
+            paidBy = parseUserFromJson(createdBy);
+        }
+
+        // Create expense with the parsed data
         Expense expense = new Expense(
                 description, // expense name
                 description, // description
                 cost,        // amount
-                "other",     // category (you might want to extract this from response)
-                new ArrayList<>(), // participants (would need to parse from users array)
-                null         // paid by (would need to parse from users array)
+                category,    // category
+                new ArrayList<>(participants),
+                paidBy       // paid by
         );
 
         return expense;
@@ -219,12 +272,14 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
         String name = groupJson.getString("name");
 
         // Parse members
-        JSONArray membersArray = groupJson.getJSONArray("members");
         List<User> members = new ArrayList<>();
-        for (int i = 0; i < membersArray.length(); i++) {
-            JSONObject memberJson = membersArray.getJSONObject(i);
-            User user = parseUserFromJson(memberJson);
-            members.add(user);
+        if (groupJson.has("members")) {
+            JSONArray membersArray = groupJson.getJSONArray("members");
+            for (int i = 0; i < membersArray.length(); i++) {
+                JSONObject memberJson = membersArray.getJSONObject(i);
+                User user = parseUserFromJson(memberJson);
+                members.add(user);
+            }
         }
 
         return new Group(id, name, members);
@@ -235,10 +290,57 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
      */
     private User parseUserFromJson(JSONObject userJson) throws JSONException {
         Long id = userJson.getLong("id");
-        String firstName = userJson.getString("first_name");
-        String lastName = userJson.getString("last_name");
+
+        // Handle null first_name
+        String firstName = userJson.optString("first_name", "");
+        if (firstName == null || firstName.equals("null")) {
+            firstName = "";
+        }
+
+        // Handle null last_name - use optString and provide default
+        String lastName = userJson.optString("last_name", "");
+        if (lastName == null || lastName.equals("null") || lastName.isEmpty()) {
+            lastName = ""; // Set to empty string if null
+        }
+
         String email = userJson.optString("email", "");
 
         return new User(id, firstName, lastName, email);
+    }
+
+    public List<Group> getGroups() throws JSONException {
+        final OkHttpClient client = new OkHttpClient().newBuilder().build();
+        final Request request = new Request.Builder()
+                .url(API_URL + "/get_groups")
+                .method("GET", null)
+                .addHeader(AUTHORIZATION, BEARER_PREFIX + getAPIKey())
+                .addHeader(CONTENT_TYPE, APPLICATION_JSON)
+                .build();
+
+        try {
+            final Response response = client.newCall(request).execute();
+            final String responseBodyString = response.body().string();
+            System.out.println("DEBUG - Groups Response: " + responseBodyString);
+
+            final JSONObject responseBody = new JSONObject(responseBodyString);
+
+            if (!response.isSuccessful()) {
+                throw new RuntimeException("Failed to get groups: HTTP " + response.code());
+            }
+
+            List<Group> groups = new ArrayList<>();
+            JSONArray groupsArray = responseBody.getJSONArray("groups");
+
+            for (int i = 0; i < groupsArray.length(); i++) {
+                JSONObject groupJson = groupsArray.getJSONObject(i);
+                Group group = parseGroupFromJson(groupJson);
+                groups.add(group);
+            }
+
+            return groups;
+
+        } catch (IOException | JSONException event) {
+            throw new RuntimeException("Failed to get groups: " + event.getMessage(), event);
+        }
     }
 }

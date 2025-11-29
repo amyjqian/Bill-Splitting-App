@@ -5,6 +5,8 @@ import main.entities.Group;
 import main.entities.User;
 import org.json.JSONException;
 
+import java.util.List;
+
 /**
  * SplitwiseAPI is an interface that defines the methods for Splitwise integration.
  */
@@ -32,4 +34,5 @@ public interface SplitwiseAPI {
      * @throws JSONException if an error occurs
      */
     User getCurrentUser() throws JSONException;
+    List<Group> getGroups() throws JSONException;
 }
