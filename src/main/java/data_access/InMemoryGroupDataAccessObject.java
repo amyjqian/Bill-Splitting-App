@@ -19,9 +19,23 @@ public class InMemoryGroupDataAccessObject implements CreateGroupDataAccessInter
 
     @Override
     public Group createGroup(String name, String groupType, User groupCreator) {
+        //add creator to userbase
+        //this.createGroup(name, groupType, groupCreator);
         Group newGroup = new Group(name, groupType, groupCreator);
         groupMap.put(newGroup.getGroupId(), newGroup);
+        userMap.put(groupCreator.getId(), groupCreator);
+        newGroup.addMember(groupCreator);
         return newGroup;
+    }
+
+    public HashMap<Integer, Group> getGroupMap() {
+        return groupMap;
+    }
+
+    public User createUser(int id, String first_name, String last_name, String email, String password ){
+        User newUser = new User(id, first_name, last_name, email, password);
+        userMap.put(newUser.getId(), newUser);
+        return newUser;
     }
 
     @Override
@@ -38,6 +52,7 @@ public class InMemoryGroupDataAccessObject implements CreateGroupDataAccessInter
     public void addUserToGroup(int groupID, int userID) {
         Group group = groupMap.get(groupID);
         User newUser = userMap.get(userID);
+        userMap.put(userID, newUser);
         group.addMember(newUser);
     }
 

@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="CreateGroup controller, interactor, state and view model updated">
+    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Most recent versions of Group use cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/ViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +66,13 @@
     "Application.ExpenseFrame.executor": "Run",
     "Application.GroupViewFrame.executor": "Run",
     "Application.JoinGroupFrame.executor": "Run",
+    "Application.JoinGroupInteractorTest.executor": "Debug",
     "Application.MyGroupFrame.executor": "Run",
     "Application.SettleUpPanel.executor": "Run",
     "Application.view.CreateGroupFrame.executor": "Debug",
+    "JUnit.CreateGroupInteractorTest.createGroupMockTest.executor": "Run",
+    "JUnit.CreateGroupInteractorTest.mockTest.executor": "Run",
+    "JUnit.JoinGroupInteractorTest.joinGroupMockTest.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -68,11 +80,15 @@
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "group__use-cases",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tutu8/IdeaProjects/Bill-Splitting-App1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -82,21 +98,11 @@
       <recent name="interface_adapter.create_group" />
       <recent name="use_case.create_group" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="use_case.join_group" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.view.CreateGroupFrame">
-    <configuration name="CreateGroupFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.view.CreateGroupFrame" />
-      <module name="bill-splitter-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.JoinGroupInteractorTest.joinGroupMockTest">
     <configuration name="CreateGroupInteractorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="use_case.create_group.CreateGroupInteractorTest" />
       <module name="bill-splitter-app" />
@@ -110,12 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyGroupFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.view.MyGroupFrame" />
+    <configuration name="JoinGroupInteractorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="use_case.join_group.JoinGroupInteractorTest" />
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.view.*" />
+          <option name="PATTERN" value="use_case.join_group.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,39 +129,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SettleUpPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.view.SettleUpPanel" />
+    <configuration name="CreateGroupInteractorTest.createGroupMockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.view.*" />
+          <option name="PATTERN" value="use_case.create_group.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="use_case.create_group" />
+      <option name="MAIN_CLASS_NAME" value="use_case.create_group.CreateGroupInteractorTest" />
+      <option name="METHOD_NAME" value="createGroupMockTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="view.CreateGroupFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.CreateGroupFrame" />
+    <configuration name="CreateGroupInteractorTest.mockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.*" />
+          <option name="PATTERN" value="use_case.create_group.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="use_case.create_group" />
+      <option name="MAIN_CLASS_NAME" value="use_case.create_group.CreateGroupInteractorTest" />
+      <option name="METHOD_NAME" value="mockTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JoinGroupInteractorTest.joinGroupMockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.join_group.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.join_group" />
+      <option name="MAIN_CLASS_NAME" value="use_case.join_group.JoinGroupInteractorTest" />
+      <option name="METHOD_NAME" value="joinGroupMockTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.view.CreateGroupFrame" />
+        <item itemvalue="JUnit.JoinGroupInteractorTest.joinGroupMockTest" />
+        <item itemvalue="Application.JoinGroupInteractorTest" />
+        <item itemvalue="JUnit.CreateGroupInteractorTest.mockTest" />
+        <item itemvalue="JUnit.CreateGroupInteractorTest.createGroupMockTest" />
         <item itemvalue="Application.CreateGroupInteractorTest" />
-        <item itemvalue="Application.CreateGroupFrame" />
-        <item itemvalue="Application.SettleUpPanel" />
-        <item itemvalue="Application.MyGroupFrame" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +205,10 @@
       <workItem from="1763309660689" duration="12287000" />
       <workItem from="1763411832090" duration="13809000" />
       <workItem from="1763591464171" duration="11967000" />
-      <workItem from="1763666891766" duration="4662000" />
+      <workItem from="1763666891766" duration="5697000" />
+      <workItem from="1763754666789" duration="1961000" />
+      <workItem from="1763932675314" duration="20776000" />
+      <workItem from="1764430995563" duration="8970000" />
     </task>
     <task id="LOCAL-00001" summary="Changed UI text">
       <option name="closed" value="true" />
@@ -235,7 +266,31 @@
       <option name="project" value="LOCAL" />
       <updated>1763597550230</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Pushing most recent changes.">
+      <option name="closed" value="true" />
+      <created>1763680019074</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763680019074</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated entities to reflect API parameters">
+      <option name="closed" value="true" />
+      <created>1763936391049</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763936391049</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Most recent versions of Group use cases">
+      <option name="closed" value="true" />
+      <created>1764088410607</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764088410607</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,16 +303,35 @@
     <MESSAGE value="Generic ViewModel created" />
     <MESSAGE value="CreateGroupViewModel created" />
     <MESSAGE value="CreateGroup controller, interactor, state and view model updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="CreateGroup controller, interactor, state and view model updated" />
+    <MESSAGE value="Pushing most recent changes." />
+    <MESSAGE value="Updated entities to reflect API parameters" />
+    <MESSAGE value="Most recent versions of Group use cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Most recent versions of Group use cases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInteractor.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((InMemoryGroupDataAccessObject) userDataAccessObject).groupMap" language="JAVA" custom="data_access.InMemoryGroupDataAccessObject" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

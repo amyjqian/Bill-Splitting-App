@@ -1,17 +1,14 @@
 package view;
 
 import interface_adapter.create_group.CreateGroupController;
-import interface_adapter.create_group.CreateGroupState;
 import interface_adapter.create_group.CreateGroupViewModel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 
-public class CreateGroupFrame extends JFrame implements ActionListener, PropertyChangeListener {
+public class CreateGroupFrame extends JFrame{
 
     private final CreateGroupViewModel createGroupViewModel;
 
@@ -34,19 +31,19 @@ public class CreateGroupFrame extends JFrame implements ActionListener, Property
 
         JButton submitButton = new JButton("Submit");
 
-        submitButton.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        if (evt.getSource().equals(submitButton)) {
-                            final CreateGroupState currentState = createGroupViewModel.getState();
-
-                            CreateGroupController.execute(
-                                    //tbd
-                            );
-                        }
-                    }
-                }
-        );
+//        submitButton.addActionListener(
+//                new ActionListener() {
+//                    public void actionPerformed(ActionEvent evt) {
+//                        if (evt.getSource().equals(submitButton)) {
+//                            final CreateGroupState currentState = createGroupViewModel.getState();
+//
+//                            CreateGroupController.execute(
+//                                    //tbd
+//                            );
+//                        }
+//                    }
+//                }
+//        );
 
         // Simple panel with components
         JPanel panel = new JPanel();
@@ -59,27 +56,19 @@ public class CreateGroupFrame extends JFrame implements ActionListener, Property
         panel.add(groupID);
         panel.add(submitButton);
         this.add(panel);
-        }
+    }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new CreateGroupFrame(new CreateGroupViewModel()).setVisible(true);
-        });
+//        SwingUtilities.invokeLater(() -> {
+//            new CreateGroupFrame(new CreateGroupViewModel()).setVisible(true);
+//        });
     }
     /**
      * React to a button click that results in evt.
      * @param evt the ActionEvent to react to
      */
-    public void actionPerformed(ActionEvent evt) {
-        System.out.println("Click " + evt.getActionCommand());
+//    public void actionPerformed(ActionEvent evt) {
+//        System.out.println("Click " + evt.getActionCommand());
+//    }
     }
 
-    @Override
-    public void propertyChange(PropertyChangeEvent evt) {
-        final CreateGroupState state = (CreateGroupState) evt.getNewValue();
-        setFields(state);
-    }
-
-    private void setFields(CreateGroupState state) {
-    }
-}

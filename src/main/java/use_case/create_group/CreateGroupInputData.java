@@ -2,6 +2,8 @@ package use_case.create_group;
 
 import entities.User;
 
+import java.util.List;
+
 public class CreateGroupInputData {
     private final String groupName;
     private final String groupType;
@@ -24,5 +26,7 @@ public class CreateGroupInputData {
         return this.groupCreator;
     }
 
-
+    public List getMembers() {
+        return this.getMembers();
+    }
 }

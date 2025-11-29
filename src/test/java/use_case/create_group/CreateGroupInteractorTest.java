@@ -4,9 +4,12 @@ import data_access.InMemoryGroupDataAccessObject;
 import entities.User;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class CreateGroupInteractorTest {
-    public static void mockTest(){
+
+    @Test
+    public void mockTest(){
         InMemoryGroupDataAccessObject userRepository = new InMemoryGroupDataAccessObject();
         CreateGroupOutputBoundary testPresenter = new CreateGroupOutputBoundary();
         CreateGroupInputBoundary interactor = new CreateGroupInteractor(userRepository, testPresenter);
@@ -16,12 +19,9 @@ public class CreateGroupInteractorTest {
         assertEquals("CSC207", inputData.getGroupName());
         assertEquals("accomodation", inputData.getGroupType());
         assertEquals(creator, inputData.getGroupCreator());
-
     }
 
     public static void main(String[] args) {
         new CreateGroupInteractorTest().mockTest();
     }
 }
-
-
