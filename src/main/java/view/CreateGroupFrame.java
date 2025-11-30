@@ -54,8 +54,6 @@ public class CreateGroupFrame extends JFrame{
                         final String groupName = createGroupViewModel.getGroupName();
                         createGroupController.execute(groupName);
                         inviteLabel.setText(createGroupViewModel.getInviteLink());
-                        System.out.println("Frame VM = " + createGroupViewModel);
-
                     }
                     else if (evt.getSource().equals(switchViewButton)) {
                         this.dispose();
