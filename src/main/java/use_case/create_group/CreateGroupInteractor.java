@@ -20,13 +20,14 @@ public class CreateGroupInteractor implements CreateGroupInputBoundary{
         // * instantiate the `CreateGroupOutputData`, which needs to contain NewGroup
         // * tell the presenter to prepare the "view my group" view (2.3).
         final String groupName = createGroupInputData.getGroupName();
-        final String groupType = createGroupInputData.getGroupType();
-        final User groupCreator = createGroupInputData.getGroupCreator();
+        //final String groupType = createGroupInputData.getGroupType();
+        //final User groupCreator = createGroupInputData.getGroupCreator();
 
-        Group newGroup = userDataAccessObject.createGroup(groupName, groupType, groupCreator);
-        System.out.println("New group created:" + newGroup);
+        Group newGroup = userDataAccessObject.createGroup(groupName);
+        System.out.println("New group: " + newGroup.getGroupName() + "created" + newGroup);
 
-        //final CreateGroupOutputData updateCreateGroupOutputData = new CreateGroupOutputData(newGroup);
+        final CreateGroupOutputData createGroupOutputData = new CreateGroupOutputData(newGroup);
+        createGroupPresenter.present(createGroupOutputData);
         //createGroupPresenter.prepareSuccessView(updateCreateGroupOutputData);
     }
 }

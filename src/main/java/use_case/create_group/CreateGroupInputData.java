@@ -1,29 +1,15 @@
 package use_case.create_group;
 
-import entities.User;
-
 import java.util.List;
 
 public class CreateGroupInputData {
     private final String groupName;
-    private final String groupType;
-    private final User groupCreator;
 
-    public CreateGroupInputData(String groupName, String groupType, User groupCreator) {
+    public CreateGroupInputData(String groupName) {
         this.groupName = groupName;
-        this.groupType = groupType;
-        this.groupCreator = groupCreator;
     }
     public String getGroupName() {
         return this.groupName;
-    }
-
-    public String getGroupType() {
-        return groupType;
-    }
-
-    public User getGroupCreator() {
-        return this.groupCreator;
     }
 
     public List getMembers() {

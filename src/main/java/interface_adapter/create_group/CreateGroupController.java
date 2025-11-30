@@ -8,19 +8,19 @@ import use_case.create_group.CreateGroupInputData;
  */
 public class CreateGroupController {
 
-    private static CreateGroupInputBoundary createGroupInteractor;
+    private final CreateGroupInputBoundary createGroupUseCaseInteractor;
 
     public CreateGroupController(CreateGroupInputBoundary createGroupUseCaseInteractor) {
-        this.createGroupInteractor = createGroupUseCaseInteractor;
+        this.createGroupUseCaseInteractor = createGroupUseCaseInteractor;
     }
 
-//    /**
-//     * Executes the CreateGroup Use Case.
-//     * @param group_name
-//     */
-//    public void execute(String group_name, String group_type, String group_creator_name, CreateGroupInputData createGroupInputData) {
-//        final CreateGroupInputData createGroupInputData = new CreateGroupInputData(
-//                group_name, group_creator_name, );
-//        createGroupInteractor.execute();
-//    }
+    /**
+     * Executes the CreateGroup Use Case.
+     *
+     * @param groupName the group name.
+     */
+    public void execute(String groupName) {
+        final CreateGroupInputData createGroupInputData = new CreateGroupInputData(groupName);
+        createGroupUseCaseInteractor.execute(createGroupInputData);
+    }
 }

@@ -28,7 +28,7 @@ public class JoinGroupInteractorTest {
         //creating test group
         CreateGroupOutputBoundary testGroupPresenter = new CreateGroupOutputBoundary();
         CreateGroupInputBoundary createGroupInteractor = new CreateGroupInteractor(userRepository, testGroupPresenter);
-        CreateGroupInputData createGroupInputData = new CreateGroupInputData("CSC207", "accomodation", creator);
+        CreateGroupInputData createGroupInputData = new CreateGroupInputData("CSC207");
         createGroupInteractor.execute(createGroupInputData);
 
         //initialize join group input data

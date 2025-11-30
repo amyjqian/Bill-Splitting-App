@@ -1,7 +1,6 @@
 package use_case.create_group;
 
 import entities.Group;
-import entities.User;
 
 /**
  * DAO interface for the Create Group Use Case.
@@ -10,12 +9,11 @@ import entities.User;
 public interface CreateGroupDataAccessInterface {
     /**
      * Create a new group by groupID
+     *
      * @param name the name of the group.
-     * @param groupType the type of group.
-     * @param groupCreator the user who created the group.
      */
 
-    Group createGroup(String name, String groupType, User groupCreator);
+    Group createGroup(String name);
 
     /**
      * Fetch the group from the db by ID

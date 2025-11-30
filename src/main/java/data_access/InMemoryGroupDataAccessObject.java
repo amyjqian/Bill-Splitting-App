@@ -17,14 +17,13 @@ public class InMemoryGroupDataAccessObject implements CreateGroupDataAccessInter
     }
 
 
-    @Override
-    public Group createGroup(String name, String groupType, User groupCreator) {
+    public Group createGroup(String name) {
         //add creator to userbase
         //this.createGroup(name, groupType, groupCreator);
-        Group newGroup = new Group(name, groupType, groupCreator);
+        Group newGroup = new Group(name);
         groupMap.put(newGroup.getGroupId(), newGroup);
-        userMap.put(groupCreator.getId(), groupCreator);
-        newGroup.addMember(groupCreator);
+        //userMap.put(groupCreator.getId(), groupCreator);
+        //newGroup.addMember(groupCreator);
         return newGroup;
     }
 

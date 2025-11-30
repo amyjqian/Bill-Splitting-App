@@ -5,14 +5,12 @@ import java.util.*;
 public class Group {
     // Core properties - parameters we need to send to the API
     private final String groupName;
-    private final String groupType;
-    private final User groupCreator; // the user who created the group, we
-                                        // will need to access their properties to create a group
+    // will need to access their properties to create a group
 
 
     //properties the API will generate
     private int groupId;
-    private String invite_link;
+    private String inviteLink = "join123"; //default invite link for now
     private final List<User> members;
     private final List<Expense> originalDebts;
     private final List<Expense> simplifiedDebts;
@@ -20,10 +18,8 @@ public class Group {
     //private Map<User, Double> balances; // Track who owes whom
 
 
-    public Group(String groupName, String groupType, User groupCreator) {
+    public Group(String groupName) {
         this.groupName = groupName;
-        this.groupType = groupType;
-        this.groupCreator = groupCreator;
         this.groupId = 20; //this is a placeholder -> will be redundant eventually
 
         this.members = new ArrayList<>();
@@ -35,12 +31,6 @@ public class Group {
 
     public String getGroupName() {
         return groupName;
-    }
-    public String getGroupType() {
-        return groupType;
-    }
-    public User getGroupCreator() {
-        return groupCreator;
     }
 
     public int getGroupId() {
@@ -56,8 +46,8 @@ public class Group {
         return simplifiedDebts;
     }
 
-    public String getInvite_link() {
-        return invite_link;
+    public String getInviteLink() {
+        return inviteLink;
     }
 
     public void addMember(User newMember) {

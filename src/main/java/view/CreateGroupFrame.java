@@ -1,7 +1,13 @@
 package view;
 
+import data_access.InMemoryGroupDataAccessObject;
+import entities.User;
 import interface_adapter.create_group.CreateGroupController;
 import interface_adapter.create_group.CreateGroupViewModel;
+import use_case.create_group.CreateGroupInputBoundary;
+import use_case.create_group.CreateGroupInteractor;
+import use_case.create_group.CreateGroupOutputBoundary;
+import use_case.create_group.CreateGroupPresenter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,11 +15,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CreateGroupFrame extends JFrame{
-
     private final CreateGroupViewModel createGroupViewModel;
+    private final CreateGroupOutputBoundary createGroupOutputBoundary;
+    private final CreateGroupInputBoundary createGroupInteractor;
+    private final CreateGroupController createGroupController;
+
 
     public CreateGroupFrame(CreateGroupViewModel createGroupViewModel) {
         this.createGroupViewModel = createGroupViewModel;
+        this.createGroupOutputBoundary = new CreateGroupPresenter(this.createGroupViewModel);
+        this.createGroupInteractor =
+                new CreateGroupInteractor(new InMemoryGroupDataAccessObject(),
+                        this.createGroupOutputBoundary);
+        this.createGroupController = new CreateGroupController(this.createGroupInteractor);
         initializeCreateGroupUI();
     }
 
@@ -27,23 +41,30 @@ public class CreateGroupFrame extends JFrame{
 
         JLabel groupNameLabel = new JLabel("Set Group Name: ", JLabel.LEFT);
         JTextField nameField = new JTextField(5);
-        JLabel groupID = new JLabel("Your Group ID is: ", JLabel.LEFT);
+        JLabel groupID = new JLabel("Your Invite Link is: ", JLabel.LEFT);
+        JLabel inviteLabel= new JLabel("placeholder");
 
         JButton submitButton = new JButton("Submit");
+        JButton switchViewButton = new JButton("Ok");
 
-//        submitButton.addActionListener(
-//                new ActionListener() {
-//                    public void actionPerformed(ActionEvent evt) {
-//                        if (evt.getSource().equals(submitButton)) {
-//                            final CreateGroupState currentState = createGroupViewModel.getState();
-//
-//                            CreateGroupController.execute(
-//                                    //tbd
-//                            );
-//                        }
-//                    }
-//                }
-//        );
+        submitButton.addActionListener(
+                evt -> {
+                    createGroupViewModel.setGroupName(nameField.getText());
+                    if (evt.getSource().equals(submitButton)) {
+                        final String groupName = createGroupViewModel.getGroupName();
+                        createGroupController.execute(groupName);
+                        inviteLabel.setText(createGroupViewModel.getInviteLink());
+                        System.out.println("Frame VM = " + createGroupViewModel);
+
+                    }
+                    else if (evt.getSource().equals(switchViewButton)) {
+                        this.dispose();
+                        SwingUtilities.invokeLater(() -> {
+                            // create an instance of the MyGroup frame which should lead to my group view (2.3)
+                        });
+                    }
+                }
+        );
 
         // Simple panel with components
         JPanel panel = new JPanel();
@@ -52,16 +73,17 @@ public class CreateGroupFrame extends JFrame{
         panel.add(newGroupLabel);
         panel.add(groupNameLabel);
         panel.add(nameField);
-        panel.add(nameField);
-        panel.add(groupID);
         panel.add(submitButton);
+        panel.add(groupID);
+        panel.add(inviteLabel);
+        panel.add(switchViewButton);
         this.add(panel);
     }
 
     public static void main(String[] args) {
-//        SwingUtilities.invokeLater(() -> {
-//            new CreateGroupFrame(new CreateGroupViewModel()).setVisible(true);
-//        });
+        SwingUtilities.invokeLater(() -> {
+            new CreateGroupFrame(new CreateGroupViewModel()).setVisible(true);
+        });
     }
     /**
      * React to a button click that results in evt.
