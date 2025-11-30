@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Updated controller and UI to update CreateGroup view">
-      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/group_view/GroupViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +70,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "group__use-cases",
+    "git-widget-placeholder": "group__view",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/tutu8/IdeaProjects/Bill-Splitting-App1",
     "node.js.detected.package.eslint": "true",
@@ -93,6 +90,10 @@
       <recent name="use_case.create_group" />
       <recent name="view" />
       <recent name="interface_adapter.create_group" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/interface_adapter/group_view" />
+      <recent name="$PROJECT_DIR$/src/main/java/interface_adapter" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="use_case.join_group" />
