@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="add expense usecase">
-      <change afterPath="$PROJECT_DIR$/src/main/test/GroupCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/TestAllEndpoints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/TestExpenseAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/VerifyApiKey.java" afterDir="false" />
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="finish add expense usecase with api calls">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dataaccess/SplitwiseDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dataaccess/SplitwiseDataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controller/AddExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controller/AddExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dataaccess/SplitwiseDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/data_access/SplitwiseDataAccess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/use_case/AddExpenseDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/use_case/AddExpenseInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/use_case/AddExpenseInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/use_case/AddExpenseInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/use_case/AddExpenseOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AddExpenseOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/use_case/AddExpenseOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/AddExpensePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/AddExpensePresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Group.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764088449296</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="finish add expense usecase with api calls">
+      <option name="closed" value="true" />
+      <created>1764456338270</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764456338273</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +236,7 @@
     <MESSAGE value="changed group entity" />
     <MESSAGE value="added use cases" />
     <MESSAGE value="add expense usecase" />
-    <option name="LAST_COMMIT_MESSAGE" value="add expense usecase" />
+    <MESSAGE value="finish add expense usecase with api calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish add expense usecase with api calls" />
   </component>
 </project>

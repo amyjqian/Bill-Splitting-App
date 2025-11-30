@@ -1,5 +1,6 @@
 package main.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Group {
@@ -12,11 +13,10 @@ public class Group {
         this.name = name;
         this.members = members;
     }
-
-    public Group(String name, String description) {
-        this.id = null;
+    public Group (Long id, String name) {
+        this.id = id;
         this.name = name;
-        this.members = new java.util.ArrayList<>();
+        this.members = new ArrayList<>();
     }
 
     public Group() {

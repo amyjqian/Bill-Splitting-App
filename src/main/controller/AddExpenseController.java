@@ -1,6 +1,6 @@
 package main.controller;
 
-import main.usecase.*;
+import main.use_case.*;
 
 public class AddExpenseController {
     private final AddExpenseInputBoundary addExpenseInteractor;

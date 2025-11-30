@@ -1,7 +1,7 @@
 package main.view;
 
-import main.usecase.AddExpenseOutputBoundary;
-import main.usecase.AddExpenseOutputData;
+import main.use_case.AddExpenseOutputBoundary;
+import main.use_case.AddExpenseOutputData;
 
 public class AddExpensePresenter implements AddExpenseOutputBoundary {
     private final ExpenseDesc view;

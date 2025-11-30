@@ -1,4 +1,4 @@
-package main.usecase;
+package main.use_case;
 
 public interface AddExpenseOutputBoundary {
     void prepareSuccessView(AddExpenseOutputData addExpenseOutputData);

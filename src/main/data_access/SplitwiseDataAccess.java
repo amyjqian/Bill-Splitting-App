@@ -1,9 +1,9 @@
-package main.dataaccess;
+package main.data_access;
 
 import main.entities.Expense;
 import main.entities.Group;
 import main.entities.User;
-import main.usecase.AddExpenseDataAccessInterface;
+import main.use_case.AddExpenseDataAccessInterface;
 import main.api.SplitwiseAPI;
 import main.api.SplitwiseAPIImpl;
 

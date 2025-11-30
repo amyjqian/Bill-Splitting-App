@@ -1,4 +1,4 @@
-package main.usecase;
+package main.use_case;
 
 import main.entities.User;
 import java.util.ArrayList;

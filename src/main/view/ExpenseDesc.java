@@ -3,7 +3,7 @@ package main.view;
 import main.controller.AddExpenseController;
 import main.entities.User;
 import main.entities.Group;
-import main.dataaccess.SplitwiseDataAccess;
+import main.data_access.SplitwiseDataAccess;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -270,9 +270,9 @@ public class ExpenseDesc extends JFrame {
         ExpenseDesc view = new ExpenseDesc();
 
         // Create presenter
-        main.usecase.AddExpenseOutputBoundary presenter = new main.usecase.AddExpenseOutputBoundary() {
+        main.use_case.AddExpenseOutputBoundary presenter = new main.use_case.AddExpenseOutputBoundary() {
             @Override
-            public void prepareSuccessView(main.usecase.AddExpenseOutputData outputData) {
+            public void prepareSuccessView(main.use_case.AddExpenseOutputData outputData) {
                 view.showSuccess(outputData.getMessage());
             }
 
@@ -287,7 +287,7 @@ public class ExpenseDesc extends JFrame {
         main.entities.ExpenseFactory expenseFactory = new main.entities.ExpenseFactory();
 
         // Create interactor and controller
-        main.usecase.AddExpenseInteractor interactor = new main.usecase.AddExpenseInteractor(
+        main.use_case.AddExpenseInteractor interactor = new main.use_case.AddExpenseInteractor(
                 dataAccess, presenter, expenseFactory
         );
 
