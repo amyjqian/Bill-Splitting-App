@@ -3,6 +3,7 @@ package main.api;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -156,7 +157,8 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
         JSONObject requestBody = new JSONObject();
 
         // Required fields
-        requestBody.put("cost", String.format("%.2f", expense.getAmount()));
+        double totalAmount = expense.getAmount();
+        requestBody.put("cost", String.format("%.2f", totalAmount));
         requestBody.put("description", expense.getDescription());
         requestBody.put("details", expense.getDescription());
 
@@ -170,28 +172,44 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
             requestBody.put("category_id", getCategoryId(expense.getCategory()));
         }
 
-        // Calculate equal shares for participants
-        double shareAmount = expense.calculateEqualShare();
         List<User> participants = expense.getParticipants();
+        User paidBy = expense.getPaidBy();
 
-        // Start with the person who paid (index 0)
-        requestBody.put("users__0__user_id", expense.getPaidBy().getId());
-        requestBody.put("users__0__paid_share", String.format("%.2f", expense.getAmount()));
-        requestBody.put("users__0__owed_share", String.format("%.2f", shareAmount));
+        // Count only the participants who actually owe money (excluding payer if they're in the list)
+        List<User> owingParticipants = participants.stream()
+                .filter(user -> !user.getId().equals(paidBy.getId()))
+                .collect(Collectors.toList());
 
-        // Add other participants (excluding the person who paid if they're in the list)
-        int userIndex = 1;
-        for (User participant : participants) {
-            // Skip if this is the same user who paid (they're already added at index 0)
-            if (!participant.getId().equals(expense.getPaidBy().getId())) {
-                requestBody.put("users__" + userIndex + "__user_id", participant.getId());
-                requestBody.put("users__" + userIndex + "__paid_share", "0.00");
-                requestBody.put("users__" + userIndex + "__owed_share", String.format("%.2f", shareAmount));
-                userIndex++;
-            }
+        // Total number of people sharing the cost (including payer)
+        int totalSharing = owingParticipants.size() + 1;
+
+        // Calculate shares using exact integer arithmetic to avoid floating-point errors
+        int totalCents = (int) Math.round(totalAmount * 100);
+        int baseShareCents = totalCents / totalSharing;
+        int remainderCents = totalCents % totalSharing;
+
+        // Convert back to dollars
+        double baseShare = baseShareCents / 100.0;
+
+        // Add the payer first (index 0)
+        double payerOwedShare = baseShare;
+        if (remainderCents > 0) {
+            payerOwedShare += remainderCents / 100.0; // Add the remainder to the payer
         }
 
-        // Debug logging
+        requestBody.put("users__0__user_id", paidBy.getId());
+        requestBody.put("users__0__paid_share", String.format("%.2f", totalAmount));
+        requestBody.put("users__0__owed_share", String.format("%.2f", payerOwedShare));
+
+        // Add other participants with exact base share
+        int userIndex = 1;
+        for (User participant : owingParticipants) {
+            requestBody.put("users__" + userIndex + "__user_id", participant.getId());
+            requestBody.put("users__" + userIndex + "__paid_share", "0.00");
+            requestBody.put("users__" + userIndex + "__owed_share", String.format("%.2f", baseShare));
+            userIndex++;
+        }
+
         System.out.println("DEBUG - Request Body: " + requestBody.toString(2));
 
         return requestBody;

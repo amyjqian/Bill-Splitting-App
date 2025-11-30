@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="entities" />
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="fixed groups">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764542074527</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed groups">
+      <option name="closed" value="true" />
+      <created>1764543217743</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764543217744</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +243,7 @@
     <MESSAGE value="add expense usecase" />
     <MESSAGE value="finish add expense usecase with api calls" />
     <MESSAGE value="entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="entities" />
+    <MESSAGE value="fixed groups" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed groups" />
   </component>
 </project>
