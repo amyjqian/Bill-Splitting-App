@@ -50,10 +50,6 @@ public class User {
         return id != null && id.equals(user.id);
     }
 
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
 
     @Override
     public String toString() {
