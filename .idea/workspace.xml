@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Updated controller and UI to update CreateGroup view">
-      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/group_view/GroupViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bill-splitter-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bill-splitter-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/group_view/GroupViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/group_view/GroupViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/GroupViewFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GroupViewFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,40 +53,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CreateGroupFrame.executor": "Run",
-    "Application.CreateGroupInteractorTest.executor": "Run",
-    "Application.ExpenseDesc.executor": "Run",
-    "Application.ExpenseFrame.executor": "Run",
-    "Application.GroupViewFrame.executor": "Run",
-    "Application.JoinGroupFrame.executor": "Run",
-    "Application.JoinGroupInteractorTest.executor": "Debug",
-    "Application.MyGroupFrame.executor": "Run",
-    "Application.SettleUpPanel.executor": "Run",
-    "Application.view.CreateGroupFrame.executor": "Debug",
-    "JUnit.CreateGroupInteractorTest.createGroupMockTest.executor": "Run",
-    "JUnit.CreateGroupInteractorTest.mockTest.executor": "Run",
-    "JUnit.JoinGroupInteractorTest.joinGroupMockTest.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "group__view",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tutu8/IdeaProjects/Bill-Splitting-App1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CreateGroupFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CreateGroupInteractorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExpenseDesc.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ExpenseFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GroupViewFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JoinGroupFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JoinGroupInteractorTest.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.MyGroupFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SettleUpPanel.executor&quot;: &quot;Run&quot;,
+    &quot;Application.view.CreateGroupFrame.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.CreateGroupInteractorTest.createGroupMockTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CreateGroupInteractorTest.mockTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JoinGroupInteractorTest.joinGroupMockTest.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;group__view&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tutu8/IdeaProjects/Bill-Splitting-App1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="interface_adapter.join_group" />

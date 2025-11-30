@@ -1,9 +1,14 @@
 package view;
 
+import interface_adapter.group_view.GroupViewController;
 import javax.swing.*;
+import java.awt.*;
 
 public class GroupViewFrame extends JFrame {
-    public GroupViewFrame() {
+    private final GroupViewController controller;
+
+    public GroupViewFrame(GroupViewController controller) {
+        this.controller = controller;
         initializeUI();
     }
     private void initializeUI(){
@@ -11,14 +16,18 @@ public class GroupViewFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 100);
 
-        JButton join = new JButton("Join Group");
-        JButton create = new JButton("Create Group");
-        JButton view = new JButton("View My Group");
+        JButton joinButton = new JButton("Join Group");
+        JButton createButton = new JButton("Create Group");
+        JButton viewButton = new JButton("View My Group");
+
+        joinButton.addActionListener(e -> controller.onJoinGroupClicked());
+        createButton.addActionListener(e -> controller.onCreateGroupClicked());
+        viewButton.addActionListener(e -> controller.onViewMyGroupClicked());
 
         JPanel panel = new JPanel();
-        panel.add(join);
-        panel.add(create);
-        panel.add(view);
+        panel.add(joinButton);
+        panel.add(createButton);
+        panel.add(viewButton);
         this.add(panel);
     }
 
