@@ -18,9 +18,6 @@ public class Group {
         this.name = name;
         this.members = new ArrayList<>();
     }
-    public void addMember(User user) {
-        this.members.add(user);
-    }
 
     public Group() {
         this.members = new java.util.ArrayList<>();
