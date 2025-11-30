@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Updated controller and UI to update CreateGroup view">
-      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupPresenter.java" afterDir="false" />
+    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Controllers updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +73,7 @@
     "JUnit.CreateGroupInteractorTest.createGroupMockTest.executor": "Run",
     "JUnit.CreateGroupInteractorTest.mockTest.executor": "Run",
     "JUnit.JoinGroupInteractorTest.joinGroupMockTest.executor": "Debug",
+    "JUnit.JoinGroupInteractorTest.joinGroupTestWithUI.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -84,6 +90,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -154,7 +161,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JoinGroupInteractorTest.joinGroupMockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JoinGroupInteractorTest.joinGroupTestWithUI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
@@ -164,7 +171,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="use_case.join_group" />
       <option name="MAIN_CLASS_NAME" value="use_case.join_group.JoinGroupInteractorTest" />
-      <option name="METHOD_NAME" value="joinGroupMockTest" />
+      <option name="METHOD_NAME" value="joinGroupTestWithUI" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -173,10 +180,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.JoinGroupFrame" />
+        <item itemvalue="JUnit.JoinGroupInteractorTest.joinGroupTestWithUI" />
         <item itemvalue="Application.CreateGroupFrame" />
         <item itemvalue="Application.CreateGroupInteractorTest" />
         <item itemvalue="JUnit.CreateGroupInteractorTest.mockTest" />
-        <item itemvalue="JUnit.JoinGroupInteractorTest.joinGroupMockTest" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +208,8 @@
       <workItem from="1763666891766" duration="5697000" />
       <workItem from="1763754666789" duration="1961000" />
       <workItem from="1763932675314" duration="20776000" />
-      <workItem from="1764430995563" duration="28581000" />
+      <workItem from="1764430995563" duration="28658000" />
+      <workItem from="1764512881281" duration="6583000" />
     </task>
     <task id="LOCAL-00001" summary="Changed UI text">
       <option name="closed" value="true" />
@@ -299,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764481607458</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Controllers updated">
+      <option name="closed" value="true" />
+      <created>1764485341788</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1764485341788</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,16 +332,12 @@
     <MESSAGE value="Updated entities to reflect API parameters" />
     <MESSAGE value="Most recent versions of Group use cases" />
     <MESSAGE value="Updated controller and UI to update CreateGroup view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated controller and UI to update CreateGroup view" />
+    <MESSAGE value="Controllers updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Controllers updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInteractor.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java</url>
           <line>81</line>
@@ -335,6 +347,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupPresenter.java</url>
           <line>19</line>
           <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputBoundary.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -11,7 +11,22 @@ public class CreateGroupInteractorTest {
     @Test
     public void mockTest(){
         InMemoryGroupDataAccessObject userRepository = new InMemoryGroupDataAccessObject();
-        CreateGroupOutputBoundary testPresenter = new CreateGroupOutputBoundary();
+        CreateGroupOutputBoundary testPresenter = new CreateGroupOutputBoundary() {
+            @Override
+            public void prepareSuccessView(CreateGroupOutputData outputData) {
+
+            }
+
+            @Override
+            public void present(CreateGroupOutputData outputData) {
+
+            }
+
+            @Override
+            public void prepareFailView(String errorMessage) {
+
+            }
+        };
         CreateGroupInputBoundary interactor = new CreateGroupInteractor(userRepository, testPresenter);
         //User creator = new User(100, "Katie", "Fruitman", "kfruitman@yahoo.ca", "123movies");
         CreateGroupInputData inputData = new CreateGroupInputData("CSC207");
@@ -21,6 +36,8 @@ public class CreateGroupInteractorTest {
        // assertEquals(creator, inputData.getGroupCreator());
 
     }
+
+
 
     public static void main(String[] args) {
         new CreateGroupInteractorTest().mockTest();

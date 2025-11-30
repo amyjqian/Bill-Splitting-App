@@ -1,10 +1,5 @@
 package use_case.join_group;
 
-import entities.Group;
-import entities.User;
-import use_case.join_group.JoinGroupDataAccessInterface;
-import use_case.join_group.JoinGroupOutputBoundary;
-
 public class JoinGroupInteractor implements JoinGroupInputBoundary{
     private JoinGroupDataAccessInterface userDataAccessObject;
     private JoinGroupOutputBoundary joinGroupPresenter;
@@ -26,5 +21,7 @@ public class JoinGroupInteractor implements JoinGroupInputBoundary{
         int userID = joinGroupInputData.getUserID();
         userDataAccessObject.addUserToGroup(groupID, userID);
         System.out.println("User " + userID + " has been added to the group");
+        final JoinGroupOutputData joinGroupOutputData = new JoinGroupOutputData(true);
+        joinGroupPresenter.prepareStatus(joinGroupOutputData);
     }
 }
