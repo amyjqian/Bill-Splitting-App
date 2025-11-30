@@ -1,5 +1,5 @@
 package use_case.join_group;
 
-public class JoinGroupOutputBoundary {
-    void prepareSuccessView(JoinGroupOutputData joinGroupOutputData) {}
+public interface JoinGroupOutputBoundary {
+    void prepareStatus(JoinGroupOutputData outputData);
 }

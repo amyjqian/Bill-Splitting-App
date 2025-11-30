@@ -4,7 +4,7 @@ public class JoinGroupInputData {
     private final int userID;
     private final int groupID;
 
-    public JoinGroupInputData(int userID, int groupID) {
+    public JoinGroupInputData(int groupID, int userID) {
         this.userID = userID;
         this.groupID = groupID;
     }

@@ -14,6 +14,10 @@ public class InMemoryGroupDataAccessObject implements CreateGroupDataAccessInter
     public InMemoryGroupDataAccessObject(){
         groupMap = new HashMap<>();
         userMap = new HashMap<>();
+
+        //populating group and user maps with default values for now
+        userMap.put(75, new User(75, "Katie", "Fruitman", "me@yahoo.ca", "hello"));
+        groupMap.put(20, new Group("Test group"));
     }
 
 

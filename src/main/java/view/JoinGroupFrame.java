@@ -1,6 +1,8 @@
 package view;
 
 import data_access.InMemoryGroupDataAccessObject;
+import entities.Group;
+import entities.User;
 import interface_adapter.join_group.JoinGroupController;
 import use_case.join_group.JoinGroupPresenter;
 import interface_adapter.join_group.JoinGroupViewModel;
@@ -26,27 +28,25 @@ public class JoinGroupFrame extends JFrame {
         this.joinGroupController = new JoinGroupController(this.joinGroupInteractor);
         initializeJoinGroupUI();
     }
-    public JoinGroupFrame() {
-        initializeJoinGroupUI();
-    }
 
     private void initializeJoinGroupUI(){
         setTitle("Group View (2.1)");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 200);
 
-        JLabel code = new JLabel("Enter code: ");
+        JLabel code = new JLabel("Enter group ID: ");
         JTextField codeField = new JTextField(CODE_LENGTH);
         JButton submit = new JButton("Submit");
 
         submit.addActionListener(
                 evt -> {
                     joinGroupViewModel.setGroupID(Integer.parseInt(codeField.getText()));
+                    joinGroupViewModel.setUserID(75); //placeholder
                     if (evt.getSource().equals(submit)) {
                         //check the db to see if a group with that group ID is found
-                        final int joinID = joinGroupViewModel.getGroupID();
+                        final int groupID = joinGroupViewModel.getGroupID();
                         final int userID = joinGroupViewModel.getUserID();
-                        joinGroupController.execute(joinID, userID);
+                        joinGroupController.execute(groupID, userID);
                     }
                 }
         );
@@ -60,7 +60,7 @@ public class JoinGroupFrame extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(()->{
-            new JoinGroupFrame().setVisible(true);
+            new JoinGroupFrame(new JoinGroupViewModel()).setVisible(true);
         });
     }
 }
