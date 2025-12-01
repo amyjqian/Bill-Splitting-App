@@ -5,39 +5,67 @@ import main.use_case.DisplayData.ExpenseDataAccessInterface;
 import main.view.DisplayDataView;
 
 import javax.swing.*;
+import java.net.http.*;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
+import org.json.*;
 
+
+// ids for testing: // empty group: 90642377 // group with entries: 90437991
 public class App {
+
+    private static final String TOKEN = "smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA";
+
     public static void main(String[] args) {
 
-        // Fake data access for now
         ExpenseDataAccessInterface dataAccess = () -> {
-            Map<String, Map<String, Object>> sample = new HashMap<>();
+            try {
+                HttpClient client = HttpClient.newHttpClient();
 
-            Map<String, Object> coffee = new HashMap<>();
-            coffee.put("amount", 4.50);
-            coffee.put("category", "Food");
-            sample.put("Coffee", coffee);
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create("https://secure.splitwise.com/api/v3.0/get_expenses?group_id="))
+                        .header("Authorization", "Bearer " + TOKEN)
+                        .build();
 
-            Map<String, Object> uber = new HashMap<>();
-            uber.put("amount", 12.80);
-            uber.put("category", "Transport");
-            sample.put("Uber Ride", uber);
+                HttpResponse<String> response =
+                        client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            Map<String, Object> groceries = new HashMap<>();
-            groceries.put("amount", 40.25);
-            groceries.put("category", "Food");
-            sample.put("Groceries", groceries);
+                JSONObject json = new JSONObject(response.body());
+                JSONArray expenses = json.getJSONArray("expenses");
 
-            return sample;
+                Map<String, Map<String, Object>> data = new HashMap<>();
+
+                for (int i = 0; i < expenses.length(); i++) {
+                    JSONObject exp = expenses.getJSONObject(i);
+                    String description = exp.getString("description");
+                    double amount = exp.getDouble("cost");
+
+                    String category = "Uncategorized";
+                    if (!exp.isNull("category")) {
+                        category = exp.getJSONObject("category").getString("name");
+                    }
+
+                    Map<String, Object> entry = new HashMap<>();
+                    entry.put("amount", amount);
+                    entry.put("category", category);
+
+                    data.put(description + " #" + i, entry);
+                }
+
+                return data;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                return new HashMap<>();
+            }
         };
 
         DisplayDataViewModel vm = new DisplayDataViewModel();
         vm.setData(dataAccess.getAllExpenses());
 
-        DisplayDataView.DisplayDataPanel view =
-                new DisplayDataView.DisplayDataPanel(null, vm);
+        DisplayDataView view = new DisplayDataView();
+        view.update(vm);
 
         JFrame frame = new JFrame("Expenses Pie Chart");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

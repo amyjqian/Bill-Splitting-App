@@ -1,6 +1,5 @@
 package main.view;
 
-import main.controllers.DisplayDataController;
 import main.presenter.DisplayDataViewModel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -9,51 +8,73 @@ import org.jfree.data.general.DefaultPieDataset;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
 import java.util.Map;
 
-public interface DisplayDataView {
-    void update(DisplayDataViewModel vm);
+public class DisplayDataView extends JPanel {
 
-    class DisplayDataPanel extends JPanel implements DisplayDataView {
+    private JPanel chartHolder;
+    private JComboBox<String> modeSelector;
+    private DisplayDataViewModel currentVM;
 
-        private JPanel chartHolder;
+    public DisplayDataView() {
+        setLayout(new BorderLayout());
+        setPreferredSize(new Dimension(600, 400));
 
-        public DisplayDataPanel(DisplayDataController controller, DisplayDataViewModel vm) {
-            setLayout(new BorderLayout());
-            setPreferredSize(new Dimension(600, 400));
+        modeSelector = new JComboBox<>(new String[]{"Description", "Category"});
+        modeSelector.addActionListener(e -> repaintChart());
+        add(modeSelector, BorderLayout.NORTH);
 
-            chartHolder = new JPanel(new BorderLayout());
-            add(chartHolder, BorderLayout.CENTER);
+        chartHolder = new JPanel(new BorderLayout());
+        add(chartHolder, BorderLayout.CENTER);
+    }
 
-            // draw chart immediately
-            update(vm);
-        }
+    public void update(DisplayDataViewModel vm) {
+        this.currentVM = vm;
+        repaintChart();
+    }
 
-        @Override
-        public void update(DisplayDataViewModel vm) {
-            chartHolder.removeAll();
+    private void repaintChart() {
+        if (currentVM == null) return;
 
-            DefaultPieDataset dataset = new DefaultPieDataset();
+        chartHolder.removeAll();
+        DefaultPieDataset dataset = new DefaultPieDataset();
 
-            for (Map.Entry<String, Map<String, Object>> entry : vm.getData().entrySet()) {
-                String name = entry.getKey();
+        String mode = (String) modeSelector.getSelectedItem();
+
+        if (mode.equals("Description")) {
+            for (Map.Entry<String, Map<String, Object>> entry : currentVM.getData().entrySet()) {
+                String description = entry.getKey();
                 double amount = (double) entry.getValue().get("amount");
-                dataset.setValue(name, amount);
+                String cleanName = description.split(" #")[0];
+                dataset.setValue(cleanName, amount);
+            }
+        } else {
+            Map<String, Double> categoryTotals = new HashMap<>();
+
+            for (Map<String, Object> entry : currentVM.getData().values()) {
+                double amount = (double) entry.get("amount");
+                String category = (String) entry.get("category");
+                categoryTotals.put(category, categoryTotals.getOrDefault(category, 0.0) + amount);
             }
 
-            JFreeChart chart = ChartFactory.createPieChart(
-                    "Expenses Breakdown",
-                    dataset,
-                    true,
-                    true,
-                    false
-            );
-
-            ChartPanel chartPanel = new ChartPanel(chart);
-            chartHolder.add(chartPanel, BorderLayout.CENTER);
-
-            revalidate();
-            repaint();
+            for (Map.Entry<String, Double> cat : categoryTotals.entrySet()) {
+                dataset.setValue(cat.getKey(), cat.getValue());
+            }
         }
+
+        JFreeChart chart = ChartFactory.createPieChart(
+                "Expenses Breakdown",
+                dataset,
+                true,
+                true,
+                false
+        );
+
+        ChartPanel chartPanel = new ChartPanel(chart);
+        chartHolder.add(chartPanel, BorderLayout.CENTER);
+
+        revalidate();
+        repaint();
     }
 }

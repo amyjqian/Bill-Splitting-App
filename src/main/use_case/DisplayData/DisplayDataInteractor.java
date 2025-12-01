@@ -14,8 +14,8 @@ public class DisplayDataInteractor implements DisplayDataInputBoundary {
     }
 
     @Override
-    public void displayData() {
+    public void execute() {
         Map<String, Map<String, Object>> data = dataAccess.getAllExpenses();
-        presenter.presentData(data);
+        presenter.present(data);
     }
 }

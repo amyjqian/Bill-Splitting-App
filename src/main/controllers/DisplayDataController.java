@@ -10,7 +10,7 @@ public class DisplayDataController {
         this.interactor = interactor;
     }
 
-    public void onDisplayDataRequested() {
-        interactor.displayData();
+    public void load() {
+        interactor.execute();
     }
 }
