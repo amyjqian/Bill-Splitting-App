@@ -73,6 +73,28 @@ public class MyGroupFrame extends JFrame {
                 updateExpenseTable();
             });
         });
+
+        // button link
+        /*
+        newExpenseButton.addActionListener(e -> {
+            ExpenseFrame expenseFrame = new ExpenseFrame();
+            expenseFrame.setVisible(true);
+            this.dispose();    // close MyGroupFrame if that’s your pattern
+        });
+
+        settleUpButton.addActionListener(e -> {
+            SettleUpPanel settlePanel = new SettleUpPanel();
+            JFrame settleFrame = new JFrame("Settle Up");
+            settleFrame.setVisible(true);
+            this.dispose();
+        });
+
+        backButton.addActionListener(e -> {
+            GroupViewFrame gv = new GroupViewFrame();
+            gv.setVisible(true);
+            this.dispose();
+        });
+        */
     }
 
     // helpers
@@ -88,7 +110,6 @@ public class MyGroupFrame extends JFrame {
             errorLabel.setText("No history found.");
             return;
         }
-
 
         myGroupViewModel.getExpenses().forEach(exp -> {
             Object[] row = {
