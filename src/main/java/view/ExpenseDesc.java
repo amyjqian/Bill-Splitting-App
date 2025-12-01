@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Map;
 
 public class ExpenseDesc extends JFrame {
 
@@ -12,28 +13,56 @@ public class ExpenseDesc extends JFrame {
     private void initializeUI() {
         setTitle("Add Expense");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 300);
+        setSize(500, 400);
         setLocationRelativeTo(null);
 
-        JLabel titleLabel = new JLabel("Enter Amount and Description and Participants ", JLabel.CENTER);
+        JLabel titleLabel = new JLabel("Enter Expense Details", JLabel.CENTER);
+        JTextField nameField = new JTextField(10);
         JTextField amountField = new JTextField(10);
         JTextField descField = new JTextField(10);
-        JTextField participantsField = new JTextField(10);
+
+        String[] options = {"Utility", "Food", "Gifts"};
+        JComboBox<String> comboBox = new JComboBox<>(options);
 
         JButton submitButton = new JButton("Submit");
 
-        // Simple panel with components
+        // Create checkboxes for participants
+        JLabel participantsLabel = new JLabel("Participants:");
+        JCheckBox participant1 = new JCheckBox("Amy");
+        JCheckBox participant2 = new JCheckBox("Tan");
+        JCheckBox participant3 = new JCheckBox("Katie");
+        JCheckBox participant4 = new JCheckBox("Patricia");
+        JCheckBox participant5 = new JCheckBox("Angela");
+        JCheckBox participant6 = new JCheckBox("Lucy");
+
+        // Panel for checkboxes with grid layout
+        JPanel participantsPanel = new JPanel();
+        participantsPanel.setLayout(new GridLayout(3, 2, 5, 5));
+        participantsPanel.add(participant1);
+        participantsPanel.add(participant2);
+        participantsPanel.add(participant3);
+        participantsPanel.add(participant4);
+        participantsPanel.add(participant5);
+        participantsPanel.add(participant6);
+
+        // Main panel with components
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(8, 1, 10, 10));
+        panel.setLayout(new GridLayout(0, 1, 10, 8));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
 
         panel.add(titleLabel);
+        panel.add(new JLabel("Expense Name:"));
+        panel.add(nameField);
         panel.add(new JLabel("Amount:"));
         panel.add(amountField);
         panel.add(new JLabel("Description:"));
         panel.add(descField);
-        panel.add(new JLabel("Participants:"));
-        panel.add(participantsField);
+        panel.add(new JLabel("Category:"));
+        panel.add(comboBox);
+        panel.add(participantsLabel);
+        panel.add(participantsPanel);
         panel.add(submitButton);
+
         add(panel);
     }
 
