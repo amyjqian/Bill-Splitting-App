@@ -4,41 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="changed participants to checkbox menu">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/app/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/data_access/SettleUpDataAccessObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/interface_adapter/MyGroupState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/interface_adapter/SettleUpViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpDataAccessInterface.java" afterDir="false" />
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="Use GroupId to get group expenses">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/SettleUpTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettlementCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettlementCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Group.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInputBoundary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpOutputBoundary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpOutputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettlementCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettlementCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/MainFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "Mark-as-Settled-APIs",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -111,6 +80,11 @@
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.SettleUpPanel">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.app.Main" />
@@ -232,6 +206,15 @@
       <option name="presentableId" value="Default" />
       <updated>1764088452883</updated>
     </task>
+    <task id="LOCAL-00001" summary="Use GroupId to get group expenses">
+      <option name="closed" value="true" />
+      <created>1764567010952</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764567010952</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -247,6 +230,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed participants to checkbox menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed participants to checkbox menu" />
+    <MESSAGE value="Use GroupId to get group expenses" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use GroupId to get group expenses" />
   </component>
 </project>

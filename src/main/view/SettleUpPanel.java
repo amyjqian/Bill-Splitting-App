@@ -1,5 +1,6 @@
 package main.view;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import main.data_access.SettleUpDataAccessObject;
 import main.usecase.*;
 
@@ -21,9 +22,15 @@ public class SettleUpPanel extends JFrame {
 
     private final Long groupId;
 
-    public SettleUpPanel(Long groupId, String apiKey) {
+    public SettleUpPanel(Long groupId) {
 
         this.groupId = groupId;
+
+        Dotenv dotenv = Dotenv.configure()
+                .directory(".")
+                .load();
+        String apiKey = dotenv.get("SPLITWISE_API_KEY");
+
         presenter = new SettleUpPresenter();
         SettleUpDataAccessInterface dataAccess = new SettleUpDataAccessObject(apiKey);
         SettlementCalculator calculator = new SettleUpCalculator();
@@ -71,9 +78,9 @@ public class SettleUpPanel extends JFrame {
     }
 
     public static void main(String[] args) {
-        Long groupId = 90437991L;
-        String apiKey = "smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA";
 
-        SwingUtilities.invokeLater(() -> new SettleUpPanel(groupId, apiKey).setVisible(true));
+        Long groupId = 90437991L;
+
+        SwingUtilities.invokeLater(() -> new SettleUpPanel(groupId).setVisible(true));
     }
 }
