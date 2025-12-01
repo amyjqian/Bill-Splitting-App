@@ -1,9 +1,9 @@
 package view;
 
-import main.interface_adapters.AutoSaveController;
-import main.usecase.AutoSaveInteractor;
-import main.data.FileAutoSaveGateway;
-import main.data.AutoSaveGateway;
+import interface_adapter.auto_save.AutoSaveController;
+import use_case.auto_save.AutoSaveInteractor;
+import data_access.FileAutoSaveGateway;
+import data_access.AutoSaveGateway;
 
 import javax.swing.*;
 import java.awt.*;

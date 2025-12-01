@@ -1,10 +1,10 @@
-package main.tests;
+package use_case.auto_save;
 
-import main.data.AutoSaveGateway;
-import main.data.FileAutoSaveGateway;
-import main.usecase.AutoSaveInteractor;
-import main.usecase.AutoSaveRequestModel;
-import main.usecase.AutoSaveResponseModel;
+import data_access.AutoSaveGateway;
+import data_access.FileAutoSaveGateway;
+import use_case.auto_save.AutoSaveInteractor;
+import use_case.auto_save.AutoSaveRequestModel;
+import use_case.auto_save.AutoSaveResponseModel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

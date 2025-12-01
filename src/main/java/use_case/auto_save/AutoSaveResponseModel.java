@@ -1,4 +1,4 @@
-package main.usecase;
+package use_case.auto_save;
 
 public class AutoSaveResponseModel {
     private final boolean success;

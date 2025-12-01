@@ -1,6 +1,6 @@
-package main.usecase;
+package use_case.auto_save;
 
-import main.data.AutoSaveGateway;
+import data_access.AutoSaveGateway;
 
 public class AutoSaveInteractor implements AutoSaveInputBoundary {
     private final AutoSaveGateway gateway;
