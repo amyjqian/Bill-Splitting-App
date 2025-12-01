@@ -26,10 +26,7 @@ public class SettleUpPanel extends JFrame {
 
         this.groupId = groupId;
 
-        Dotenv dotenv = Dotenv.configure()
-                .directory(".")
-                .load();
-        String apiKey = dotenv.get("SPLITWISE_API_KEY");
+        String apiKey = System.getenv("SPLITWISE_API_KEY");
 
         presenter = new SettleUpPresenter();
         SettleUpDataAccessInterface dataAccess = new SettleUpDataAccessObject(apiKey);
