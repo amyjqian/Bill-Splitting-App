@@ -1,6 +1,5 @@
 package main.view;
 
-import io.github.cdimascio.dotenv.Dotenv;
 import main.data_access.SettleUpDataAccessObject;
 import main.usecase.*;
 
@@ -76,7 +75,7 @@ public class SettleUpPanel extends JFrame {
 
     public static void main(String[] args) {
 
-        Long groupId = 90437991L;
+        Long groupId = 90692920L;
 
         SwingUtilities.invokeLater(() -> new SettleUpPanel(groupId).setVisible(true));
     }
