@@ -1,8 +1,8 @@
 package main;
 
-import main.presenter.DisplayDataViewModel;
-import main.use_case.DisplayData.ExpenseDataAccessInterface;
-import main.view.DisplayDataView;
+import interface_adapters.displayData.DisplayDataViewModel;
+import use_case.DisplayData.ExpenseDataAccessInterface;
+import view.DisplayDataView;
 
 import javax.swing.*;
 import java.net.http.*;

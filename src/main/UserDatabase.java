@@ -1,6 +1,6 @@
 package main;
 
-import main.entities.User;
+import entities.User;
 
 public interface UserDatabase {
     User getUserByUsername(String username);
