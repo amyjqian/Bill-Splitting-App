@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08ba7b2a-e125-46ef-ae40-f2e1af425d17" name="Changes" comment="fixed mark as settled button" />
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="changed participants to checkbox menu">
+      <change afterPath="$PROJECT_DIR$/src/Test/SettleUpTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +23,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -21,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="add_expense" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,70 +45,153 @@
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/amyjqian/Bill-Splitting-App.git&quot;,
     &quot;accountId&quot;: &quot;c222dea5-cc86-42a3-b4b6-b358cf0414e5&quot;
-  },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
-    },
-    &quot;owner&quot;: &quot;amyjqian&quot;,
-    &quot;repository&quot;: &quot;Bill-Splitting-App&quot;
   }
 }</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
 }</component>
-  <component name="ProjectId" id="35LAtjuksZir9BQwpkL75F8VBkF" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="35yhvtaCGmI5GScbaGJXHllMgf9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CreateGroupFrame.executor": "Run",
+    "Application.ExpenseDesc.executor": "Run",
+    "Application.ExpenseFrame.executor": "Run",
+    "Application.GroupViewFrame.executor": "Run",
+    "Application.MainFrame.executor": "Run",
     "Application.SettleUpPanel.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "JUnit.SettleUpTest.testCalculatorAllExpensesSettled.executor": "Run",
+    "JUnit.SettleUpTest.testCalculatorNoExpenses.executor": "Run",
+    "JUnit.SettleUpTest.testExpenseEntity.executor": "Run",
+    "JUnit.SettleUpTest.testGroupEntity.executor": "Run",
+    "JUnit.SettleUpTest.testPresenterStoresValues.executor": "Run",
+    "JUnit.SettleUpTest.testUserEntity.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "Mark-as-Settled",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/renlei-pro/Desktop/CSC207/Bill-Splitting-App",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="SettleUpPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.view.SettleUpPanel" />
+  <component name="RunManager" selected="JUnit.SettleUpTest.testPresenterStoresValues">
+    <configuration name="SettleUpTest.testCalculatorAllExpensesSettled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.view.*" />
+          <option name="PATTERN" value="Test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
+      <option name="METHOD_NAME" value="testCalculatorAllExpensesSettled" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SettleUpTest.testCalculatorNoExpenses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
+      <option name="METHOD_NAME" value="testCalculatorNoExpenses" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SettleUpTest.testExpenseEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
+      <option name="METHOD_NAME" value="testExpenseEntity" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SettleUpTest.testGroupEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
+      <option name="METHOD_NAME" value="testGroupEntity" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SettleUpTest.testPresenterStoresValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
+      <option name="METHOD_NAME" value="testPresenterStoresValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
-      <module name="Bill-Splitting-App" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Bill-Splitting-App" />
       <option name="filePath" />
-      <method v="2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.SettleUpTest.testCalculatorAllExpensesSettled" />
+      <item itemvalue="JUnit.SettleUpTest.testCalculatorNoExpenses" />
+      <item itemvalue="JUnit.SettleUpTest.testExpenseEntity" />
+      <item itemvalue="JUnit.SettleUpTest.testGroupEntity" />
+      <item itemvalue="JUnit.SettleUpTest.testPresenterStoresValues" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SettleUpPanel" />
+        <item itemvalue="JUnit.SettleUpTest.testPresenterStoresValues" />
+        <item itemvalue="JUnit.SettleUpTest.testCalculatorNoExpenses" />
+        <item itemvalue="JUnit.SettleUpTest.testCalculatorAllExpensesSettled" />
+        <item itemvalue="JUnit.SettleUpTest.testGroupEntity" />
+        <item itemvalue="JUnit.SettleUpTest.testExpenseEntity" />
       </list>
     </recent_temporary>
   </component>
@@ -112,223 +204,27 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="08ba7b2a-e125-46ef-ae40-f2e1af425d17" name="Changes" comment="" />
-      <created>1762879194436</created>
+      <changelist id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="changed participants to checkbox menu" />
+      <created>1764088452883</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1762879194436</updated>
+      <updated>1764088452883</updated>
     </task>
-    <task id="LOCAL-00001" summary="Settle Up - Suggested Payments UI">
-      <option name="closed" value="true" />
-      <created>1763011473887</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1763011473887</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Attribute Settled added for Expense class">
-      <option name="closed" value="true" />
-      <created>1763011533187</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1763011533187</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Got rid of the text field">
-      <option name="closed" value="true" />
-      <created>1763423174035</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1763423174035</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Implemented Settle Up Input Data">
-      <option name="closed" value="true" />
-      <created>1763433587624</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1763433587624</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Implemented Settle Up Output Data">
-      <option name="closed" value="true" />
-      <created>1763433601384</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1763433601384</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Added a getExpenses() method to Group">
-      <option name="closed" value="true" />
-      <created>1763436484603</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1763436484603</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Implemented the Input Boundary">
-      <option name="closed" value="true" />
-      <created>1763436512298</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1763436512298</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Implemented the Output Boundary">
-      <option name="closed" value="true" />
-      <created>1763436521319</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1763436521319</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added an isSettled() method to Expense">
-      <option name="closed" value="true" />
-      <created>1763437139521</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1763437139521</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Added a boolean settled attribute + isSettled() method">
-      <option name="closed" value="true" />
-      <created>1763484806114</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1763484806114</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Added a getExpense() method">
-      <option name="closed" value="true" />
-      <created>1763484846000</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1763484846000</updated>
-    </task>
-    <task id="LOCAL-00012" summary="added a setSettled() method">
-      <option name="closed" value="true" />
-      <created>1763487459611</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1763487459611</updated>
-    </task>
-    <task id="LOCAL-00013" summary="settlement calculator interface for calculating suggested payments">
-      <option name="closed" value="true" />
-      <created>1763487491329</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1763487491329</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Implemented SettleUpInteractor">
-      <option name="closed" value="true" />
-      <created>1763487507695</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1763487507695</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Added a setSettled() method for marking expenses as settled">
-      <option name="closed" value="true" />
-      <created>1763487682810</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1763487682810</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Started making a SettleUpCalculator">
-      <option name="closed" value="true" />
-      <created>1763488884318</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1763488884318</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Implemented a calculator for suggesting payments">
-      <option name="closed" value="true" />
-      <created>1763501179238</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1763501179238</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Implemented the settle up controller">
-      <option name="closed" value="true" />
-      <created>1763515463855</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1763515463856</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Implemented the settle up presenter">
-      <option name="closed" value="true" />
-      <created>1763515474230</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1763515474230</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Updated UI">
-      <option name="closed" value="true" />
-      <created>1763517761889</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1763517761889</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Changed the formatting of suggested payment">
-      <option name="closed" value="true" />
-      <created>1763606695402</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1763606695402</updated>
-    </task>
-    <task id="LOCAL-00022" summary="fixed bug">
-      <option name="closed" value="true" />
-      <created>1763607019225</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1763607019225</updated>
-    </task>
-    <task id="LOCAL-00023" summary="fixed mark as settled button">
-      <option name="closed" value="true" />
-      <created>1763608557369</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1763608557369</updated>
-    </task>
-    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Settle Up - Suggested Payments UI" />
-    <MESSAGE value="Attribute Settled added for Expense class" />
-    <MESSAGE value="Got rid of the text field" />
-    <MESSAGE value="Implemented Settle Up Input Data" />
-    <MESSAGE value="Implemented Settle Up Output Data" />
-    <MESSAGE value="Added a getExpenses() method to Group" />
-    <MESSAGE value="Implemented the Input Boundary" />
-    <MESSAGE value="Implemented the Output Boundary" />
-    <MESSAGE value="Added an isSettled() method to Expense" />
-    <MESSAGE value="Added a boolean settled attribute + isSettled() method" />
-    <MESSAGE value="Added a getExpense() method" />
-    <MESSAGE value="added a setSettled() method" />
-    <MESSAGE value="settlement calculator interface for calculating suggested payments" />
-    <MESSAGE value="Implemented SettleUpInteractor" />
-    <MESSAGE value="Added a setSettled() method for marking expenses as settled" />
-    <MESSAGE value="Started making a SettleUpCalculator" />
-    <MESSAGE value="Implemented a calculator for suggesting payments" />
-    <MESSAGE value="Implemented the settle up controller" />
-    <MESSAGE value="Implemented the settle up presenter" />
-    <MESSAGE value="Updated UI" />
-    <MESSAGE value="Changed the formatting of suggested payment" />
-    <MESSAGE value="fixed bug" />
-    <MESSAGE value="fixed mark as settled button" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mark as settled button" />
+    <MESSAGE value="changed participants to checkbox menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed participants to checkbox menu" />
   </component>
 </project>

@@ -10,6 +10,7 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class SettleUpPanel extends JFrame {
 
@@ -90,11 +91,16 @@ public class SettleUpPanel extends JFrame {
         User user2 = new User("12345", "B", "skdfjj");
         User user3 = new User("sdfmhb", "C", "sdfbqwe");
 
-        Expense exp1 = new Expense("1", 6, "exp1", user1);
-        Expense exp2 = new Expense("2", 9, "exp2", user2);
-        Expense exp3 = new Expense("3", 99, "exp3", user3);
-        Expense exp4 = new Expense("4", 9, "exp4", user1);
-        Expense exp5 = new Expense("5", 6, "exp5", user2);
+        ArrayList<User> participants = new ArrayList<User>();
+        participants.add(user1);
+        participants.add(user2);
+        participants.add(user3);
+
+        Expense exp1 = new Expense("1", "", 6, "1", participants, user1);
+        Expense exp2 = new Expense("2", "",9, "2", participants,user2);
+        Expense exp3 = new Expense("3", "",99, "3", participants, user3);
+        Expense exp4 = new Expense("4", "",9, "1", participants,user1);
+        Expense exp5 = new Expense("5", "",6, "2", participants, user2);
 
         exp1.addParticipant(user1);
         exp1.addParticipant(user2);
@@ -116,13 +122,8 @@ public class SettleUpPanel extends JFrame {
         group.addMember(user1);
         group.addMember(user2);
         group.addMember(user3);
-        group.addExpense(exp1);
-        group.addExpense(exp2);
-        group.addExpense(exp3);
-        group.addExpense(exp4);
-        group.addExpense(exp5);
 
-        exp5.setSettled();
+        exp5.setSettled(True);
 
         SwingUtilities.invokeLater(() -> new SettleUpPanel(group).setVisible(true));
     }
