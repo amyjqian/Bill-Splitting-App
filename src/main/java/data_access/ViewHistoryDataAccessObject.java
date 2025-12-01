@@ -79,10 +79,11 @@ public class ViewHistoryDataAccessObject implements ViewHistoryDataAccessInterfa
 
     private Expense parseExpense(JSONObject json) {
             try {
-            String id = json.optString("id", "no id");
+            String name = json.optString("name", "no name");
             double amount = json.optDouble("cost",0.0);
             String description = json.optString("description","(no description)");
             String date = json.optString("date", "(no date)");
+            String category = json.optString("category","(no category)");
 
             // Who paid?
             JSONObject createdByObj = json.optJSONObject("created_by");
@@ -90,7 +91,7 @@ public class ViewHistoryDataAccessObject implements ViewHistoryDataAccessInterfa
 
             if (createdByObj != null) {
                 paidBy = new User(
-                        String.valueOf(createdByObj.optInt("id", 0)),
+                        String.valueOf(createdByObj.optInt(name, 0)),
                         createdByObj.optString("first_name", "Unknown"),
                         ""
                 );
@@ -100,7 +101,7 @@ public class ViewHistoryDataAccessObject implements ViewHistoryDataAccessInterfa
 
             // Participants
             JSONArray userShares = json.optJSONArray("users");
-            List<User> participants = new ArrayList<>();
+            ArrayList<User> participants = new ArrayList<>();
 
             if (userShares != null) {
                 for (int i = 0; i < userShares.length(); i++) {
@@ -111,7 +112,7 @@ public class ViewHistoryDataAccessObject implements ViewHistoryDataAccessInterfa
                     if (u == null) continue;
 
                     User participant = new User(
-                            String.valueOf(u.optInt("id", 0)),
+                            String.valueOf(u.optInt("name", 0)),
                             u.optString("first_name", "Unknown"),
                             ""
                     );
@@ -119,8 +120,8 @@ public class ViewHistoryDataAccessObject implements ViewHistoryDataAccessInterfa
                 }
             }
 
-            // build expense entity
-            Expense exp = new Expense(id, amount, description, paidBy, date);
+            // build expense entites
+            Expense exp = new Expense(name, description, amount, category, participants, paidBy);
 
             // Add participants
             for (User u : participants) {

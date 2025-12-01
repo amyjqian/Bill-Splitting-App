@@ -16,11 +16,11 @@ public interface JoinGroupDataAccessInterface {
 
     void addUserToGroup(int groupID, int userID);
 
-    /**
-     * Remove a user from the group.
-     * @param groupID the id of the group
-     * @param userID the id of the user
-     */
+//    /**
+//     * Remove a user from the group.
+//     * @param groupID the id of the group
+//     * @param userID the id of the user
+//     */
 
-    void removeUserFromGroup(int groupID, int userID);
+    //void removeUserFromGroup(int groupID, int userID);
 }
