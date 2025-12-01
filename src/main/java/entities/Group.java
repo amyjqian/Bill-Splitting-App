@@ -1,4 +1,4 @@
-package main.entities;
+package entities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,5 +45,4 @@ public class Group {
     public String toString() {
         return name;
     }
-
 }

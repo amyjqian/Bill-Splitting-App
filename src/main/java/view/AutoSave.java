@@ -1,4 +1,4 @@
-package main.view;
+package view;
 
 import main.interface_adapters.AutoSaveController;
 import main.usecase.AutoSaveInteractor;
