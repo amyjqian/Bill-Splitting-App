@@ -1,7 +1,9 @@
 package main.usecase;
 
-import main.entities.Group;
+import main.entities.Expense;
+
+import java.util.List;
 
 public interface SettlementCalculator {
-    String suggestedPayment(Group group);
+    String suggestedPayment(List<Expense> expenses);
 }

@@ -9,13 +9,13 @@ public class SettleUpController {
         this.interactor = interactor;
     }
 
-    public void onSettleUpPressed(Group group) {
-        SettleUpInputData inputData = new SettleUpInputData(group);
+    public void onSettleUpPressed(Long groupId) {
+        SettleUpInputData inputData = new SettleUpInputData(groupId);
         interactor.settleUp(inputData);
     }
 
-    public void onPaidPressed(Group group) {
-        SettleUpInputData inputData = new SettleUpInputData(group);
+    public void onPaidPressed(Long groupId) {
+        SettleUpInputData inputData = new SettleUpInputData(groupId);
         interactor.markAsSettled(inputData);
     }
 }

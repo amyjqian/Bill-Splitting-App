@@ -1,16 +1,15 @@
 package main.usecase;
 
-import main.entities.Group;
 
 public class SettleUpInputData {
 
-    private final Group group;
+    private final Long groupId;
 
-    public SettleUpInputData(Group group) {
-        this.group = group;
+    public SettleUpInputData(Long groupId) {
+        this.groupId = groupId;
     }
 
-    public Group getGroup() {
-        return group;
+    public Long getGroupId() {
+        return groupId;
     }
 }

@@ -5,15 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="changed participants to checkbox menu">
-      <change afterPath="$PROJECT_DIR$/src/Test/SettleUpTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/app/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/data_access/SettleUpDataAccessObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/interface_adapter/MyGroupState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/interface_adapter/SettleUpViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpDataAccessInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/SettleUpTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettlementCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettlementCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/Group.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInputBoundary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpInteractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpOutputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpOutputBoundary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpOutputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpPresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettlementCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettlementCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +49,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,7 +57,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="add_expense" />
+        <entry key="$PROJECT_DIR$" value="Mark-as-Settled" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,6 +91,7 @@
     "Application.ExpenseDesc.executor": "Run",
     "Application.ExpenseFrame.executor": "Run",
     "Application.GroupViewFrame.executor": "Run",
+    "Application.Main.executor": "Run",
     "Application.MainFrame.executor": "Run",
     "Application.SettleUpPanel.executor": "Run",
     "JUnit.SettleUpTest.testCalculatorAllExpensesSettled.executor": "Run",
@@ -75,7 +103,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Mark-as-Settled",
+    "git-widget-placeholder": "Mark-as-Settled-APIs",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -83,7 +111,33 @@
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.SettleUpTest.testPresenterStoresValues">
+  <component name="RunManager" selected="Application.SettleUpPanel">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.app.Main" />
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SettleUpPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.view.SettleUpPanel" />
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SettleUpTest.testCalculatorAllExpensesSettled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bill-splitter-app" />
       <extension name="coverage">
@@ -111,38 +165,6 @@
       <option name="PACKAGE_NAME" value="Test" />
       <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
       <option name="METHOD_NAME" value="testCalculatorNoExpenses" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SettleUpTest.testExpenseEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bill-splitter-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
-      <option name="METHOD_NAME" value="testExpenseEntity" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SettleUpTest.testGroupEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bill-splitter-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
-      <option name="METHOD_NAME" value="testGroupEntity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,19 +201,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.SettleUpPanel" />
       <item itemvalue="JUnit.SettleUpTest.testCalculatorAllExpensesSettled" />
       <item itemvalue="JUnit.SettleUpTest.testCalculatorNoExpenses" />
-      <item itemvalue="JUnit.SettleUpTest.testExpenseEntity" />
-      <item itemvalue="JUnit.SettleUpTest.testGroupEntity" />
       <item itemvalue="JUnit.SettleUpTest.testPresenterStoresValues" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SettleUpPanel" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SettleUpTest.testPresenterStoresValues" />
         <item itemvalue="JUnit.SettleUpTest.testCalculatorNoExpenses" />
         <item itemvalue="JUnit.SettleUpTest.testCalculatorAllExpensesSettled" />
-        <item itemvalue="JUnit.SettleUpTest.testGroupEntity" />
-        <item itemvalue="JUnit.SettleUpTest.testExpenseEntity" />
       </list>
     </recent_temporary>
   </component>

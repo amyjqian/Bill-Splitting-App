@@ -15,9 +15,7 @@ public class SettleUpOutputData {
         return allSettled;
     }
 
-    public boolean isSuccess() {
-        return success;
-    }
+    public boolean isSuccess() { return success; }
 
     public String getPayments() {
         return payments;

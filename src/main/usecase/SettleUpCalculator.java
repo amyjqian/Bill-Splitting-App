@@ -1,18 +1,16 @@
 package main.usecase;
 
 import main.entities.Expense;
-import main.entities.Group;
 import main.entities.User;
 
 import java.util.*;
 
 public class SettleUpCalculator implements SettlementCalculator{
     @Override
-    public String suggestedPayment(Group group) {
+    public String suggestedPayment(List<Expense> expenses) {
         Map<User, Double> balance = new HashMap<>();
-        List<Expense> expenses = group.getExpenses();
         for (Expense expense : expenses){
-            if (!expense.isSettled()){
+            if (!expense.getSettled()){
                 User payer = expense.getPaidBy();
                 double amount = expense.getAmount();
                 balance.put(payer,
@@ -20,7 +18,9 @@ public class SettleUpCalculator implements SettlementCalculator{
                 List<User> participants = expense.getParticipants();
                 double eachOwes = expense.calculateEqualShare();
                 for (User participant : participants){
-                    if (!participant.equals(payer)){
+                    if (participant.getId() != null &&
+                            payer.getId() != null &&
+                            !participant.getId().equals(payer.getId())){
                         balance.put(participant,
                                 balance.getOrDefault(participant, 0.0)-eachOwes);
                     }
@@ -45,9 +45,9 @@ public class SettleUpCalculator implements SettlementCalculator{
                 if (receiver.getValue() != 0 && payer.getValue() != 0 ){
                     double payment;
                     payment = Math.min(receiver.getValue(), -payer.getValue());
-                    messageBuilder.append(payer.getKey().getName());
+                    messageBuilder.append(payer.getKey().getDisplayName());
                     messageBuilder.append(" owes ");
-                    messageBuilder.append(receiver.getKey().getName());
+                    messageBuilder.append(receiver.getKey().getDisplayName());
                     messageBuilder.append(" $");
                     messageBuilder.append(String.format("%.2f", payment));
                     messageBuilder.append(".\n");
