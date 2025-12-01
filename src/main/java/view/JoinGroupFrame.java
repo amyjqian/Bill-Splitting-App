@@ -1,6 +1,6 @@
 package view;
 
-import data_access.InMemoryGroupDataAccessObject;
+import data_access.SplitwiseDataAccess;
 import entities.Group;
 import entities.User;
 import interface_adapter.join_group.JoinGroupController;
@@ -23,7 +23,7 @@ public class JoinGroupFrame extends JFrame {
         this.joinGroupViewModel = joinGroupViewModel;
         this.joinGroupOutputBoundary = new JoinGroupPresenter(this.joinGroupViewModel);
         this.joinGroupInteractor =
-                new JoinGroupInteractor(new InMemoryGroupDataAccessObject(),
+                new JoinGroupInteractor(new SplitwiseDataAccess(),
                         this.joinGroupOutputBoundary);
         this.joinGroupController = new JoinGroupController(this.joinGroupInteractor);
         initializeJoinGroupUI();

@@ -1,38 +1,67 @@
 package entities;
 
 public class User {
-    private final int id;
-    private final String password;
-    private final String email;
-    private final String first_name;
-    private final String last_name;
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 
-    public User(int id, String first_name, String last_name, String email, String password) {
+    // Constructors
+    public User(Long id, String firstName, String lastName, String email) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = "";
+    }
+
+    public User(Long id, String firstName, String lastName, String email, String password) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
     }
 
-    // Getters
-    public int getId() { return id; }
-    public String getEmail() {
-        return email;
+    public User(String firstName, String lastName, String email) {
+        this(null, firstName, lastName, email);
     }
-    public String getFirst_name() {
-        return first_name;
+
+    public User() {}
+
+    public Long getId() { return id; }
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public String getEmail() { return email; }
+    public String getPassword() {return password; }
+
+    public void setId(Long id) { this.id = id; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+    public void setEmail(String email) { this.email = email; }
+    public void setPassword(String password) {this.password = password; }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        User user = (User) obj;
+        return id != null && id.equals(user.id);
     }
-    public String getLast_name() {
-        return last_name;
-    }
-    public String getPassword() { return password; }
+
 
     @Override
     public String toString() {
-        return first_name + " " + last_name;
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 
-
-
+    public String getDisplayName() {
+        return firstName;
+    }
 }

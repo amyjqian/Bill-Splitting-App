@@ -9,22 +9,9 @@ import entities.Group;
 public interface CreateGroupDataAccessInterface {
     /**
      * Create a new group by groupID
-     *
      * @param name the name of the group.
      */
 
     Group createGroup(String name);
 
-    /**
-     * Fetch the group from the db by ID
-     * @param groupID the group id.
-     * @return group
-     */
-    Group getGroup(int groupID);
-
-    /**
-     * Delete the group associated with groupID
-     * @param groupID the groupID.
-     */
-    void delete(String groupID);
 }

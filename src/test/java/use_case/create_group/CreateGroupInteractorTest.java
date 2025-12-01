@@ -1,16 +1,17 @@
 package use_case.create_group;
 
-import data_access.InMemoryGroupDataAccessObject;
-import entities.User;
+import data_access.SplitwiseDataAccess;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import use_case.create_group.*;
 import org.junit.jupiter.api.Test;
 
 public class CreateGroupInteractorTest {
 
     @Test
     public void mockTest(){
-        InMemoryGroupDataAccessObject userRepository = new InMemoryGroupDataAccessObject();
+        SplitwiseDataAccess userRepository = new SplitwiseDataAccess();
         CreateGroupOutputBoundary testPresenter = new CreateGroupOutputBoundary() {
             @Override
             public void prepareSuccessView(CreateGroupOutputData outputData) {
@@ -39,7 +40,7 @@ public class CreateGroupInteractorTest {
 
 
 
-    public static void main(String[] args) {
-        new CreateGroupInteractorTest().mockTest();
-    }
+//    public static void main(String[] args) {
+//        new CreateGroupInteractorTest().mockTest();
+//    }
 }

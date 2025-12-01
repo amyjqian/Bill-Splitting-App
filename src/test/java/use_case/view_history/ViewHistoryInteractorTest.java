@@ -1,11 +1,9 @@
 package use_case.view_history;
 
 import entities.Expense;
-import entities.Group;
 import entities.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import use_case.view_history.*;
 
 import java.util.*;
 
