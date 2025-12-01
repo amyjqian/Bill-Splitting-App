@@ -4,13 +4,13 @@ import entities.Group;
 
 public class CreateGroupOutputData {
     private final Group group;
-    private final String inviteLink;
+    private final long id;
 
     public CreateGroupOutputData(Group group){
         this.group = group;
-        this.inviteLink = group.getInviteLink();
+        this.id = group.getId();
     }
-    public String getInviteLink() {
-        return group.getInviteLink();
+    public Long getInviteLink() {
+        return group.getId();
     }
 }

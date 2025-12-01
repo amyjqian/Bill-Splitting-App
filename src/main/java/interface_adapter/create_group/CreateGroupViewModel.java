@@ -5,7 +5,7 @@ package interface_adapter.create_group;
  */
 public class CreateGroupViewModel {
     private String groupName;
-    private String inviteLink;
+    private Long inviteLink;
 
     public CreateGroupViewModel() {
     }
@@ -19,11 +19,11 @@ public class CreateGroupViewModel {
     }
 
 
-    public void setInviteLink(String inviteLink) {
+    public void setInviteLink(Long inviteLink) {
         this.inviteLink = inviteLink;
     }
 
-    public String getInviteLink() {
+    public Long getInviteLink() {
         return inviteLink;
     }
 }

@@ -1,7 +1,6 @@
 package view;
 
-import data_access.InMemoryGroupDataAccessObject;
-import entities.User;
+import data_access.SplitwiseDataAccess;
 import interface_adapter.create_group.CreateGroupController;
 import interface_adapter.create_group.CreateGroupViewModel;
 import use_case.create_group.CreateGroupInputBoundary;
@@ -11,23 +10,15 @@ import use_case.create_group.CreateGroupPresenter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class CreateGroupFrame extends JFrame{
     private final CreateGroupViewModel createGroupViewModel;
-    private final CreateGroupOutputBoundary createGroupOutputBoundary;
-    private final CreateGroupInputBoundary createGroupInteractor;
     private final CreateGroupController createGroupController;
 
 
-    public CreateGroupFrame(CreateGroupViewModel createGroupViewModel) {
+    public CreateGroupFrame(CreateGroupViewModel createGroupViewModel, CreateGroupController controller) {
         this.createGroupViewModel = createGroupViewModel;
-        this.createGroupOutputBoundary = new CreateGroupPresenter(this.createGroupViewModel);
-        this.createGroupInteractor =
-                new CreateGroupInteractor(new InMemoryGroupDataAccessObject(),
-                        this.createGroupOutputBoundary);
-        this.createGroupController = new CreateGroupController(this.createGroupInteractor);
+        this.createGroupController = controller;
         initializeCreateGroupUI();
     }
 
@@ -53,7 +44,7 @@ public class CreateGroupFrame extends JFrame{
                     if (evt.getSource().equals(submitButton)) {
                         final String groupName = createGroupViewModel.getGroupName();
                         createGroupController.execute(groupName);
-                        inviteLabel.setText(createGroupViewModel.getInviteLink());
+                        inviteLabel.setText(String.valueOf(createGroupViewModel.getInviteLink()));
                     }
                     else if (evt.getSource().equals(switchViewButton)) {
                         this.dispose();
@@ -76,12 +67,6 @@ public class CreateGroupFrame extends JFrame{
         panel.add(inviteLabel);
         panel.add(switchViewButton);
         this.add(panel);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new CreateGroupFrame(new CreateGroupViewModel()).setVisible(true);
-        });
     }
     /**
      * React to a button click that results in evt.

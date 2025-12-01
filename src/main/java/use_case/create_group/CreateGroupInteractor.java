@@ -1,7 +1,6 @@
 package use_case.create_group;
 
 import entities.Group;
-import entities.User;
 
 public class CreateGroupInteractor implements CreateGroupInputBoundary{
     private CreateGroupDataAccessInterface userDataAccessObject;
@@ -24,7 +23,7 @@ public class CreateGroupInteractor implements CreateGroupInputBoundary{
         //final User groupCreator = createGroupInputData.getGroupCreator();
 
         Group newGroup = userDataAccessObject.createGroup(groupName);
-        System.out.println("New group: " + newGroup.getGroupName() + "created" + newGroup);
+        System.out.println("New group: " + newGroup.getName() + "created" + newGroup);
 
         final CreateGroupOutputData createGroupOutputData = new CreateGroupOutputData(newGroup);
         createGroupPresenter.present(createGroupOutputData);

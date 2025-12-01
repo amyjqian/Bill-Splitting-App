@@ -4,15 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Controllers updated">
+    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Final presenters (without failure conditions)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPIImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data_access/SplitwiseDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseDataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupAPITest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupAPITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bill-splitter-app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" afterDir="false" />
@@ -33,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ui_v1" />
+        <entry key="$PROJECT_DIR$" value="group_use-cases" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,37 +74,45 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CreateGroupAPITest.executor": "Run",
+    "Application.CreateGroupFactory.executor": "Run",
     "Application.CreateGroupFrame.executor": "Run",
     "Application.CreateGroupInteractorTest.executor": "Run",
     "Application.ExpenseDesc.executor": "Run",
     "Application.ExpenseFrame.executor": "Run",
     "Application.GroupViewFrame.executor": "Run",
+    "Application.JoinGroupAPITest.executor": "Run",
     "Application.JoinGroupFrame.executor": "Run",
     "Application.JoinGroupInteractorTest.executor": "Debug",
     "Application.MyGroupFrame.executor": "Run",
     "Application.SettleUpPanel.executor": "Run",
+    "Application.TestCreateGroupAPI.executor": "Run",
+    "Application.TestJoinGroupAPI.executor": "Run",
     "Application.view.CreateGroupFrame.executor": "Debug",
     "JUnit.CreateGroupInteractorTest.createGroupMockTest.executor": "Run",
+    "JUnit.CreateGroupInteractorTest.executor": "Coverage",
     "JUnit.CreateGroupInteractorTest.mockTest.executor": "Run",
     "JUnit.JoinGroupInteractorTest.joinGroupMockTest.executor": "Debug",
     "JUnit.JoinGroupInteractorTest.joinGroupTestWithUI.executor": "Debug",
+    "JUnit.create_group in bill-splitter-app.executor": "Run",
+    "JUnit.use_case in bill-splitter-app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "group__use-cases",
+    "git-widget-placeholder": "group__use-cases__without__join",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tutu8/IdeaProjects/Bill-Splitting-App1",
+    "last_opened_file_path": "C:/Users/tutu8/IdeaProjects/Bill-Splitting-App1/src/main/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "project.structure.side.proportion": "0.49080458",
+    "settings.editor.selected.configurable": "preferences.pathVariables",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -101,17 +123,26 @@
       <recent name="view" />
       <recent name="interface_adapter.create_group" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tutu8\IdeaProjects\Bill-Splitting-App1\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tutu8\IdeaProjects\Bill-Splitting-App1\src\main\java" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="use_case.join_group" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JoinGroupFrame">
-    <configuration name="CreateGroupFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.CreateGroupFrame" />
+  <component name="RunManager" selected="Application.JoinGroupAPITest">
+    <configuration name="CreateGroupAPITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="lj8hXq1uvnJhQqwhRcgd7fgJ3NsuAJjN0vFI73rW" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="use_case.create_group.CreateGroupAPITest" />
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.*" />
+          <option name="PATTERN" value="use_case.create_group.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,49 +150,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateGroupInteractorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="use_case.create_group.CreateGroupInteractorTest" />
-      <module name="bill-splitter-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="use_case.create_group.CreateGroupOutputBoundary" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JoinGroupFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.JoinGroupFrame" />
-      <module name="bill-splitter-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateGroupInteractorTest.mockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bill-splitter-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="use_case.create_group.CreateGroupOutputBoundary" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="use_case.create_group" />
-      <option name="MAIN_CLASS_NAME" value="use_case.create_group.CreateGroupInteractorTest" />
-      <option name="METHOD_NAME" value="mockTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JoinGroupInteractorTest.joinGroupTestWithUI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JoinGroupAPITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="lj8hXq1uvnJhQqwhRcgd7fgJ3NsuAJjN0vFI73rW" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="use_case.join_group.JoinGroupAPITest" />
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
@@ -169,21 +162,65 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="use_case.join_group" />
-      <option name="MAIN_CLASS_NAME" value="use_case.join_group.JoinGroupInteractorTest" />
-      <option name="METHOD_NAME" value="joinGroupTestWithUI" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA" />
+      </envs>
+      <module name="bill-splitter-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateGroupInteractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="use_case.create_group.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="use_case.create_group" />
+      <option name="MAIN_CLASS_NAME" value="use_case.create_group.CreateGroupInteractorTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="create_group in bill-splitter-app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bill-splitter-app" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/use_case/create_group" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="use_case in bill-splitter-app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bill-splitter-app" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/use_case" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CreateGroupAPITest" />
+      <item itemvalue="Application.JoinGroupAPITest" />
+      <item itemvalue="JUnit.use_case in bill-splitter-app" />
+      <item itemvalue="JUnit.CreateGroupInteractorTest" />
+      <item itemvalue="JUnit.create_group in bill-splitter-app" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JoinGroupFrame" />
-        <item itemvalue="JUnit.JoinGroupInteractorTest.joinGroupTestWithUI" />
-        <item itemvalue="Application.CreateGroupFrame" />
-        <item itemvalue="Application.CreateGroupInteractorTest" />
-        <item itemvalue="JUnit.CreateGroupInteractorTest.mockTest" />
+        <item itemvalue="Application.JoinGroupAPITest" />
+        <item itemvalue="Application.CreateGroupAPITest" />
+        <item itemvalue="JUnit.use_case in bill-splitter-app" />
+        <item itemvalue="JUnit.CreateGroupInteractorTest" />
+        <item itemvalue="JUnit.create_group in bill-splitter-app" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +246,11 @@
       <workItem from="1763754666789" duration="1961000" />
       <workItem from="1763932675314" duration="20776000" />
       <workItem from="1764430995563" duration="28658000" />
-      <workItem from="1764512881281" duration="6583000" />
+      <workItem from="1764512881281" duration="29226000" />
+      <workItem from="1764562477529" duration="4525000" />
+      <workItem from="1764601753450" duration="543000" />
+      <workItem from="1764602471865" duration="44000" />
+      <workItem from="1764602534315" duration="8685000" />
     </task>
     <task id="LOCAL-00001" summary="Changed UI text">
       <option name="closed" value="true" />
@@ -315,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764485341788</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Final presenters (without failure conditions)">
+      <option name="closed" value="true" />
+      <created>1764519752264</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1764519752264</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,35 +382,21 @@
     <MESSAGE value="Most recent versions of Group use cases" />
     <MESSAGE value="Updated controller and UI to update CreateGroup view" />
     <MESSAGE value="Controllers updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controllers updated" />
+    <MESSAGE value="Final presenters (without failure conditions)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final presenters (without failure conditions)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupPresenter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/use_case/create_group/CreateGroupPresenter.java</url>
           <line>19</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java</url>
-          <line>81</line>
+          <line>78</line>
           <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupController.java</url>
@@ -369,12 +404,31 @@
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputBoundary.java</url>
+          <url>file://$PROJECT_DIR$/src/main/use_case/join_group/JoinGroupOutputBoundary.java</url>
           <line>4</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupAPITest.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/api/SplitwiseAPIImpl.java</url>
+          <line>90</line>
+          <properties class="api.SplitwiseAPIImpl" method="getGroup">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((InMemoryGroupDataAccessObject) userDataAccessObject).groupMap" language="JAVA" custom="data_access.InMemoryGroupDataAccessObject" />
