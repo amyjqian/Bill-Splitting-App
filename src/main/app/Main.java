@@ -1,5 +1,4 @@
 package main.app;
-import io.github.cdimascio.dotenv.Dotenv;
 
 public class Main {
 
