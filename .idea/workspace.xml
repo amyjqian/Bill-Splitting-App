@@ -4,32 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Final presenters (without failure conditions)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPIImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_access/SplitwiseDataAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseDataAccessInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupAPITest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupAPITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="cca8bf39-f8c4-447f-abf0-cdd5b7d1a32d" name="Changes" comment="Merge remote-tracking branch 'origin/group_use-cases_without_join' into AutoSaveGUI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/entities/Expense.java&#10;#&#9;src/main/entities/Group.java&#10;#&#9;src/main/entities/User.java&#10;#&#9;src/main/java/view/AddExpensePresenter.java&#10;#&#9;src/main/java/view/AutoSaveDemo.java">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bill-splitter-app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/InMemoryGroupDataAccessObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controller/AddExpenseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data/AutoSaveGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/AutoSaveGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data/FileAutoSaveGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/FileAutoSaveGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data_access/SplitwiseDataAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/interface_adapters/AutoSaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/auto_save/AutoSaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AutoSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AutoSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AutoSaveDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AutoSaveDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/AutoSaveInteractorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/auto_save/AutoSaveInteractorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseDataAccessInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInputBoundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInputData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInteractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseOutputBoundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseOutputData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/auto_save/AutoSaveInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/auto_save/AutoSaveInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveRequestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/auto_save/AutoSaveRequestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/AutoSaveResponseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/auto_save/AutoSaveResponseModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +72,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AutoSaveDemo.executor": "Run",
     "Application.CreateGroupAPITest.executor": "Run",
     "Application.CreateGroupFactory.executor": "Run",
     "Application.CreateGroupFrame.executor": "Run",
@@ -101,7 +100,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "group__use-cases__without__join",
+    "git-widget-placeholder": "AutoSaveGUI",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/tutu8/IdeaProjects/Bill-Splitting-App1/src/main/java",
     "node.js.detected.package.eslint": "true",
@@ -127,13 +126,33 @@
       <recent name="C:\Users\tutu8\IdeaProjects\Bill-Splitting-App1\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tutu8\IdeaProjects\Bill-Splitting-App1\src\main\java" />
+      <recent name="$PROJECT_DIR$/src/main/java/data_access" />
+      <recent name="$PROJECT_DIR$/src/test/java/use_case/auto_save" />
+      <recent name="$PROJECT_DIR$/src/main/java/use_case/auto_save" />
+      <recent name="$PROJECT_DIR$/src/main/java/interface_adapter/AutoSave" />
+      <recent name="$PROJECT_DIR$/src/main/use_case" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="use_case.join_group" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JoinGroupAPITest">
+  <component name="RunManager" selected="Application.AutoSaveDemo">
+    <configuration name="AutoSaveDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="main.view.AutoSaveDemo" />
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CreateGroupAPITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="SPLITWISE_API_KEY" value="lj8hXq1uvnJhQqwhRcgd7fgJ3NsuAJjN0vFI73rW" />
@@ -191,14 +210,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="create_group in bill-splitter-app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="bill-splitter-app" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java/use_case/create_group" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="use_case in bill-splitter-app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bill-splitter-app" />
       <option name="TEST_OBJECT" value="directory" />
@@ -208,19 +219,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.AutoSaveDemo" />
       <item itemvalue="Application.CreateGroupAPITest" />
       <item itemvalue="Application.JoinGroupAPITest" />
       <item itemvalue="JUnit.use_case in bill-splitter-app" />
       <item itemvalue="JUnit.CreateGroupInteractorTest" />
-      <item itemvalue="JUnit.create_group in bill-splitter-app" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AutoSaveDemo" />
         <item itemvalue="Application.JoinGroupAPITest" />
         <item itemvalue="Application.CreateGroupAPITest" />
         <item itemvalue="JUnit.use_case in bill-splitter-app" />
         <item itemvalue="JUnit.CreateGroupInteractorTest" />
-        <item itemvalue="JUnit.create_group in bill-splitter-app" />
       </list>
     </recent_temporary>
   </component>

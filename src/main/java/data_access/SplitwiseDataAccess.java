@@ -11,7 +11,8 @@ import use_case.join_group.JoinGroupDataAccessInterface;
 
 import java.util.List;
 
-public class SplitwiseDataAccess implements AddExpenseDataAccessInterface, CreateGroupDataAccessInterface, JoinGroupDataAccessInterface {
+public class SplitwiseDataAccess implements AddExpenseDataAccessInterface,
+        CreateGroupDataAccessInterface, JoinGroupDataAccessInterface {
     private final SplitwiseAPI splitwiseAPI;
 
     public SplitwiseDataAccess() {
