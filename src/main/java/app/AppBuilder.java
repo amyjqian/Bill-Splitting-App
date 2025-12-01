@@ -9,7 +9,6 @@ import io.github.cdimascio.dotenv.Dotenv;
 import view.MyGroupFrame;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class AppBuilder {
     public static void main(String[] args) {
