@@ -1,7 +1,7 @@
-package main.view;
+package view;
 
-import main.data_access.SettleUpDataAccessObject;
-import main.usecase.*;
+import data_access.SettleUpDataAccessObject;
+import usecase.SettleUp.*;
 
 import javax.swing.*;
 import javax.swing.text.SimpleAttributeSet;
@@ -17,7 +17,7 @@ public class SettleUpPanel extends JFrame {
     private JLabel settlementLabel;
     private JButton settleUpButton;
     private JButton backButton;
-    private JButton paidButton;
+    private JButton markButton;
 
     private final Long groupId;
 
@@ -58,18 +58,18 @@ public class SettleUpPanel extends JFrame {
 
         this.backButton = new JButton("Back");
         backButton.setPreferredSize(new Dimension(120, 20));
-        this.paidButton = new JButton("Mark as Settled");
-        paidButton.setPreferredSize(new Dimension(120, 20));
+        this.markButton = new JButton("Mark as Settled");
+        markButton.setPreferredSize(new Dimension(120, 20));
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(backButton);
-        buttonPanel.add(paidButton);
-        paidButton.setVisible(!presenter.isAllSettled());
+        buttonPanel.add(markButton);
+        markButton.setVisible(!presenter.isAllSettled());
 
         add(buttonPanel, BorderLayout.SOUTH);
 
         backButton.addActionListener(e -> dispose());
-        paidButton.addActionListener(e -> {controller.onPaidPressed(groupId);
+        markButton.addActionListener(e -> {controller.onMarkPressed(groupId);
                 area.setText(presenter.getMessage());
-                paidButton.setVisible(false);});
+                markButton.setVisible(false);});
     }
 }

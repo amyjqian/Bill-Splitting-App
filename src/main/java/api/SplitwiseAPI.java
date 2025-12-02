@@ -1,8 +1,8 @@
-package main.api;
+package api;
 
-import main.entities.Expense;
-import main.entities.Group;
-import main.entities.User;
+import entities.Expense;
+import entities.Group;
+import entities.User;
 import org.json.JSONException;
 
 import java.util.List;

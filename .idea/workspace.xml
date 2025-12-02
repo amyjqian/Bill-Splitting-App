@@ -4,10 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="Updated SettleUpCalculator: messages now prints user name">
-      <change afterPath="$PROJECT_DIR$/src/test/SettleUpInteractorTest.java" afterDir="false" />
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="removed to settleup main">
+      <change afterPath="$PROJECT_DIR$/.idea/IntelliLang.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPIImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/app/SettleUpMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/SettleUpMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data_access/SettleUpDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/SettleUpDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/ExpenseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettleUpPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettlementCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usecase/SettlementCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ExpenseDesc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ExpenseFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SettleUpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/SettleUpInteractorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/SettleUpInteractorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +108,10 @@
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -128,7 +157,7 @@
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.view.*" />
+          <option name="PATTERN" value="main.data_access.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -202,6 +231,7 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
       </set>
     </attachedChunks>
   </component>
@@ -212,6 +242,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764088452883</updated>
+      <workItem from="1764642294894" duration="317000" />
+      <workItem from="1764642912152" duration="4099000" />
     </task>
     <task id="LOCAL-00001" summary="Use GroupId to get group expenses">
       <option name="closed" value="true" />
@@ -229,8 +261,27 @@
       <option name="project" value="LOCAL" />
       <updated>1764631379950</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added SettleUpInteractor test">
+      <option name="closed" value="true" />
+      <created>1764634760764</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764634760764</updated>
+    </task>
+    <task id="LOCAL-00004" summary="removed to settleup main">
+      <option name="closed" value="true" />
+      <created>1764634788002</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764634788002</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -247,10 +298,12 @@
     <MESSAGE value="changed participants to checkbox menu" />
     <MESSAGE value="Use GroupId to get group expenses" />
     <MESSAGE value="Updated SettleUpCalculator: messages now prints user name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated SettleUpCalculator: messages now prints user name" />
+    <MESSAGE value="Added SettleUpInteractor test" />
+    <MESSAGE value="removed to settleup main" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed to settleup main" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Bill_Splitting_App$SettleUpInteractorTest.ic" NAME="SettleUpInteractorTest Coverage Results" MODIFIED="1764634259059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/Bill_Splitting_App$SettleUpInteractorTest.ic" NAME="SettleUpInteractorTest Coverage Results" MODIFIED="1764634570573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>test.*</FILTER>
     </SUITE>
   </component>

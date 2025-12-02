@@ -1,6 +1,6 @@
-package main.usecase;
+package usecase.SettleUp;
 
-public class SettleUpPresenter implements SettleUpOutputBoundary{
+public class SettleUpPresenter implements SettleUpOutputBoundary {
     private String message;
     private boolean allSettled;
 

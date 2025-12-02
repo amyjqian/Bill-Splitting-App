@@ -1,11 +1,10 @@
 package test;
 
-import main.entities.Expense;
-import main.entities.User;
-import main.usecase.*;
+import entities.Expense;
+import entities.User;
+import usecase.SettleUp.*;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 

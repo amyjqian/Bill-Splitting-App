@@ -1,11 +1,11 @@
-package main.usecase;
+package usecase.SettleUp;
 
-import main.entities.Expense;
-import main.entities.User;
+import entities.Expense;
+import entities.User;
 
 import java.util.*;
 
-public class SettleUpCalculator implements SettlementCalculator{
+public class SettleUpCalculator implements SettlementCalculator {
     @Override
     public String suggestedPayment(List<Expense> expenses) {
         Map<String, Double> balance = new HashMap<>();
@@ -13,10 +13,10 @@ public class SettleUpCalculator implements SettlementCalculator{
             if (!expense.getSettled()){
                 User paidBy = expense.getPaidBy();
                 double amount = expense.getAmount();
-                balance.put(paidBy.getLastName(),
-                        balance.getOrDefault(paidBy.getLastName(),0.0) + amount);
                 List<User> participants = expense.getParticipants();
                 double eachOwes = expense.calculateEqualShare();
+                balance.put(paidBy.getLastName(),
+                        balance.getOrDefault(paidBy.getLastName(),0.0) + amount - eachOwes);
                 for (User participant : participants){
                     if (participant.getFirstName() != null &&
                             paidBy.getFirstName() != null &&

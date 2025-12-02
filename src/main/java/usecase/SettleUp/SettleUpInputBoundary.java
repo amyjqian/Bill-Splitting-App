@@ -1,4 +1,4 @@
-package main.usecase;
+package usecase.SettleUp;
 
 public interface SettleUpInputBoundary {
     void settleUp(SettleUpInputData inputData);

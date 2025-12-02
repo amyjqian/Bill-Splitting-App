@@ -1,7 +1,6 @@
-package main.usecase;
+package usecase.SettleUp;
 
-import main.entities.Expense;
-import main.entities.Group;
+import entities.Expense;
 
 import java.util.List;
 
@@ -11,7 +10,8 @@ public class SettleUpInteractor implements SettleUpInputBoundary {
     private final SettlementCalculator calculator;
     private final SettleUpOutputBoundary presenter;
 
-    public SettleUpInteractor(SettleUpDataAccessInterface dataAccess, SettlementCalculator calculator, SettleUpOutputBoundary presenter) {
+    public SettleUpInteractor(SettleUpDataAccessInterface dataAccess, SettlementCalculator calculator,
+                              SettleUpOutputBoundary presenter) {
         this.dataAccess = dataAccess;
         this.calculator = calculator;
         this.presenter = presenter;

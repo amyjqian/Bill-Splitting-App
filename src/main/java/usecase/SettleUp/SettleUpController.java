@@ -1,6 +1,4 @@
-package main.usecase;
-
-import main.entities.Group;
+package usecase.SettleUp;
 
 public class SettleUpController {
     private final SettleUpInputBoundary interactor;
@@ -14,7 +12,7 @@ public class SettleUpController {
         interactor.settleUp(inputData);
     }
 
-    public void onPaidPressed(Long groupId) {
+    public void onMarkPressed(Long groupId) {
         SettleUpInputData inputData = new SettleUpInputData(groupId);
         interactor.markAsSettled(inputData);
     }

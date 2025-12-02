@@ -1,7 +1,8 @@
-package main.data_access;
+package data_access;
 
-import main.entities.Expense;
-import main.entities.User;
+import entities.Expense;
+import entities.User;
+import usecase.SettleUp.SettleUpDataAccessInterface;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -9,12 +10,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.IOException;
-import main.usecase.SettleUpDataAccessInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SettleUpDataAccessObject implements SettleUpDataAccessInterface{
+public class SettleUpDataAccessObject implements SettleUpDataAccessInterface {
 
     private static final String BASE_URL = "https://secure.splitwise.com/api/v3.0/get_expenses?group_id=";
 

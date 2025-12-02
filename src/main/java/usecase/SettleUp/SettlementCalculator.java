@@ -1,6 +1,6 @@
-package main.usecase;
+package usecase.SettleUp;
 
-import main.entities.Expense;
+import entities.Expense;
 
 import java.util.List;
 

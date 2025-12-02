@@ -1,4 +1,4 @@
-package main.api;
+package api;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,9 +9,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import main.entities.Expense;
-import main.entities.Group;
-import main.entities.User;
+import entities.Expense;
+import entities.Group;
+import entities.User;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -21,7 +21,7 @@ import okhttp3.Response;
 /**
  * SplitwiseAPIImpl class for Splitwise API integration.
  */
-public class SplitwiseAPIImpl implements main.api.SplitwiseAPI {
+public class SplitwiseAPIImpl implements SplitwiseAPI {
     // Constants
     private static final String API_URL = "https://www.splitwise.com/api/v3.0";
     private static final String CONTENT_TYPE = "Content-Type";

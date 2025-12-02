@@ -1,6 +1,6 @@
-package main.app;
+package app;
 
-import main.view.SettleUpPanel;
+import view.SettleUpPanel;
 
 import javax.swing.*;
 

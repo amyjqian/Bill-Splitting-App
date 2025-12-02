@@ -1,4 +1,4 @@
-package main.usecase;
+package usecase.SettleUp;
 
 public class SettleUpOutputData {
     private boolean allSettled;
