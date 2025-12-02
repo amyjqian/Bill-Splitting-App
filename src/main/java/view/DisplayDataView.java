@@ -1,5 +1,6 @@
 package view;
 
+import interface_adapters.displayData.DisplayDataController;
 import interface_adapters.displayData.DisplayDataViewModel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -16,6 +17,7 @@ public class DisplayDataView extends JPanel {
     private JPanel chartHolder;
     private JComboBox<String> modeSelector;
     private DisplayDataViewModel currentVM;
+    private DisplayDataController controller;
 
     public DisplayDataView() {
         setLayout(new BorderLayout());
@@ -77,4 +79,10 @@ public class DisplayDataView extends JPanel {
         revalidate();
         repaint();
     }
+
+    public void setController(DisplayDataController controller) {
+        this.controller = controller;
+    }
+
+
 }
