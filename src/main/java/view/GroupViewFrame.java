@@ -1,5 +1,6 @@
 package view;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import use_case.create_group.CreateGroupFactory;
 import use_case.view_history.CreateViewHistoryFactory;
 
@@ -24,7 +25,10 @@ public class GroupViewFrame extends JFrame {
         });
 
         view.addActionListener(e -> {
-            String apiKey = System.getenv("SPLITWISE_API_KEY");
+            Dotenv dotenv = Dotenv.configure()
+                    .directory(".")
+                    .load();
+            String apiKey = dotenv.get("SPLITWISE_API_KEY");
             MyGroupFrame frame = CreateViewHistoryFactory.createFrame(apiKey);
             frame.setVisible(true);
             this.dispose();

@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="83ec3bfa-78d9-4358-bbf6-cb5fc6f493b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/use_case/view_history/CreateViewHistoryFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_history/CreateViewHistoryFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_history/CreateViewHistoryFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_history/CreateViewHistoryFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GroupViewFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GroupViewFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MyGroupFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MyGroupFrame.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +25,12 @@
     &quot;assignee&quot;: &quot;tanSiru&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/amyjqian/Bill-Splitting-App.git",
-    "accountId": "1fdfdb60-dbec-49a9-89d9-230b5d7fac52"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/amyjqian/Bill-Splitting-App.git&quot;,
+    &quot;accountId&quot;: &quot;1fdfdb60-dbec-49a9-89d9-230b5d7fac52&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -44,8 +42,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AppBuilder.executor": "Run",
+    "Application.CreateGroupFactory.executor": "Run",
     "Application.CreateViewHistoryFactory.executor": "Run",
     "Application.GroupViewFrame.executor": "Run",
+    "Application.Main.executor": "Coverage",
+    "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -60,6 +61,16 @@
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="app.AppBuilder" />
+      <module name="bill-splitter-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="temp2" />
       <method v="2">
@@ -113,5 +124,10 @@
         <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Bill_Splitting_App$Main.ic" NAME="Main Coverage Results" MODIFIED="1764660304591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>app.*</FILTER>
+    </SUITE>
   </component>
 </project>
