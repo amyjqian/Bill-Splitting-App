@@ -25,11 +25,11 @@ public class CreateGroupFactory {
         return new CreateGroupFrame(viewModel, controller);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            CreateGroupFrame frame = CreateGroupFactory.createFrame();
-            frame.setVisible(true);
-        });
-    }
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            CreateGroupFrame frame = CreateGroupFactory.createFrame();
+//            frame.setVisible(true);
+//        });
+//    }
     }
 
