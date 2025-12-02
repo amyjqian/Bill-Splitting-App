@@ -1,5 +1,6 @@
 package use_case.add_expense;
 
+import entities.Group;
 import entities.Expense;
 import entities.ExpenseFactory;
 import entities.User;
@@ -20,15 +21,10 @@ public class AddExpenseInteractor implements AddExpenseInputBoundary {
     @Override
     public void execute(AddExpenseInputData addExpenseInputData) {
         try {
-            // Validate input
-            if (addExpenseInputData.getAmount() <= 0) {
-                expensePresenter.prepareFailView("Amount must be positive");
-                return;
-            } else if (addExpenseInputData.getParticipants().isEmpty()) {
-                expensePresenter.prepareFailView("At least one participant is required");
-                return;
-            } else if (addExpenseInputData.getGroupId() == null) {
-                expensePresenter.prepareFailView("Group ID is required");
+            // Validate input in the interactor (use case layer)
+            String validationError = validateInput(addExpenseInputData);
+            if (validationError != null) {
+                expensePresenter.prepareFailView(validationError);
                 return;
             }
 
@@ -36,8 +32,8 @@ public class AddExpenseInteractor implements AddExpenseInputBoundary {
             User currentUser = expenseDataAccessObject.getCurrentUser();
             addExpenseInputData.setPaidBy(currentUser);
 
-            // Verify group exists and get group details
-            entities.Group group = expenseDataAccessObject.getGroup(addExpenseInputData.getGroupId());
+            // Verify group exists
+            Group group = expenseDataAccessObject.getGroup(addExpenseInputData.getGroupId());
             if (group == null) {
                 expensePresenter.prepareFailView("Group not found");
                 return;
@@ -67,5 +63,21 @@ public class AddExpenseInteractor implements AddExpenseInputBoundary {
         } catch (Exception e) {
             expensePresenter.prepareFailView("Failed to add expense: " + e.getMessage());
         }
+    }
+
+    private String validateInput(AddExpenseInputData inputData) {
+        if (inputData.getExpenseName() == null || inputData.getExpenseName().trim().isEmpty()) {
+            return "Expense name cannot be empty";
+        }
+        if (inputData.getAmount() <= 0) {
+            return "Amount must be positive";
+        }
+        if (inputData.getParticipants() == null || inputData.getParticipants().isEmpty()) {
+            return "At least one participant is required";
+        }
+        if (inputData.getGroupId() == null) {
+            return "Group ID is required";
+        }
+        return null;
     }
 }

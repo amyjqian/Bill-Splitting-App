@@ -21,4 +21,3 @@ public class ViewHistoryPresenter implements ViewHistoryOutputBoundary {
         viewModel.firePropertyChanged();
     }
 }
-

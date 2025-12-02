@@ -3,9 +3,6 @@ package use_case.create_group;
 import data_access.SplitwiseDataAccess;
 import interface_adapter.create_group.CreateGroupController;
 import interface_adapter.create_group.CreateGroupViewModel;
-import use_case.create_group.CreateGroupInteractor;
-import use_case.create_group.CreateGroupOutputBoundary;
-import use_case.create_group.CreateGroupPresenter;
 import view.CreateGroupFrame;
 
 import javax.swing.*;
@@ -20,7 +17,7 @@ public class CreateGroupFactory {
         CreateGroupOutputBoundary presenter = new CreateGroupPresenter(viewModel);
 
         // Create the Interactor (input boundary)
-        CreateGroupInteractor interactor = new CreateGroupInteractor(new SplitwiseDataAccess(), presenter);
+        CreateGroupInteractor interactor = new CreateGroupInteractor((CreateGroupDataAccessInterface) new SplitwiseDataAccess(), presenter);
 
         // Create the Controller
         CreateGroupController controller = new CreateGroupController(interactor);

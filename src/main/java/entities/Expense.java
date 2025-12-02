@@ -12,22 +12,22 @@ public class Expense {
     private String category; // stores what category the expense should be
     private User paidBy;
     private boolean settled;
-    private String date;
+    private LocalDate date;
 
     public Expense(String expenseName,
                    String description,
                    double amount,
                    String category,
                    ArrayList<User> participants,
-                   User paiedBy) {
+                   User paidBy) {
         this.expenseName = expenseName;
         this.description = description;
         this.amount = amount;
         this.category = category;
         this.participants = participants;
-        this.paidBy = paiedBy;
+        this.paidBy = paidBy;
         this.settled = false;
-        this.date = String.valueOf(LocalDate.now());
+        this.date = LocalDate.now();
     }
 
     // Getters and setters
@@ -38,7 +38,7 @@ public class Expense {
     public List<User> getParticipants() { return participants; }
     public User getPaidBy() { return paidBy; }
     public boolean getSettled() { return settled; }
-    public String getDate() { return date; }
+    public LocalDate getDate() { return date; }
     public void setSettled(boolean newSettled) {this.settled = newSettled; }
 
     public void addParticipant(User user) {

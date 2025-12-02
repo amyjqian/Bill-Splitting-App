@@ -11,8 +11,9 @@ import java.awt.*;
 public class MyGroupFrame extends JFrame {
 
     private final MyGroupViewModel myGroupViewModel;
+    private final ViewHistoryController viewHistoryController;
     private final DisplayDataController displayDataController;
-    private final view.DisplayDataView chartView;
+    private final DisplayDataView chartView;
 
     JTextField groupField = new JTextField("group14", 15);
     JLabel errorLabel = new JLabel("", SwingConstants.CENTER);
@@ -20,11 +21,13 @@ public class MyGroupFrame extends JFrame {
     JTable expenseTable;
     DefaultTableModel tableModel;
 
-    public MyGroupFrame(MyGroupViewModel myGroupViewModel,
+    public MyGroupFrame(MyGroupViewModel viewModel,
                         ViewHistoryController viewHistoryController,
                         DisplayDataController displayDataController,
-                        view.DisplayDataView chartView) {
-        this.myGroupViewModel = myGroupViewModel;
+                        DisplayDataView chartView) {
+
+        this.myGroupViewModel = viewModel;
+        this.viewHistoryController = viewHistoryController;
         this.displayDataController = displayDataController;
         this.chartView = chartView;
 
@@ -48,13 +51,12 @@ public class MyGroupFrame extends JFrame {
         groupPanel.add(backButton);
         groupPanel.add(viewChartButton);
 
-
         errorLabel.setForeground(Color.RED);
 
-        JPanel northPanel = new JPanel(new BorderLayout());
-        northPanel.add(groupPanel, BorderLayout.CENTER);
-        northPanel.add(errorLabel, BorderLayout.SOUTH);
-
+        JPanel northPanel = new JPanel();
+        northPanel.setLayout(new BoxLayout(northPanel, BoxLayout.Y_AXIS));
+        northPanel.add(groupPanel);
+        northPanel.add(errorLabel);
 
         add(northPanel, BorderLayout.NORTH);
 
@@ -75,18 +77,17 @@ public class MyGroupFrame extends JFrame {
 
         // event listeners
         refreshHistoryButton.addActionListener(e -> {
-            viewHistoryController.execute(groupField.getText());
+            this.viewHistoryController.execute(groupField.getText());
         });
 
         viewChartButton.addActionListener(e -> {
-            displayDataController.load(); // run the use case
+            displayDataController.load();  //// calls interactor
 
-            // NOW show the view in a new window
-            JFrame chartFrame = new JFrame("Expenses Pie Chart");
-            chartFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            chartFrame.add(chartView);  // IMPORTANT!
+            //// opens new chart window properly
+            JFrame chartFrame = new JFrame("Expense Chart");
+            chartFrame.add(chartView);
             chartFrame.pack();
-            chartFrame.setLocationRelativeTo(this);
+            chartFrame.setLocationRelativeTo(null);
             chartFrame.setVisible(true);
         });
 
@@ -99,24 +100,26 @@ public class MyGroupFrame extends JFrame {
         });
 
         // button link
+
         newExpenseButton.addActionListener(e -> {
-            view.ExpenseFrame expenseFrame = new view.ExpenseFrame();
+            AddExpenseFrame expenseFrame = new AddExpenseFrame();
             expenseFrame.setVisible(true);
             this.dispose();    // close MyGroupFrame if that’s your pattern
         });
 
         settleUpButton.addActionListener(e -> {
-            view.SettleUpPanel settlePanel = new view.SettleUpPanel();
+            SettleUpPanel settlePanel = new SettleUpPanel();
             JFrame settleFrame = new JFrame("Settle Up");
             settleFrame.setVisible(true);
             this.dispose();
         });
 
         backButton.addActionListener(e -> {
-            view.GroupViewFrame gv = new view.GroupViewFrame();
+            GroupViewFrame gv = new GroupViewFrame();
             gv.setVisible(true);
             this.dispose();
         });
+
     }
 
     // helpers
@@ -135,9 +138,9 @@ public class MyGroupFrame extends JFrame {
 
         myGroupViewModel.getExpenses().forEach(exp -> {
             Object[] row = {
-                    exp.getDescription(),
-                    exp.getAmount(),
-                    exp.getDate()
+                    exp.get(0),   // description
+                    exp.get(1),   // amount
+                    exp.get(2)    // date
             };
             tableModel.addRow(row);
         });

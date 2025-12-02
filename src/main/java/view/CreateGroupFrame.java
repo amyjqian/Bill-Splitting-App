@@ -7,6 +7,7 @@ import use_case.create_group.CreateGroupInputBoundary;
 import use_case.create_group.CreateGroupInteractor;
 import use_case.create_group.CreateGroupOutputBoundary;
 import use_case.create_group.CreateGroupPresenter;
+import use_case.view_history.CreateViewHistoryFactory;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,10 +34,10 @@ public class CreateGroupFrame extends JFrame{
         JLabel groupNameLabel = new JLabel("Set Group Name: ", JLabel.LEFT);
         JTextField nameField = new JTextField(5);
         JLabel groupID = new JLabel("Your Invite Link is: ", JLabel.LEFT);
-        JLabel inviteLabel= new JLabel("placeholder");
+        //JLabel inviteLabel= new JLabel("placeholder");
 
         JButton submitButton = new JButton("Submit");
-        JButton switchViewButton = new JButton("Ok");
+        //JButton switchViewButton = new JButton("Ok");
 
         submitButton.addActionListener(
                 evt -> {
@@ -44,13 +45,21 @@ public class CreateGroupFrame extends JFrame{
                     if (evt.getSource().equals(submitButton)) {
                         final String groupName = createGroupViewModel.getGroupName();
                         createGroupController.execute(groupName);
-                        inviteLabel.setText(String.valueOf(createGroupViewModel.getInviteLink()));
-                    }
-                    else if (evt.getSource().equals(switchViewButton)) {
                         this.dispose();
                         SwingUtilities.invokeLater(() -> {
-                            // create an instance of the MyGroup frame which should lead to my group view (2.3)
+                            String apiKey = System.getenv("SPLITWISE_API_KEY");
+                            System.out.println("API KEY = " + apiKey);
+
+                            try {
+                                MyGroupFrame frame = CreateViewHistoryFactory.createFrame(apiKey);
+                                System.out.println("FRAME BUILT");
+                                frame.setVisible(true);
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
                         });
+
+                        //inviteLabel.setText(String.valueOf(createGroupViewModel.getInviteLink()));
                     }
                 }
         );
@@ -64,8 +73,8 @@ public class CreateGroupFrame extends JFrame{
         panel.add(nameField);
         panel.add(submitButton);
         panel.add(groupID);
-        panel.add(inviteLabel);
-        panel.add(switchViewButton);
+//        panel.add(inviteLabel);
+//        panel.add(switchViewButton);
         this.add(panel);
     }
     /**
@@ -75,5 +84,4 @@ public class CreateGroupFrame extends JFrame{
 //    public void actionPerformed(ActionEvent evt) {
 //        System.out.println("Click " + evt.getActionCommand());
 //    }
-    }
-
+}

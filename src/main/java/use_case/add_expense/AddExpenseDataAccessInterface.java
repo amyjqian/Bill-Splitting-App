@@ -1,6 +1,8 @@
 package use_case.add_expense;
 
+import entities.Group;
 import entities.Expense;
+import entities.User;
 
 /**
  * The DAO interface for the Add Expense Use Case.
@@ -19,12 +21,12 @@ public interface AddExpenseDataAccessInterface {
      * Gets the current user from Splitwise API
      * @return the current user
      */
-    entities.User getCurrentUser();
+    User getCurrentUser();
 
     /**
      * Gets a group from Splitwise API
      * @param groupId the group ID
      * @return the group
      */
-    entities.Group getGroup(Long groupId);
+    Group getGroup(Long groupId);
 }

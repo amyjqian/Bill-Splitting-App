@@ -1,59 +1,77 @@
 package app;
 
-import data_access.DisplayDataAccessObject;
-import data_access.ViewHistoryDataAccessObject;
-import interface_adapter.view_history.MyGroupViewModel;
-import interface_adapter.view_history.ViewHistoryPresenter;
-import interface_adapter.view_history.ViewHistoryController;
-import interface_adapters.displayData.DisplayDataController;
 import interface_adapters.displayData.DisplayDataViewModel;
-import interface_adapters.displayData.DisplayDataPresenter;
-import use_case.DisplayData.DisplayDataInteractor;
 import use_case.DisplayData.ExpenseDataAccessInterface;
-import use_case.view_history.ViewHistoryInteractor;
-
-//import io.github.cdimascio.dotenv.Dotenv;
 import view.DisplayDataView;
-import view.MyGroupFrame;
 
 import javax.swing.*;
+import java.net.http.*;
+import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
+import org.json.*;
 
+
+// ids for testing: // empty group: 90642377 // group with entries: 90437991
 public class AppBuilder {
+
+    private static final String TOKEN = "smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA";
+
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            MyGroupViewModel vm = new MyGroupViewModel("groupView");
-//            Dotenv dotenv = Dotenv.load();
-//            String apiKey = dotenv.get("SPLITWISE_API_KEY");
-            String groupId = "90437991";
-            String apiKey = "smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA";
 
-            ViewHistoryPresenter presenter = new ViewHistoryPresenter(vm);
-            ViewHistoryDataAccessObject dao = new ViewHistoryDataAccessObject(apiKey);
-            ViewHistoryInteractor interactor = new ViewHistoryInteractor(dao, presenter);
-            ViewHistoryController controller = new ViewHistoryController(interactor);
+        ExpenseDataAccessInterface dataAccess = () -> {
+            try {
+                HttpClient client = HttpClient.newHttpClient();
 
-            DisplayDataViewModel chartVM = new DisplayDataViewModel();
-            DisplayDataView chartView = new DisplayDataView();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create("https://secure.splitwise.com/api/v3.0/get_expenses?group_id="))
+                        .header("Authorization", "Bearer " + TOKEN)
+                        .build();
 
-            DisplayDataPresenter displayPresenter =
-                    new DisplayDataPresenter(chartVM, chartView);
+                HttpResponse<String> response =
+                        client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            ExpenseDataAccessInterface dataAccess =
-                    new DisplayDataAccessObject(apiKey,groupId);
+                JSONObject json = new JSONObject(response.body());
+                JSONArray expenses = json.getJSONArray("expenses");
 
-            DisplayDataInteractor displayInteractor =
-                    new DisplayDataInteractor(dataAccess, displayPresenter);
+                Map<String, Map<String, Object>> data = new HashMap<>();
 
-            DisplayDataController displayController =
-                    new DisplayDataController(displayInteractor);
+                for (int i = 0; i < expenses.length(); i++) {
+                    JSONObject exp = expenses.getJSONObject(i);
+                    String description = exp.getString("description");
+                    double amount = exp.getDouble("cost");
 
-            chartView.setController(displayController);
+                    String category = "Uncategorized";
+                    if (!exp.isNull("category")) {
+                        category = exp.getJSONObject("category").getString("name");
+                    }
 
-            MyGroupFrame frame = new MyGroupFrame(vm, controller, displayController, chartView);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
+                    Map<String, Object> entry = new HashMap<>();
+                    entry.put("amount", amount);
+                    entry.put("category", category);
+
+                    data.put(description + " #" + i, entry);
+                }
+
+                return data;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                return new HashMap<>();
+            }
+        };
+
+        DisplayDataViewModel vm = new DisplayDataViewModel();
+        vm.setData(dataAccess.getAllExpenses());
+
+        DisplayDataView view = new DisplayDataView();
+        view.update(vm);
+
+        JFrame frame = new JFrame("Expenses Pie Chart");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(view);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 }

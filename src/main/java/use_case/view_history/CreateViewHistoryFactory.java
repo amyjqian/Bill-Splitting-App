@@ -31,7 +31,6 @@ public class CreateViewHistoryFactory {
         // Create the Controller
         ViewHistoryController controller = new ViewHistoryController(interactor);
 
-        // Return the UI frame
         DisplayDataViewModel chartVM = new DisplayDataViewModel();
         DisplayDataView chartView = new DisplayDataView();
         DisplayDataPresenter displayPresenter =
@@ -48,13 +47,16 @@ public class CreateViewHistoryFactory {
                 new DisplayDataController(displayInteractor);
 
         chartView.setController(displayController);
+
+        // Return the UI frame
         return new MyGroupFrame(viewModel, controller, displayController, chartView);
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             // You may load your API key differently depending on how your program is set up.
-            String apiKey = System.getenv("SPLITWISE_API_KEY");
+//            String apiKey = System.getenv("SPLITWISE_API_KEY");
+            String apiKey = "smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA";
 
             MyGroupFrame frame = CreateViewHistoryFactory.createFrame(apiKey);
             frame.setVisible(true);

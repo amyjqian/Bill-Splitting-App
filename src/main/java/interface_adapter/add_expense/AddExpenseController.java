@@ -1,14 +1,13 @@
 package interface_adapter.add_expense;
 
-import use_case.add_expense.*;
+import entities.User;
+import use_case.add_expense.AddExpenseInputBoundary;
+import use_case.add_expense.AddExpenseInputData;
 
 public class AddExpenseController {
-    private AddExpenseInputBoundary addExpenseInteractor;
+    private final AddExpenseInputBoundary addExpenseInteractor;
 
-    public AddExpenseController(AddExpenseInteractor interactor) {
-    }
-
-    public void AddExpenseController(AddExpenseInputBoundary addExpenseInteractor) {
+    public AddExpenseController(AddExpenseInputBoundary addExpenseInteractor) {
         this.addExpenseInteractor = addExpenseInteractor;
     }
 
@@ -16,7 +15,7 @@ public class AddExpenseController {
                         String description,
                         float amount,
                         String category,
-                        java.util.ArrayList<entities.User> participants,
+                        java.util.ArrayList<User> participants,
                         Long groupId) {
         AddExpenseInputData inputData = new AddExpenseInputData(
                 expenseName, description, amount, category, participants, groupId);
