@@ -55,8 +55,7 @@ public class CreateViewHistoryFactory {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             // You may load your API key differently depending on how your program is set up.
-//            String apiKey = System.getenv("SPLITWISE_API_KEY");
-            String apiKey = "smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA";
+            String apiKey = System.getenv("SPLITWISE_API_KEY");
 
             MyGroupFrame frame = CreateViewHistoryFactory.createFrame(apiKey);
             frame.setVisible(true);
