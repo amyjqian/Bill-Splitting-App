@@ -1,3 +1,7 @@
+git rm --cached .idea/workspace.xml
+git rm --cached .idea/workspace.xml
+git rm --cached bill-splitter-app.iml
+.env
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !/src/main//target/
