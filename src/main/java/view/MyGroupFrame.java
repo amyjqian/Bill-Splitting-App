@@ -1,8 +1,10 @@
 package view;
 
+import interface_adapter.add_expense.AddExpenseController;
 import interface_adapter.view_history.MyGroupViewModel;
 import interface_adapter.view_history.ViewHistoryController;
 import interface_adapters.displayData.DisplayDataController;
+import use_case.add_expense.AddExpenseFactory;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -102,9 +104,9 @@ public class MyGroupFrame extends JFrame {
         // button link
 
         newExpenseButton.addActionListener(e -> {
-            AddExpenseFrame expenseFrame = new AddExpenseFrame();
+            AddExpenseFrame expenseFrame = AddExpenseFactory.createView(this);
             expenseFrame.setVisible(true);
-            this.dispose();    // close MyGroupFrame if that’s your pattern
+            this.setVisible(false);
         });
 
         settleUpButton.addActionListener(e -> {
