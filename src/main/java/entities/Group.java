@@ -1,48 +1,33 @@
 package entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Group {
-    private Long id;
-    private String name;
+    // Core properties
+    private String groupId;
+    private String groupName;
+
+    // Members and relationships
     private List<User> members;
+    private List<Expense> expenses;
+    private Map<User, Double> balances; // Track who owes whom
 
-    public Group(Long id, String name, List<User> members) {
-        this.id = id;
-        this.name = name;
-        this.members = members;
-    }
-    public Group (Long id, String name) {
-        this.id = id;
-        this.name = name;
+
+    public Group(String groupId, String groupName) {
+        this.groupId = groupId;
+        this.groupName = groupName;
         this.members = new ArrayList<>();
+        this.expenses = new ArrayList<>();
+        this.balances = new HashMap<>();
+
+
     }
-
-    public Group() {
-        this.members = new java.util.ArrayList<>();
-    }
-
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public List<User> getMembers() { return members; }
-
-    public void setId(Long id) { this.id = id; }
-    public void setName(String name) { this.name = name; }
-    public void setMembers(List<User> members) { this.members = members; }
-
     public void addMember(User user) {
-        if (!members.contains(user)) {
-            members.add(user);
-        }
+        this.members.add(user);
     }
 
-    public void removeMember(User user) {
-        members.remove(user);
+    public List<Expense> getExpenses() {
+        return expenses;
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }

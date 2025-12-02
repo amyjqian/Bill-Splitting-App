@@ -1,45 +1,34 @@
 package entities;
-
-import java.time.LocalDate;
+//changed this entity
 import java.util.ArrayList;
 import java.util.List;
 
 public class Expense {
-    private String expenseName;
+    private String id;
+    private String name;
     private double amount;
     private String description;
-    private List<User> participants;
-    private String category; // stores what category the expense should be
     private User paidBy;
-    private boolean settled;
-    private String date;
+    private List<User> participants;
+    private boolean settled = false;
+    private String date; // creation date
 
-    public Expense(String expenseName,
-                   String description,
-                   double amount,
-                   String category,
-                   ArrayList<User> participants,
-                   User paiedBy) {
-        this.expenseName = expenseName;
-        this.description = description;
+    public Expense(String id, double amount, String description, User paidBy, String date) {
+        this.id = id;
         this.amount = amount;
-        this.category = category;
-        this.participants = participants;
-        this.paidBy = paiedBy;
-        this.settled = false;
-        this.date = String.valueOf(LocalDate.now());
+        this.description = description;
+        this.paidBy = paidBy;
+        this.participants = new ArrayList<>();
+        this.date = date;
     }
 
     // Getters and setters
-    public String getExpenseName() { return expenseName; }
+    public String getId() { return id; }
     public double getAmount() { return amount; }
     public String getDescription() { return description; }
-    public String getCategory() { return category; }
-    public List<User> getParticipants() { return participants; }
     public User getPaidBy() { return paidBy; }
-    public boolean getSettled() { return settled; }
+    public List<User> getParticipants() { return participants; }
     public String getDate() { return date; }
-    public void setSettled(boolean newSettled) {this.settled = newSettled; }
 
     public void addParticipant(User user) {
         if (!participants.contains(user)) {
