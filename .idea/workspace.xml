@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="Updated">
-      <change afterPath="$PROJECT_DIR$/src/main/app/SettleUpMain.java" afterDir="false" />
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="Updated SettleUpCalculator: messages now prints user name">
+      <change afterPath="$PROJECT_DIR$/src/test/SettleUpInteractorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/usecase/SettleUpCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/usecase/SettleUpCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/usecase/SettleUpCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/view/SettleUpPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +66,7 @@
     "Application.MainFrame.executor": "Run",
     "Application.SettleUpMain.executor": "Run",
     "Application.SettleUpPanel.executor": "Run",
+    "JUnit.SettleUpInteractorTest.executor": "Coverage",
     "JUnit.SettleUpTest.testCalculatorAllExpensesSettled.executor": "Run",
     "JUnit.SettleUpTest.testCalculatorNoExpenses.executor": "Run",
     "JUnit.SettleUpTest.testExpenseEntity.executor": "Run",
@@ -92,7 +90,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SettleUpPanel">
+  <component name="RunManager" selected="Application.SettleUpMain">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.app.Main" />
       <module name="bill-splitter-app" />
@@ -108,7 +106,7 @@
     </configuration>
     <configuration name="SettleUpMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
-        <env name="SPLITWISE_API_KEY" value=" lj8hXq1uvnJhQqwhRcgd7fgJ3NsuAJjN0vFI73rW " />
+        <env name="SPLITWISE_API_KEY" value="t8J5L8eJw3M7RgY2ztRmnuB2tp3w7qcmMt5vdpi3" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="main.app.SettleUpMain" />
       <module name="bill-splitter-app" />
@@ -138,18 +136,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SettleUpTest.testCalculatorNoExpenses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SettleUpInteractorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bill-splitter-app" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Test.*" />
+          <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.SettleUpTest" />
-      <option name="METHOD_NAME" value="testCalculatorNoExpenses" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.SettleUpInteractorTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,16 +185,16 @@
       <item itemvalue="Application.SettleUpMain" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.SettleUpPanel" />
-      <item itemvalue="JUnit.SettleUpTest.testCalculatorNoExpenses" />
+      <item itemvalue="JUnit.SettleUpInteractorTest" />
       <item itemvalue="JUnit.SettleUpTest.testPresenterStoresValues" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SettleUpPanel" />
         <item itemvalue="Application.SettleUpMain" />
+        <item itemvalue="JUnit.SettleUpInteractorTest" />
+        <item itemvalue="Application.SettleUpPanel" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SettleUpTest.testPresenterStoresValues" />
-        <item itemvalue="JUnit.SettleUpTest.testCalculatorNoExpenses" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764567010952</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated SettleUpCalculator: messages now prints user name">
+      <option name="closed" value="true" />
+      <created>1764631379950</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764631379950</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,6 +246,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed participants to checkbox menu" />
     <MESSAGE value="Use GroupId to get group expenses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use GroupId to get group expenses" />
+    <MESSAGE value="Updated SettleUpCalculator: messages now prints user name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated SettleUpCalculator: messages now prints user name" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Bill_Splitting_App$SettleUpInteractorTest.ic" NAME="SettleUpInteractorTest Coverage Results" MODIFIED="1764634259059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>test.*</FILTER>
+    </SUITE>
   </component>
 </project>
