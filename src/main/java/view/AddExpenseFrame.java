@@ -25,30 +25,50 @@ public class AddExpenseFrame extends JFrame {
     private Group currentGroup;
     private JComboBox<Group> groupComboBox;
 
-    public AddExpenseFrame() {
+    private JFrame previousFrame;
+
+    public AddExpenseFrame(JFrame previousFrame) {
+        this.previousFrame = previousFrame;
         this.dataAccess = new SplitwiseDataAccess();
         initializeUI();
-        initializeUI();
         loadRealGroups();
+    }
+
+    public AddExpenseFrame() {
+        this(null);
     }
 
     private void initializeUI() {
         setTitle("Add Expense");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 500);
+        setSize(500, 600); // Slightly taller to accommodate back button
         setLocationRelativeTo(null);
 
+        JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+
+        JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        JButton backButton = new JButton("Back to Group");
+        backButton.addActionListener(new BackButtonListener());
+        topPanel.add(backButton);
+        mainPanel.add(topPanel, BorderLayout.NORTH);
+
+        // CENTER PANEL: Expense form
+        JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new GridLayout(0, 1, 10, 8));
+
+        // Title
+        JLabel titleLabel = new JLabel("Add New Expense", JLabel.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        centerPanel.add(titleLabel);
+
         // Initialize components
-        JLabel titleLabel = new JLabel("Enter Expense Details", JLabel.CENTER);
         nameField = new JTextField(20);
         amountField = new JTextField(20);
         descField = new JTextField(20);
 
         String[] options = {"Utility", "Food", "Gifts", "Transportation", "Entertainment", "Other"};
         comboBox = new JComboBox<>(options);
-
-        JButton submitButton = new JButton("Submit");
-        submitButton.addActionListener(new SubmitButtonListener());
 
         // Create panel for participants
         participantCheckboxes = new ArrayList<>();
@@ -71,27 +91,49 @@ public class AddExpenseFrame extends JFrame {
         JScrollPane participantsScrollPane = new JScrollPane(participantsPanel);
         participantsScrollPane.setPreferredSize(new Dimension(400, 120));
 
-        // Main panel with components
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(0, 1, 10, 8));
-        panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        // Add form components to center panel
+        centerPanel.add(new JLabel("Expense Name:"));
+        centerPanel.add(nameField);
+        centerPanel.add(new JLabel("Amount ($):"));
+        centerPanel.add(amountField);
+        centerPanel.add(new JLabel("Description:"));
+        centerPanel.add(descField);
+        centerPanel.add(groupLabel);
+        centerPanel.add(groupComboBox);
+        centerPanel.add(new JLabel("Category:"));
+        centerPanel.add(comboBox);
+        centerPanel.add(new JLabel("Participants:"));
+        centerPanel.add(participantsScrollPane);
 
-        panel.add(titleLabel);
-        panel.add(new JLabel("Expense Name:"));
-        panel.add(nameField);
-        panel.add(new JLabel("Amount:"));
-        panel.add(amountField);
-        panel.add(new JLabel("Description:"));
-        panel.add(descField);
-        panel.add(groupLabel);
-        panel.add(groupComboBox);
-        panel.add(new JLabel("Category:"));
-        panel.add(comboBox);
-        panel.add(new JLabel("Participants:"));
-        panel.add(participantsScrollPane);
-        panel.add(submitButton);
+        mainPanel.add(centerPanel, BorderLayout.CENTER);
 
-        add(panel);
+        // BOTTOM PANEL: Submit button
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JButton submitButton = new JButton("Add Expense");
+        submitButton.addActionListener(new SubmitButtonListener());
+        submitButton.setPreferredSize(new Dimension(150, 40));
+        submitButton.setBackground(new Color(76, 175, 80));
+        submitButton.setForeground(Color.black);
+        bottomPanel.add(submitButton);
+
+        mainPanel.add(bottomPanel, BorderLayout.SOUTH);
+
+        add(mainPanel);
+    }
+
+    // Back button listener
+    private class BackButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // Close current frame
+            dispose();
+
+            // Show previous frame if it exists
+            if (previousFrame != null) {
+                previousFrame.setVisible(true);
+            } else {
+            }
+        }
     }
 
     // Load participants for the current group
@@ -156,12 +198,6 @@ public class AddExpenseFrame extends JFrame {
     private class SubmitButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-//            if (controller == null) {
-//                JOptionPane.showMessageDialog(ExpenseDesc.this,
-//                        "Controller not initialized", "Error", JOptionPane.ERROR_MESSAGE);
-//                return;
-//            }
-
             try {
                 String expenseName = nameField.getText().trim();
                 String amountText = amountField.getText().trim();
@@ -169,9 +205,18 @@ public class AddExpenseFrame extends JFrame {
                 String category = (String) comboBox.getSelectedItem();
                 float amount;
 
+                // Validation
+                if (expenseName.isEmpty()) {
+                    showError("Please enter an expense name");
+                    return;
+                }
 
                 try {
                     amount = Float.parseFloat(amountText);
+                    if (amount <= 0) {
+                        showError("Amount must be positive");
+                        return;
+                    }
                 } catch (NumberFormatException ex) {
                     showError("Please enter a valid amount");
                     return;
@@ -185,6 +230,14 @@ public class AddExpenseFrame extends JFrame {
                         }
                     }
                 }
+                if (participants.isEmpty()) {
+                    showError("Please select at least one participant");
+                    return;
+                }
+                if (currentGroup == null) {
+                    showError("Please select a group");
+                    return;
+                }
                 controller.execute(expenseName, description, amount, category,
                         participants, currentGroup.getId());
 
@@ -194,18 +247,28 @@ public class AddExpenseFrame extends JFrame {
         }
     }
 
-    // Method to show success message
     public void showSuccess(String message) {
-        JOptionPane.showMessageDialog(this, message, "Success", JOptionPane.INFORMATION_MESSAGE);
-        clearForm();
+        int choice = JOptionPane.showConfirmDialog(this,
+                message + "\n\nWould you like to add another expense?",
+                "Success",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+
+        if (choice == JOptionPane.YES_OPTION) {
+            clearForm();
+        } else {
+            // Go back to previous frame
+            dispose();
+            if (previousFrame != null) {
+                previousFrame.setVisible(true);
+            }
+        }
     }
 
-    // Method to show error message
     public void showError(String message) {
         JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    // Clear form after successful submission
     private void clearForm() {
         nameField.setText("");
         amountField.setText("");
@@ -215,7 +278,13 @@ public class AddExpenseFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        AddExpenseFrame view = AddExpenseFactory.createView();
+        // Example usage
+        JFrame dummyPreviousFrame = new JFrame("Previous Frame");
+        dummyPreviousFrame.setSize(300, 200);
+        dummyPreviousFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        dummyPreviousFrame.setVisible(true);
+
+        AddExpenseFrame view = new AddExpenseFrame(dummyPreviousFrame);
         view.setVisible(true);
     }
 }

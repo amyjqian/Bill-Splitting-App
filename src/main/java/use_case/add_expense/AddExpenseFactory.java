@@ -4,13 +4,20 @@ import interface_adapter.add_expense.AddExpenseController;
 import data_access.SplitwiseDataAccess;
 import entities.ExpenseFactory;
 import view.AddExpenseFrame;
+import javax.swing.*;
 
 public class AddExpenseFactory {
 
-    public static AddExpenseFrame createView() {
-        AddExpenseFrame view = new AddExpenseFrame();
+    // Updated method to accept previous frame
+    public static AddExpenseFrame createView(JFrame previousFrame) {
+        AddExpenseFrame view = new AddExpenseFrame(previousFrame);
         configureView(view);
         return view;
+    }
+
+    // Keep original for backward compatibility
+    public static AddExpenseFrame createView() {
+        return createView(null);
     }
 
     private static void configureView(AddExpenseFrame view) {

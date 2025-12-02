@@ -4,86 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83ec3bfa-78d9-4358-bbf6-cb5fc6f493b4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_12_2025,_16_23_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_12_2025,_16_23_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_12_2025,_21_31_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_12_2025__16_23__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_12_2025__21_31__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_1_12_2025,_16_21_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_1_12_2025__16_21__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_access/AutoSaveDataAccessObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data_access/FileAutoSaveDataAccessObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/add_expense/AddExpenseViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/GroupCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/TestAllEndpoints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/TestExpenseAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/VerifyApiKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpensePresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/AddExpenseFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitingnore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="83ec3bfa-78d9-4358-bbf6-cb5fc6f493b4" name="Changes" comment="added autosave usecase">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bill-splitter-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bill-splitter-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/SplitwiseDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/SplitwiseDataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/ViewHistoryDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/ViewHistoryDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/ExpenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/ExpenseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/add_expense/AddExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/add_expense/AddExpenseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/ViewHistoryPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/ViewHistoryPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/view_history/CreateViewHistoryFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_history/CreateViewHistoryFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/AutoSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AutoSave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ExpenseDesc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ExpenseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ExpenseFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AddExpenseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AddExpenseFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/SplitwiseAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/SplitwiseAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api/SplitwiseAPIImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api/SplitwiseAPIImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/AppBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data_access/FileAutoSaveGateway.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/data_access/SplitwiseDataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/SplitwiseDataAccess.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/data_access/ViewHistoryDataAccessObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data_access/ViewHistoryDataAccessObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Expense.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/ExpenseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/ExpenseFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/add_expense/AddExpenseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/add_expense/AddExpenseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/join_group/JoinGroupController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/MyGroupState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/MyGroupState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/MyGroupViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/MyGroupViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/auto_save/AutoSaveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/auto_save/AutoSaveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/use_case/add_expense/AddExpenseInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/add_expense/AddExpenseInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/auto_save/AutoSaveInputBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/auto_save/AutoSaveInputBoundary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/auto_save/AutoSaveInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/auto_save/AutoSaveInteractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupInteractor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/create_group/CreateGroupPresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/login/LoginInputData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/join_group/JoinGroupInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/join_group/JoinGroupInteractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/join_group/JoinGroupPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/join_group/JoinGroupPresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/login/LoginInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/login/LoginInteractor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_history/CreateViewHistoryFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_history/CreateViewHistoryFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_history/ViewHistoryInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_history/ViewHistoryInteractor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_history/ViewHistoryOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_history/ViewHistoryOutputData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_my_group/ViewMyGroupOutputData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/AutoSave.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/AutoSave.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/CreateGroupFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/CreateGroupFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ExpenseDesc$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ExpenseDesc$SubmitButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ExpenseDesc.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/ExpenseFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ExpenseFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/ExpenseFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ExpenseFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GroupViewFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GroupViewFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/JoinGroupFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/JoinGroupFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MyGroupFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MyGroupFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/SettleUpPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/SettleUpPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,32 +47,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "tanSiru"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tanSiru&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/amyjqian/Bill-Splitting-App.git",
-    "accountId": "e69e95a7-1879-4e35-961b-e9b858726185"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/amyjqian/Bill-Splitting-App.git&quot;,
+    &quot;accountId&quot;: &quot;e69e95a7-1879-4e35-961b-e9b858726185&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="36HD0GgjkXWqbQ7IZwlCAJ5Q7Wc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AddExpenseFrame.executor": "Run",
+    "Application.AppBuilder.executor": "Run",
+    "Application.CreateGroupFactory.executor": "Run",
     "Application.CreateViewHistoryFactory.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Unnamed (1).executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging real-main",
+    "git-widget-placeholder": "real-main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -128,7 +88,53 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Unnamed (1)">
+    <configuration name="AppBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.AppBuilder" />
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Main" />
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed (1)" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="use_case.create_group.CreateGroupFactory" />
+      <module name="bill-splitter-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="view.MyGroupFrame" />
+      <module name="bill-splitter-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="temp2" />
       <method v="2">
@@ -140,6 +146,18 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.Unnamed (1)" />
+      <item itemvalue="Application.AppBuilder" />
+      <item itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.AppBuilder" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -163,5 +181,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added autosave usecase" />
+    <option name="LAST_COMMIT_MESSAGE" value="added autosave usecase" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Bill_Splitting_App1$Unnamed__1_.ic" NAME="Unnamed (1) Coverage Results" MODIFIED="1764657995705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
