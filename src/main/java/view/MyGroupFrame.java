@@ -12,7 +12,7 @@ public class MyGroupFrame extends JFrame {
 
     private final MyGroupViewModel myGroupViewModel;
     private final DisplayDataController displayDataController;
-    private final DisplayDataView chartView;
+    private final view.DisplayDataView chartView;
 
     JTextField groupField = new JTextField("group14", 15);
     JLabel errorLabel = new JLabel("", SwingConstants.CENTER);
@@ -23,7 +23,7 @@ public class MyGroupFrame extends JFrame {
     public MyGroupFrame(MyGroupViewModel myGroupViewModel,
                         ViewHistoryController viewHistoryController,
                         DisplayDataController displayDataController,
-                        DisplayDataView chartView) {
+                        view.DisplayDataView chartView) {
         this.myGroupViewModel = myGroupViewModel;
         this.displayDataController = displayDataController;
         this.chartView = chartView;
@@ -100,20 +100,20 @@ public class MyGroupFrame extends JFrame {
 
         // button link
         newExpenseButton.addActionListener(e -> {
-            ExpenseFrame expenseFrame = new ExpenseFrame();
+            view.ExpenseFrame expenseFrame = new view.ExpenseFrame();
             expenseFrame.setVisible(true);
             this.dispose();    // close MyGroupFrame if that’s your pattern
         });
 
         settleUpButton.addActionListener(e -> {
-            SettleUpPanel settlePanel = new SettleUpPanel();
+            view.SettleUpPanel settlePanel = new view.SettleUpPanel();
             JFrame settleFrame = new JFrame("Settle Up");
             settleFrame.setVisible(true);
             this.dispose();
         });
 
         backButton.addActionListener(e -> {
-            GroupViewFrame gv = new GroupViewFrame();
+            view.GroupViewFrame gv = new view.GroupViewFrame();
             gv.setVisible(true);
             this.dispose();
         });
