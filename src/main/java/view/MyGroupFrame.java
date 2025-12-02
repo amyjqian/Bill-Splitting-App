@@ -77,9 +77,9 @@ public class MyGroupFrame extends JFrame {
         });
 
         // button link
-        /*
+
         newExpenseButton.addActionListener(e -> {
-            ExpenseFrame expenseFrame = new ExpenseFrame();
+            AddExpenseFrame expenseFrame = new AddExpenseFrame();
             expenseFrame.setVisible(true);
             this.dispose();    // close MyGroupFrame if that’s your pattern
         });
@@ -96,7 +96,7 @@ public class MyGroupFrame extends JFrame {
             gv.setVisible(true);
             this.dispose();
         });
-         */
+
     }
 
     // helpers
