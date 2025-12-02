@@ -77,6 +77,7 @@ public class MyGroupFrame extends JFrame {
         });
 
         // button link
+        /*
         newExpenseButton.addActionListener(e -> {
             ExpenseFrame expenseFrame = new ExpenseFrame();
             expenseFrame.setVisible(true);
@@ -95,6 +96,7 @@ public class MyGroupFrame extends JFrame {
             gv.setVisible(true);
             this.dispose();
         });
+         */
     }
 
     // helpers

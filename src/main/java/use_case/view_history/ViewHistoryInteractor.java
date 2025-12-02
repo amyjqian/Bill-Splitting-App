@@ -1,12 +1,12 @@
 package use_case.view_history;
 
 import entities.Expense;
-// import use_case.view_history.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
+public class ViewHistoryInteractor implements ViewHistoryInputBoundary {
+
     private final ViewHistoryDataAccessInterface viewHistoryDataAccessInterface;
     private final ViewHistoryOutputBoundary viewHistoryOutputBoundary;
 
@@ -15,6 +15,8 @@ public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
         this.viewHistoryDataAccessInterface = viewHistoryDataAccessInterface;
         this.viewHistoryOutputBoundary = viewHistoryOutputBoundary;
     }
+
+    @Override
     public void execute(ViewHistoryInputData viewHistoryInputData) {
 
         String groupId = viewHistoryInputData.getGroupId();
@@ -24,15 +26,14 @@ public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
             );
             return;
         }
+
         try {
-            // dao
             List<Expense> expenses = viewHistoryDataAccessInterface.getGroupExpenses(groupId);
 
-            // empty expense
             if (expenses == null) {
-                ViewHistoryOutputData outputData =
-                        new ViewHistoryOutputData(null, "No history found.", false);
-                viewHistoryOutputBoundary.prepareFailedView(outputData);
+                viewHistoryOutputBoundary.prepareFailedView(
+                        new ViewHistoryOutputData(null, "No history found.", false)
+                );
                 return;
             }
 
@@ -40,24 +41,20 @@ public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
 
             for (Expense exp : expenses) {
                 cleanRows.add(List.of(
-                        exp.getDescription(),
+                        exp.getExpenseName(),
                         exp.getAmount(),
                         exp.getDate()
                 ));
             }
 
-            // successful output
-            ViewHistoryOutputData outputData =
-                    new ViewHistoryOutputData(cleanRows,"", true);
+            viewHistoryOutputBoundary.prepareSuccessView(
+                    new ViewHistoryOutputData(cleanRows, "", true)
+            );
 
-            viewHistoryOutputBoundary.prepareSuccessView(outputData);
-
-            } catch (Exception e) {
-                // api failed
-                ViewHistoryOutputData outputData =
-                        new ViewHistoryOutputData(List.of(), e.getMessage(), false);
-                viewHistoryOutputBoundary.prepareFailedView(outputData);
-            }
+        } catch (Exception e) {
+            viewHistoryOutputBoundary.prepareFailedView(
+                    new ViewHistoryOutputData(List.of(), e.getMessage(), false)
+            );
         }
     }
-
+}

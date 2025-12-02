@@ -1,12 +1,11 @@
 package interface_adapter.view_history;
 
-import entities.Expense;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class MyGroupState {
-    private List<List<Object>> expenses =  new ArrayList<>();
+    private List<List<Object>> expenses = new ArrayList<>();
     private String message = "";
 
     public MyGroupState() {}
@@ -17,8 +16,9 @@ public class MyGroupState {
     }
 
     public List<List<Object>> getExpenses() { return expenses; }
-    public void setExpenses(List<?> expenses) {
-        this.expenses = new ArrayList<>((List<List<Object>>) expenses);
+
+    public void setExpenses(List<List<Object>> expenses) {
+        this.expenses = new ArrayList<>(expenses);
     }
 
     public String getMessage() { return message; }
