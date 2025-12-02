@@ -4,6 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="fixed buildExpenseRequestBody">
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/AddExpenseViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPIImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controller/AddExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/AddExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data_access/SplitwiseDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/SplitwiseDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/ExpenseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/GroupCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/GroupCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/TestAllEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestAllEndpoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/TestExpenseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestExpenseAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/VerifyApiKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/VerifyApiKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/AddExpensePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpensePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/AutoSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AutoSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AddExpenseFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ExpenseFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/GroupViewFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GroupViewFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/JoinGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SettleUpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/MainFrame.class" beforeDir="false" />
     <list default="true" id="2ede0f0b-e0f6-4497-ac7e-30adeda285c8" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/entities/ExpenseFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
@@ -33,6 +73,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+        <entry key="$PROJECT_DIR$" value="main" />
         <entry key="$PROJECT_DIR$" value="viewHistory" />
       </map>
     </option>
