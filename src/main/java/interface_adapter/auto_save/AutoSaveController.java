@@ -16,6 +16,6 @@ public class AutoSaveController{
     }
 
     public String loadDraft() {
-        interactor.load();
+        return interactor.load();
     }
 }

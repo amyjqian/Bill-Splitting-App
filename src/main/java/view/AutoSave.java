@@ -1,9 +1,10 @@
+/*
 package view;
 
 import interface_adapter.auto_save.AutoSaveController;
 import use_case.auto_save.AutoSaveInteractor;
 import data_access.FileAutoSaveDataAccessObject;
-import data_access.AutoSaveGateway;
+import data_access.AutoSaveDataAccessObject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +21,7 @@ public class AutoSave extends JPanel {
         saveStatus.setForeground(Color.GREEN);
         add(saveStatus, BorderLayout.SOUTH);
 
-        AutoSaveGateway gateway = new FileAutoSaveDataAccessObject();
+        AutoSaveDataAccessObject gateway = new FileAutoSaveDataAccessObject();
         AutoSaveInteractor interactor = new AutoSaveInteractor(gateway);
         controller = new AutoSaveController(interactor);
 
@@ -44,3 +45,4 @@ public class AutoSave extends JPanel {
         saveStatus.setForeground(color);
     }
 }
+*/

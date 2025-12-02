@@ -22,7 +22,7 @@ public class AppBuilder {
             ViewHistoryInteractor interactor = new ViewHistoryInteractor(dao, presenter);
             ViewHistoryController controller = new ViewHistoryController(interactor);
 
-            MyGroupFrame frame = new MyGroupFrame(vm, controller);
+            MyGroupFrame frame = new MyGroupFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(600, 400);
             frame.setVisible(true);

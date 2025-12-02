@@ -20,11 +20,12 @@ public class AutoSaveInteractor implements AutoSaveInputBoundary {
     }
 
     @Override
-    public void load() {
+    public String load() {
         String content = dao.loadDraft();
         boolean success = content != null && !content.isEmpty();
         presenter.present(
                 new AutoSaveResponseModel(success, content)
         );
+        return content;
     }
 }

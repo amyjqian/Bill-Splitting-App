@@ -18,11 +18,19 @@ public class MyGroupFrame extends JFrame implements AutoSaveStatusDisplay {
     JButton newExpenseButton = new JButton("New Expense");
     JButton settleUpButton = new JButton("Settle Up");
 
+    private AutoSaveController autoSaveController;
+    private JLabel autosaveLabel;
+
     public MyGroupFrame() {
         setTitle("My Group");
         setLayout(new BorderLayout(10, 10));
 
-        AutoSaveDataAccessObject dao = new FileAutoSaveDataAccessObject();
+        AutoSaveDataAccessObject dao = new FileAutoSaveDataAccessObject() {
+            @Override
+            public void safeDraft(String content) {
+
+            }
+        };
         AutoSaveInteractor interactor = new AutoSaveInteractor(dao, responseModel -> {
             if (responseModel.isSuccess()) {
                 showAutoSaveStatus("All changes saved.");
@@ -35,6 +43,7 @@ public class MyGroupFrame extends JFrame implements AutoSaveStatusDisplay {
         // Autosave label
         autosaveLabel = new JLabel("All changes saved.", SwingConstants.CENTER);
         autosaveLabel.setForeground(Color.GREEN);
+        add(autosaveLabel, BorderLayout.NORTH);
 
         JPanel titleRow = new JPanel(new BorderLayout());
         titleLabel.setFont(new Font("SansSerif", Font.BOLD, 18));
@@ -47,7 +56,6 @@ public class MyGroupFrame extends JFrame implements AutoSaveStatusDisplay {
         groupPanel.add(groupField);
         groupPanel.add(backButton);
         add(groupPanel,BorderLayout.BEFORE_FIRST_LINE);
-
 
         // table
         expenseTable = new JTable(new Object[][]{}, new String[]{"Expenses", "Amount", "Date Added"});
@@ -62,6 +70,13 @@ public class MyGroupFrame extends JFrame implements AutoSaveStatusDisplay {
         footerPanel.add(newExpenseButton);
         footerPanel.add(settleUpButton);
         add(footerPanel, BorderLayout.SOUTH);
+    }
+
+    @Override
+    public void showAutoSaveStatus(String message) {
+        if (autosaveLabel != null) {
+            autosaveLabel.setText(message);
+        }
     }
 
     public String getViewName() {

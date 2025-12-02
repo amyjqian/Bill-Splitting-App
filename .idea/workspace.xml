@@ -5,34 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="852a6bd0-1620-4b14-ab23-5e2550b8e854" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main.java/app/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/use_case/view_history/ViewHistoryInteractorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitingnore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitingnore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bill-splitter-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bill-splitter-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/app/AppBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/app/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/data_access/ViewHistoryDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/data_access/ViewHistoryDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/entities/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/interface_adapter/view_history/MyGroupState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/interface_adapter/view_history/MyGroupState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/interface_adapter/view_history/MyGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/interface_adapter/view_history/MyGroupViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/interface_adapter/view_history/ViewHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/interface_adapter/view_history/ViewHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/interface_adapter/view_history/ViewHistoryPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/interface_adapter/view_history/ViewHistoryPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryDataAccessInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryOutputBoundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryOutputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/view/ExpenseDesc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/view/ExpenseFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/view/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/view/MyGroupFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test/use_case/view_history/ViewHistoryInteractorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPIImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/AppBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/AutoSaveDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/AutoSaveDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/FileAutoSaveDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/FileAutoSaveDataAccessObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/SplitwiseDataAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/auto_save/AutoSaveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/auto_save/AutoSaveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/create_group/CreateGroupViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/join_group/JoinGroupViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/add_expense/AddExpenseDataAccessInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/auto_save/AutoSaveInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/auto_save/AutoSaveInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/auto_save/AutoSaveInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/auto_save/AutoSaveInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupDataAccessInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInputBoundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInputData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupInteractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupOutputBoundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupOutputData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/create_group/CreateGroupPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupDataAccessInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInputBoundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInputData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupInteractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputBoundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupOutputData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/join_group/JoinGroupPresenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AutoSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AutoSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AutoSaveDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AutoSaveDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/GroupCheck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/TestAllEndpoints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/TestExpenseAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/VerifyApiKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/auto_save/AutoSaveInteractorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/use_case/auto_save/AutoSaveInteractorTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupAPITest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/create_group/CreateGroupInteractorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/join_group/JoinGroupInteractorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/use_case/view_history/ViewHistoryInteractorTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +73,12 @@
     &quot;assignee&quot;: &quot;angelajj465&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/amyjqian/Bill-Splitting-App.git&quot;,
-    &quot;accountId&quot;: &quot;1fdfdb60-dbec-49a9-89d9-230b5d7fac52&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/amyjqian/Bill-Splitting-App.git",
+    "accountId": "d38f565f-d0a1-4da9-9863-f62ef233c0a2"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -69,30 +87,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AppBuilder.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MyGroupFrame.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ViewHistoryInteractorTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;viewHistory&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppBuilder.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MyGroupFrame.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "JUnit.ViewHistoryInteractorTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "AutoSaveGUI",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AppBuilder">
+    <configuration name="AppBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.AppBuilder" />
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyGroupFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.MyGroupFrame" />
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.Main" />
       <module name="bill-splitter-app" />
@@ -100,11 +150,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppBuilder" />
+        <item itemvalue="Application.MyGroupFrame" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
@@ -115,7 +172,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762785916007</updated>
+      <workItem from="1764642737250" duration="2146000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

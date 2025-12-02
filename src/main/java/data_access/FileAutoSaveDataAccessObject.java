@@ -2,7 +2,7 @@ package data_access;
 
 import java.io.*;
 
-public class FileAutoSaveDataAccessObject implements AutoSaveDataAccessObject {
+public abstract class FileAutoSaveDataAccessObject implements AutoSaveDataAccessObject {
 
     private final File file = new File("autosave.txt");
 

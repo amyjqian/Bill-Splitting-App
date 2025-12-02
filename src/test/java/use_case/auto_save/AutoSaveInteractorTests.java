@@ -1,6 +1,6 @@
 package use_case.auto_save;
 
-import data_access.AutoSaveGateway;
+import data_access.AutoSaveDataAccessObject;
 import data_access.FileAutoSaveDataAccessObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,14 +12,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AutoSaveInteractorTest {
 
-    private AutoSaveGateway autoSaveGateway;
+    private AutoSaveDataAccessObject autoSaveDataAccessObject;
     private AutoSaveInteractor autoSaveInteractor;
     private final File file = new File("autosave.txt");
 
     @BeforeEach
     void setUp() {
-        autoSaveGateway = new FileAutoSaveDataAccessObject();
-        autoSaveInteractor = new AutoSaveInteractor(autoSaveGateway);
+        autoSaveDataAccessObject = new FileAutoSaveDataAccessObject();
+        autoSaveInteractor = new AutoSaveInteractor(autoSaveDataAccessObject);
         if (file.exists()) file.delete();
     }
 
