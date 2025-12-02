@@ -1,0 +1,160 @@
+Index: src/main/java/view/MyGroupFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package view;\n\nimport interface_adapter.view_history.MyGroupViewModel;\nimport interface_adapter.view_history.ViewHistoryController;\n\nimport javax.swing.*;\nimport javax.swing.table.DefaultTableModel;\nimport java.awt.*;\n\npublic class MyGroupFrame extends JFrame {\n\n    private final MyGroupViewModel myGroupViewModel;\n    private final ViewHistoryController controller;\n\n    JTextField groupField = new JTextField(\"group14\", 15);\n    JLabel errorLabel = new JLabel(\"\", SwingConstants.CENTER);\n\n    JTable expenseTable;\n    DefaultTableModel tableModel;\n\n    public MyGroupFrame(MyGroupViewModel myGroupViewModel, ViewHistoryController viewHistoryController) {\n        this.myGroupViewModel = myGroupViewModel;\n        this.controller = viewHistoryController;\n\n        setTitle(\"My Group\");\n        setLayout(new BorderLayout(10, 10));\n\n        // top section: groupName, Back, Refresh\n        // JLabel titleLabel = new JLabel(\"My Group\", SwingConstants.CENTER);\n        JLabel groupLabel = new JLabel(\"Group:\");\n        groupField.setEditable(false);\n\n        JButton backButton = new JButton(\"Back\");\n        JButton refreshHistoryButton = new JButton(\"Refresh History\");\n\n        JPanel groupPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));\n        groupPanel.add(groupLabel);\n        groupPanel.add(groupField);\n        groupPanel.add(refreshHistoryButton);\n        groupPanel.add(backButton);\n\n        errorLabel.setForeground(Color.RED);\n\n        JPanel northPanel = new JPanel();\n        northPanel.setLayout(new BoxLayout(northPanel, BoxLayout.Y_AXIS));\n        northPanel.add(groupPanel);\n        northPanel.add(errorLabel);\n\n        add(northPanel, BorderLayout.NORTH);\n\n        // table section\n        tableModel = new DefaultTableModel(new String[]{\"Description\", \"Amount\", \"Date\"}, 0);\n        expenseTable = new JTable(tableModel);\n        add(new JScrollPane(expenseTable), BorderLayout.CENTER);\n\n        // bottom buttons\n        JButton newExpenseButton = new JButton(\"New Expense\");\n        JButton settleUpButton = new JButton(\"Settle Up\");\n\n        JPanel footerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 50, 10));\n        footerPanel.add(newExpenseButton);\n        footerPanel.add(settleUpButton);\n\n        add(footerPanel, BorderLayout.SOUTH);\n\n        // event listeners\n        refreshHistoryButton.addActionListener(e -> {\n            this.controller.execute(groupField.getText());\n        });\n\n        // ViewModel listener\n        myGroupViewModel.addPropertyChangeListener(evt -> {\n            SwingUtilities.invokeLater(() -> {\n                updateErrorLabel();\n                updateExpenseTable();\n            });\n        });\n\n        // button link\n        newExpenseButton.addActionListener(e -> {\n            ExpenseFrame expenseFrame = new ExpenseFrame();\n            expenseFrame.setVisible(true);\n            this.dispose();    // close MyGroupFrame if that’s your pattern\n        });\n\n        settleUpButton.addActionListener(e -> {\n            SettleUpPanel settlePanel = new SettleUpPanel();\n            JFrame settleFrame = new JFrame(\"Settle Up\");\n            settleFrame.setVisible(true);\n            this.dispose();\n        });\n\n        backButton.addActionListener(e -> {\n            GroupViewFrame gv = new GroupViewFrame();\n            gv.setVisible(true);\n            this.dispose();\n        });\n    }\n\n    // helpers\n    private void updateErrorLabel() {\n        errorLabel.setText(myGroupViewModel.getMessage());\n    }\n\n    private void updateExpenseTable() {\n        // Clear table\n        tableModel.setRowCount(0);\n\n        if (myGroupViewModel.getExpenses().isEmpty()) {\n            errorLabel.setText(\"No history found.\");\n            return;\n        }\n\n        myGroupViewModel.getExpenses().forEach(exp -> {\n            Object[] row = {\n                    exp.get(0),   // description\n                    exp.get(1),   // amount\n                    exp.get(2)    // date\n            };\n            tableModel.addRow(row);\n        });\n    }\n\n    public String getViewName() {\n        return \"groupView\";\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/view/MyGroupFrame.java b/src/main/java/view/MyGroupFrame.java
+--- a/src/main/java/view/MyGroupFrame.java	(revision 2ebbfe7dceb88a436ad374b2f0325f826afe7a45)
++++ b/src/main/java/view/MyGroupFrame.java	(date 1764642666912)
+@@ -77,6 +77,7 @@
+         });
+ 
+         // button link
++        /*
+         newExpenseButton.addActionListener(e -> {
+             ExpenseFrame expenseFrame = new ExpenseFrame();
+             expenseFrame.setVisible(true);
+@@ -95,6 +96,7 @@
+             gv.setVisible(true);
+             this.dispose();
+         });
++         */
+     }
+ 
+     // helpers
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"852a6bd0-1620-4b14-ab23-5e2550b8e854\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/src/main.java/app/Main.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/test/java/use_case/view_history/ViewHistoryInteractorTest.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.gitingnore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.gitingnore\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/encodings.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/encodings.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/bill-splitter-app.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/bill-splitter-app.iml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/app/AppBuilder.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/app/AppBuilder.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/app/Main.java\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/data_access/ViewHistoryDataAccessObject.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/data_access/ViewHistoryDataAccessObject.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/entities/Expense.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/entities/Expense.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/entities/Group.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/entities/Group.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/entities/User.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/entities/User.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/interface_adapter/view_history/MyGroupState.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/interface_adapter/view_history/MyGroupState.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/interface_adapter/view_history/MyGroupViewModel.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/interface_adapter/view_history/MyGroupViewModel.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/interface_adapter/view_history/ViewHistoryController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/interface_adapter/view_history/ViewHistoryController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/interface_adapter/view_history/ViewHistoryPresenter.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/interface_adapter/view_history/ViewHistoryPresenter.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryDataAccessInterface.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryDataAccessInterface.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInputBoundary.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInputBoundary.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInputData.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInputData.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInteractor.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInteractor.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryOutputBoundary.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryOutputBoundary.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryOutputData.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryOutputData.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/view/ExpenseDesc.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/view/ExpenseDesc.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/view/ExpenseFrame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/view/ExpenseFrame.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/view/MainFrame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/view/MainFrame.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/view/MyGroupFrame.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main.java/view/MyGroupFrame.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/test/test/use_case/view_history/ViewHistoryInteractorTest.java\" beforeDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;angelajj465&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/amyjqian/Bill-Splitting-App.git&quot;,\n    &quot;accountId&quot;: &quot;1fdfdb60-dbec-49a9-89d9-230b5d7fac52&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 3\n}</component>\n  <component name=\"ProjectId\" id=\"35I7pYP2YvEey74h4YjfYOjs64a\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Application.AppBuilder.executor&quot;: &quot;Run&quot;,\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\n    &quot;Application.MyGroupFrame.executor&quot;: &quot;Run&quot;,\n    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,\n    &quot;JUnit.ViewHistoryInteractorTest.executor&quot;: &quot;Run&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;viewHistory&quot;,\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$\" />\n      <recent name=\"$PROJECT_DIR$/src/main\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"app.Main\" />\n      <module name=\"bill-splitter-app\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"852a6bd0-1620-4b14-ab23-5e2550b8e854\" name=\"Changes\" comment=\"\" />\n      <created>1762785916007</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1762785916007</updated>\n    </task>\n    <servers />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2ebbfe7dceb88a436ad374b2f0325f826afe7a45)
++++ b/.idea/workspace.xml	(date 1764641418420)
+@@ -5,34 +5,9 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="852a6bd0-1620-4b14-ab23-5e2550b8e854" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main.java/app/Main.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/test/java/use_case/view_history/ViewHistoryInteractorTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.gitingnore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitingnore" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/bill-splitter-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bill-splitter-app.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/app/AppBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/app/AppBuilder.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/app/Main.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/data_access/ViewHistoryDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/data_access/ViewHistoryDataAccessObject.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/entities/Expense.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/entities/Group.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/entities/User.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/interface_adapter/view_history/MyGroupState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/interface_adapter/view_history/MyGroupState.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/interface_adapter/view_history/MyGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/interface_adapter/view_history/MyGroupViewModel.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/interface_adapter/view_history/ViewHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/interface_adapter/view_history/ViewHistoryController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/interface_adapter/view_history/ViewHistoryPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/interface_adapter/view_history/ViewHistoryPresenter.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryDataAccessInterface.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInputBoundary.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInputData.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryInteractor.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryOutputBoundary.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/use_case/view_history/ViewHistoryOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/use_case/view_history/ViewHistoryOutputData.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/view/ExpenseDesc.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/view/ExpenseFrame.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/view/MainFrame.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.java/view/MyGroupFrame.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/test/use_case/view_history/ViewHistoryInteractorTest.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -47,6 +22,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="viewHistory" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+@@ -69,25 +49,27 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.AppBuilder.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.MyGroupFrame.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+-    &quot;JUnit.ViewHistoryInteractorTest.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;viewHistory&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.AppBuilder.executor": "Run",
++    "Application.Main.executor": "Run",
++    "Application.MyGroupFrame.executor": "Run",
++    "Application.Unnamed.executor": "Run",
++    "JUnit.ViewHistoryInteractorTest.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "Back-up-viewHistory",
++    "kotlin-language-version-configured": "true",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/" />
+       <recent name="$PROJECT_DIR$" />
+       <recent name="$PROJECT_DIR$/src/main" />
+     </key>
+@@ -118,4 +100,11 @@
+     </task>
+     <servers />
+   </component>
++  <component name="XDebuggerManager">
++    <pin-to-top-manager>
++      <pinned-members>
++        <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
++      </pinned-members>
++    </pin-to-top-manager>
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"Encoding\">\n    <file url=\"file://$PROJECT_DIR$\" charset=\"UTF-8\" />\n    <file url=\"file://$PROJECT_DIR$/src/main.java/java\" charset=\"UTF-8\" />\n    <file url=\"file://$PROJECT_DIR$/src/main.java/resources\" charset=\"UTF-8\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	(revision 2ebbfe7dceb88a436ad374b2f0325f826afe7a45)
++++ b/.idea/encodings.xml	(date 1764640878599)
+@@ -4,5 +4,7 @@
+     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main.java/java" charset="UTF-8" />
+     <file url="file://$PROJECT_DIR$/src/main.java/resources" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+   </component>
+ </project>
+\ No newline at end of file
