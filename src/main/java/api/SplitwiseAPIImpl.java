@@ -420,38 +420,6 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
     }
 
     @Override
-    public void addUserToGroup(long groupID, long userID) throws JSONException {
-        final OkHttpClient client = new OkHttpClient().newBuilder().build();
-        final MediaType mediaType = MediaType.parse(APPLICATION_JSON);
-
-        // Build the request body according to Splitwise API requirements
-        final JSONObject requestBody = addUserRequestBody(groupID, userID);
-        final RequestBody body = RequestBody.create(mediaType, requestBody.toString());
-
-        final Request request = new Request.Builder()
-                .url(API_URL + "/add_user_to_group")
-                .method("POST", body)
-                .addHeader(AUTHORIZATION, BEARER_PREFIX + getAPIKey())
-                .addHeader(CONTENT_TYPE, APPLICATION_JSON)
-                .build();
-
-        try {
-            final Response response = client.newCall(request).execute();
-            final String responseBodyString = response.body().string();
-            System.out.println("DEBUG - Add User to Group Response: " + responseBodyString);
-
-            final JSONObject responseBody = new JSONObject(responseBodyString);
-
-            // Now check success field
-            if (!responseBody.optBoolean("success", false)) {
-                throw new RuntimeException("API returned success = false");
-            }
-        } catch (IOException | JSONException event) {
-            throw new RuntimeException("API call failed: " + event.getMessage(), event);
-        }
-    }
-
-    @Override
     public User getUser(long userID) throws JSONException {
         OkHttpClient client = new OkHttpClient();
 
@@ -487,5 +455,4 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
     }
 
 }
-
 

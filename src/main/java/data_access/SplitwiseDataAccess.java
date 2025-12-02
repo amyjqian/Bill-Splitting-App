@@ -6,10 +6,12 @@ import entities.User;
 import use_case.add_expense.AddExpenseDataAccessInterface;
 import api.SplitwiseAPI;
 import api.SplitwiseAPIImpl;
+import use_case.create_group.CreateGroupDataAccessInterface;
 
 import java.util.List;
 
-public class SplitwiseDataAccess implements AddExpenseDataAccessInterface {
+public class SplitwiseDataAccess implements AddExpenseDataAccessInterface,
+        CreateGroupDataAccessInterface {
     private final SplitwiseAPI splitwiseAPI;
 
     public SplitwiseDataAccess() {
@@ -47,11 +49,21 @@ public class SplitwiseDataAccess implements AddExpenseDataAccessInterface {
             throw new RuntimeException("Failed to get group from Splitwise: " + e.getMessage(), e);
         }
     }
+
     public List<Group> getGroups() {
         try {
             return splitwiseAPI.getGroups();
         } catch (Exception e) {
             throw new RuntimeException("Failed to get groups: " + e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public Group createGroup(String name) {
+        try {
+            return splitwiseAPI.createGroup(name);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create group" + e.getMessage(), e);
         }
     }
 }

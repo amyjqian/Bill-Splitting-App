@@ -38,7 +38,5 @@ public interface SplitwiseAPI {
 
     Group createGroup(String name) throws JSONException;
 
-    void addUserToGroup(long groupID, long userID) throws JSONException;
-
     User getUser(long userID) throws JSONException;
 }
