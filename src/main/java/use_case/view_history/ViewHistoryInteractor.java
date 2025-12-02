@@ -3,6 +3,7 @@ package use_case.view_history;
 import entities.Expense;
 // import use_case.view_history.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
@@ -35,9 +36,19 @@ public class ViewHistoryInteractor implements ViewHistoryInputBoundary{
                 return;
             }
 
+            List<List<Object>> cleanRows = new ArrayList<>();
+
+            for (Expense exp : expenses) {
+                cleanRows.add(List.of(
+                        exp.getDescription(),
+                        exp.getAmount(),
+                        exp.getDate()
+                ));
+            }
+
             // successful output
             ViewHistoryOutputData outputData =
-                    new ViewHistoryOutputData(expenses,"", true);
+                    new ViewHistoryOutputData(cleanRows,"", true);
 
             viewHistoryOutputBoundary.prepareSuccessView(outputData);
 

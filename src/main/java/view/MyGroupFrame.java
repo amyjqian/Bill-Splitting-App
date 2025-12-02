@@ -10,6 +10,7 @@ import java.awt.*;
 public class MyGroupFrame extends JFrame {
 
     private final MyGroupViewModel myGroupViewModel;
+    private final ViewHistoryController controller;
 
     JTextField groupField = new JTextField("group14", 15);
     JLabel errorLabel = new JLabel("", SwingConstants.CENTER);
@@ -19,6 +20,7 @@ public class MyGroupFrame extends JFrame {
 
     public MyGroupFrame(MyGroupViewModel myGroupViewModel, ViewHistoryController viewHistoryController) {
         this.myGroupViewModel = myGroupViewModel;
+        this.controller = viewHistoryController;
 
         setTitle("My Group");
         setLayout(new BorderLayout(10, 10));
@@ -63,7 +65,7 @@ public class MyGroupFrame extends JFrame {
 
         // event listeners
         refreshHistoryButton.addActionListener(e -> {
-            viewHistoryController.execute(groupField.getText());
+            this.controller.execute(groupField.getText());
         });
 
         // ViewModel listener
@@ -111,9 +113,9 @@ public class MyGroupFrame extends JFrame {
 
         myGroupViewModel.getExpenses().forEach(exp -> {
             Object[] row = {
-                    exp.getDescription(),
-                    exp.getAmount(),
-                    exp.getDate()
+                    exp.get(0),   // description
+                    exp.get(1),   // amount
+                    exp.get(2)    // date
             };
             tableModel.addRow(row);
         });
