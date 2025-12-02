@@ -2,6 +2,7 @@ package view;
 
 import interface_adapter.view_history.MyGroupViewModel;
 import interface_adapter.view_history.ViewHistoryController;
+import interface_adapters.displayData.DisplayDataController;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -10,6 +11,8 @@ import java.awt.*;
 public class MyGroupFrame extends JFrame {
 
     private final MyGroupViewModel myGroupViewModel;
+    private final DisplayDataController displayDataController;
+    private final DisplayDataView chartView;
 
     JTextField groupField = new JTextField("group14", 15);
     JLabel errorLabel = new JLabel("", SwingConstants.CENTER);
@@ -17,8 +20,13 @@ public class MyGroupFrame extends JFrame {
     JTable expenseTable;
     DefaultTableModel tableModel;
 
-    public MyGroupFrame(MyGroupViewModel myGroupViewModel, ViewHistoryController viewHistoryController) {
+    public MyGroupFrame(MyGroupViewModel myGroupViewModel,
+                        ViewHistoryController viewHistoryController,
+                        DisplayDataController displayDataController,
+                        DisplayDataView chartView) {
         this.myGroupViewModel = myGroupViewModel;
+        this.displayDataController = displayDataController;
+        this.chartView = chartView;
 
         setTitle("My Group");
         setLayout(new BorderLayout(10, 10));
@@ -31,18 +39,22 @@ public class MyGroupFrame extends JFrame {
         JButton backButton = new JButton("Back");
         JButton refreshHistoryButton = new JButton("Refresh History");
 
+        JButton viewChartButton = new JButton("View Chart");
+
         JPanel groupPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
         groupPanel.add(groupLabel);
         groupPanel.add(groupField);
         groupPanel.add(refreshHistoryButton);
         groupPanel.add(backButton);
+        groupPanel.add(viewChartButton);
+
 
         errorLabel.setForeground(Color.RED);
 
-        JPanel northPanel = new JPanel();
-        northPanel.setLayout(new BoxLayout(northPanel, BoxLayout.Y_AXIS));
-        northPanel.add(groupPanel);
-        northPanel.add(errorLabel);
+        JPanel northPanel = new JPanel(new BorderLayout());
+        northPanel.add(groupPanel, BorderLayout.CENTER);
+        northPanel.add(errorLabel, BorderLayout.SOUTH);
+
 
         add(northPanel, BorderLayout.NORTH);
 
@@ -66,6 +78,18 @@ public class MyGroupFrame extends JFrame {
             viewHistoryController.execute(groupField.getText());
         });
 
+        viewChartButton.addActionListener(e -> {
+            displayDataController.load(); // run the use case
+
+            // NOW show the view in a new window
+            JFrame chartFrame = new JFrame("Expenses Pie Chart");
+            chartFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            chartFrame.add(chartView);  // IMPORTANT!
+            chartFrame.pack();
+            chartFrame.setLocationRelativeTo(this);
+            chartFrame.setVisible(true);
+        });
+
         // ViewModel listener
         myGroupViewModel.addPropertyChangeListener(evt -> {
             SwingUtilities.invokeLater(() -> {
@@ -75,7 +99,6 @@ public class MyGroupFrame extends JFrame {
         });
 
         // button link
-        /*
         newExpenseButton.addActionListener(e -> {
             ExpenseFrame expenseFrame = new ExpenseFrame();
             expenseFrame.setVisible(true);
@@ -94,7 +117,6 @@ public class MyGroupFrame extends JFrame {
             gv.setVisible(true);
             this.dispose();
         });
-        */
     }
 
     // helpers

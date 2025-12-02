@@ -1,0 +1,3 @@
+git rm --cached .idea/workspace.xml
+git rm --cached .idea/workspace.xml
+git rm --cached bill-splitter-app.iml
