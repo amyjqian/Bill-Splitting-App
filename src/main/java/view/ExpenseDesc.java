@@ -1,9 +1,9 @@
 package view;
 
-import main.controller.AddExpenseController;
-import main.entities.User;
-import main.entities.Group;
-import main.data_access.SplitwiseDataAccess;
+import interface_adapter.add_expense.AddExpenseController;
+import entities.User;
+import entities.Group;
+import data_access.SplitwiseDataAccess;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -270,9 +270,9 @@ public class ExpenseDesc extends JFrame {
         ExpenseDesc view = new ExpenseDesc();
 
         // Create presenter
-        main.use_case.AddExpenseOutputBoundary presenter = new main.use_case.AddExpenseOutputBoundary() {
+        use_case.add_expense.AddExpenseOutputBoundary presenter = new use_case.add_expense.AddExpenseOutputBoundary() {
             @Override
-            public void prepareSuccessView(main.use_case.AddExpenseOutputData outputData) {
+            public void prepareSuccessView(use_case.add_expense.AddExpenseOutputData outputData) {
                 view.showSuccess(outputData.getMessage());
             }
 
@@ -284,10 +284,10 @@ public class ExpenseDesc extends JFrame {
 
         // Create data access
         SplitwiseDataAccess dataAccess = new SplitwiseDataAccess();
-        main.entities.ExpenseFactory expenseFactory = new main.entities.ExpenseFactory();
+        entities.ExpenseFactory expenseFactory = new entities.ExpenseFactory();
 
         // Create interactor and controller
-        main.use_case.AddExpenseInteractor interactor = new main.use_case.AddExpenseInteractor(
+        use_case.add_expense.AddExpenseInteractor interactor = new use_case.add_expense.AddExpenseInteractor(
                 dataAccess, presenter, expenseFactory
         );
 
