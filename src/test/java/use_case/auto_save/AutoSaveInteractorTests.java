@@ -1,10 +1,7 @@
 package use_case.auto_save;
 
 import data_access.AutoSaveGateway;
-import data_access.FileAutoSaveGateway;
-import use_case.auto_save.AutoSaveInteractor;
-import use_case.auto_save.AutoSaveRequestModel;
-import use_case.auto_save.AutoSaveResponseModel;
+import data_access.FileAutoSaveDataAccessObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +18,7 @@ class AutoSaveInteractorTest {
 
     @BeforeEach
     void setUp() {
-        autoSaveGateway = new FileAutoSaveGateway();
+        autoSaveGateway = new FileAutoSaveDataAccessObject();
         autoSaveInteractor = new AutoSaveInteractor(autoSaveGateway);
         if (file.exists()) file.delete();
     }

@@ -1,8 +1,7 @@
 package interface_adapter.auto_save;
 
-import use_case.auto_save.AutoSaveInputBoundary;
-import use_case.auto_save.AutoSaveRequestModel;
-import use_case.auto_save.AutoSaveResponseModel;
+import use_case.auto_save.*;
+
 
 public class AutoSaveController{
 
@@ -13,12 +12,10 @@ public class AutoSaveController{
     }
 
     public void autosave(String content) {
-        AutoSaveRequestModel req = new AutoSaveRequestModel(content);
-        interactor.save(req);
+        interactor.save(new AutoSaveRequestModel(content));
     }
 
     public String loadDraft() {
-        AutoSaveResponseModel res = interactor.load();
-        return res.getContent();
+        interactor.load();
     }
 }

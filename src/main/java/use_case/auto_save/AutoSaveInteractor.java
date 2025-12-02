@@ -1,24 +1,30 @@
 package use_case.auto_save;
 
-import data_access.AutoSaveGateway;
+import data_access.AutoSaveDataAccessObject;
 
 public class AutoSaveInteractor implements AutoSaveInputBoundary {
-    private final AutoSaveGateway gateway;
+    private final AutoSaveDataAccessObject dao;
+    private final AutoSaveOutputBoundary presenter;
 
-    public AutoSaveInteractor(AutoSaveGateway gateway) {
-        this.gateway = gateway;
+    public AutoSaveInteractor(AutoSaveDataAccessObject dao, AutoSaveOutputBoundary presenter) {
+        this.dao = dao;
+        this.presenter = presenter;
     }
 
     @Override
-    public AutoSaveResponseModel save(AutoSaveRequestModel requestModel) {
-        gateway.saveDraft(requestModel.getContent());
-        return new AutoSaveResponseModel(true, requestModel.getContent());
+    public void save(AutoSaveRequestModel requestModel) {
+        dao.saveDraft(requestModel.getContent());
+        presenter.present(
+                new AutoSaveResponseModel(true, requestModel.getContent())
+        );
     }
 
     @Override
-    public AutoSaveResponseModel load() {
-        String content = gateway.loadDraft();
+    public void load() {
+        String content = dao.loadDraft();
         boolean success = content != null && !content.isEmpty();
-        return new AutoSaveResponseModel(success, content);
+        presenter.present(
+                new AutoSaveResponseModel(success, content)
+        );
     }
 }

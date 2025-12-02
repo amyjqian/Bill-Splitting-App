@@ -1,9 +1,14 @@
 package view;
+import interface_adapter.auto_save.AutoSaveController;
+import interface_adapter.auto_save.AutoSaveStatusDisplay;
+import use_case.auto_save.AutoSaveInteractor;
+import data_access.AutoSaveDataAccessObject;
+import data_access.FileAutoSaveDataAccessObject;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class MyGroupFrame extends JFrame {
+public class MyGroupFrame extends JFrame implements AutoSaveStatusDisplay {
 
     JLabel titleLabel = new JLabel("My Group", SwingConstants.CENTER);
     JLabel groupLabel = new JLabel("Group:");
@@ -16,6 +21,20 @@ public class MyGroupFrame extends JFrame {
     public MyGroupFrame() {
         setTitle("My Group");
         setLayout(new BorderLayout(10, 10));
+
+        AutoSaveDataAccessObject dao = new FileAutoSaveDataAccessObject();
+        AutoSaveInteractor interactor = new AutoSaveInteractor(dao, responseModel -> {
+            if (responseModel.isSuccess()) {
+                showAutoSaveStatus("All changes saved.");
+            } else {
+                showAutoSaveStatus("Failed to save.");
+            }
+        });
+        autoSaveController = new AutoSaveController(interactor);
+
+        // Autosave label
+        autosaveLabel = new JLabel("All changes saved.", SwingConstants.CENTER);
+        autosaveLabel.setForeground(Color.GREEN);
 
         JPanel titleRow = new JPanel(new BorderLayout());
         titleLabel.setFont(new Font("SansSerif", Font.BOLD, 18));
