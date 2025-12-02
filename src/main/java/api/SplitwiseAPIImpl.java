@@ -87,6 +87,7 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
             throw new RuntimeException("API call failed: " + event.getMessage(), event);
         }
     }
+
     @Override
     public Group getGroup(Long groupId) throws JSONException {
         final OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -150,6 +151,21 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
     /**
      * Builds the JSON request body for creating an expense
      */
+
+    /**
+     * Builds the JSON request body for creating a group
+     */
+    private JSONObject buildGroupRequestBody(String name) {
+        JSONObject requestBody = new JSONObject();
+
+        // Required fields
+        requestBody.put("name", name);
+        // Debug logging
+        System.out.println("DEBUG - Request Body: " + requestBody.toString(2));
+
+        return requestBody;
+    }
+
     /**
      * Builds the JSON request body for creating an expense
      */
@@ -159,6 +175,7 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
         // Required fields
         double totalAmount = expense.getAmount();
         requestBody.put("cost", String.format("%.2f", totalAmount));
+        requestBody.put("cost", String.format("%.2f", expense.getAmount()));
         requestBody.put("description", expense.getDescription());
         requestBody.put("details", expense.getDescription());
 
@@ -210,6 +227,28 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
             userIndex++;
         }
 
+        // Calculate equal shares for participants
+        double shareAmount = expense.calculateEqualShare();
+        List<User> participants = expense.getParticipants();
+
+        // Start with the person who paid (index 0)
+        requestBody.put("users__0__user_id", expense.getPaidBy().getId());
+        requestBody.put("users__0__paid_share", String.format("%.2f", expense.getAmount()));
+        requestBody.put("users__0__owed_share", String.format("%.2f", shareAmount));
+
+        // Add other participants (excluding the person who paid if they're in the list)
+        int userIndex = 1;
+        for (User participant : participants) {
+            // Skip if this is the same user who paid (they're already added at index 0)
+            if (!participant.getId().equals(expense.getPaidBy().getId())) {
+                requestBody.put("users__" + userIndex + "__user_id", participant.getId());
+                requestBody.put("users__" + userIndex + "__paid_share", "0.00");
+                requestBody.put("users__" + userIndex + "__owed_share", String.format("%.2f", shareAmount));
+                userIndex++;
+            }
+        }
+
+        // Debug logging
         System.out.println("DEBUG - Request Body: " + requestBody.toString(2));
 
         return requestBody;
@@ -228,6 +267,18 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
             case "utilities": return 4;
             case "other": return 5;
             default: return 5; // Other
+            case "food":
+                return 1;
+            case "transportation":
+                return 2;
+            case "entertainment":
+                return 3;
+            case "utilities":
+                return 4;
+            case "other":
+                return 5;
+            default:
+                return 5; // Other
         }
     }
 
@@ -362,3 +413,97 @@ public class SplitwiseAPIImpl implements SplitwiseAPI {
         }
     }
 }
+
+    @Override
+    public Group createGroup(String name) throws JSONException {
+        final OkHttpClient client = new OkHttpClient().newBuilder().build();
+        final MediaType mediaType = MediaType.parse(APPLICATION_JSON);
+
+        // Build the request body according to Splitwise API requirements
+        final JSONObject requestBody = buildGroupRequestBody(name);
+        final RequestBody body = RequestBody.create(mediaType, requestBody.toString());
+
+        final Request request = new Request.Builder()
+                .url(API_URL + "/create_group")
+                .method("POST", body)
+                .addHeader(AUTHORIZATION, BEARER_PREFIX + getAPIKey())
+                .addHeader(CONTENT_TYPE, APPLICATION_JSON)
+                .build();
+
+        try {
+            final Response response = client.newCall(request).execute();
+            final String responseBodyString = response.body().string();
+            System.out.println("DEBUG - Create Group Response: " + responseBodyString);
+
+            final JSONObject responseBody = new JSONObject(responseBodyString);
+
+            // Check for errors first
+            if (responseBody.has("errors") && !responseBody.getJSONObject("errors").isEmpty()) {
+                JSONObject errors = responseBody.getJSONObject("errors");
+                if (errors.has("base")) {
+                    throw new RuntimeException("Failed to create group: " + errors.getJSONArray("base").getString(0));
+                } else {
+                    throw new RuntimeException("Failed to create group: " + errors.toString());
+                }
+            }
+
+            // If we get here, the response was successful
+            if (responseBody.has("group") && responseBody.length() > 0) {
+                final JSONObject groupJson = responseBody.getJSONObject("group");
+                return parseGroupFromJson(groupJson);
+            } else {
+                throw new RuntimeException("No group object in response");
+            }
+
+        } catch (IOException | JSONException event) {
+            throw new RuntimeException("API call failed: " + event.getMessage(), event);
+        }
+    }
+
+    /**
+     * Builds the JSON request body for adding a user to group
+     */
+    private JSONObject addUserRequestBody(long groupID, long userID) throws JSONException {
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("group_id", groupID);
+        requestBody.put("user_id", userID);
+        return requestBody;
+    }
+
+    @Override
+    public User getUser(long userID) throws JSONException {
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url(API_URL + "/get_user/" + userID)
+                .get()
+                .addHeader(AUTHORIZATION, BEARER_PREFIX + getAPIKey())
+                .addHeader(CONTENT_TYPE, APPLICATION_JSON)
+                .build();
+
+        try (Response response = client.newCall(request).execute()) {
+            String body = response.body().string();
+            JSONObject json = new JSONObject(body);
+
+            if (!response.isSuccessful()) {
+                // handle 403/404 etc.
+                throw new RuntimeException("Failed to get user: HTTP " + response.code() + " – " + body);
+            }
+
+            if (json.has("user")) {
+                JSONObject userJson = json.getJSONObject("user");
+                return parseUserFromJson(userJson);
+            } else if (json.has(ERRORS)) {
+                // either errors as object or array
+                Object errs = json.get(ERRORS);
+                throw new RuntimeException("API returned error getting user: " + errs.toString());
+            } else {
+                throw new RuntimeException("Unexpected response fetching user: " + body);
+            }
+        } catch (IOException | JSONException e) {
+            throw new RuntimeException("API call error getting user: " + e.getMessage(), e);
+        }
+    }
+
+}
+

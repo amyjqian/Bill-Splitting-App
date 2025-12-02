@@ -8,8 +8,7 @@ public class ExpenseFactory {
                           double amount,
                           String category,
                           ArrayList<User> participants,
-                          User paidedBy) {
-        return new Expense(expenseName, description, amount, category, participants, paidedBy);
+                          User paidBy) {
+        return new Expense(expenseName, description, amount, category, participants, paidBy);
     }
-
 }

@@ -1,0 +1,19 @@
+Index: bill-splitter-app.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module version=\"4\">\n  <component name=\"AdditionalModuleElements\">\n    <content url=\"file://$MODULE_DIR$\" dumb=\"true\">\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main\" isTestSource=\"false\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test\" isTestSource=\"true\" />\n    </content>\n  </component>\n  <component name=\"CheckStyle-IDEA-Module\" serialisationVersion=\"2\">\n    <option name=\"activeLocationsIds\" />\n  </component>\n</module>
+===================================================================
+diff --git a/bill-splitter-app.iml b/bill-splitter-app.iml
+--- a/bill-splitter-app.iml	(revision 41cbba755f39133d93f78b7ee1a86bead7b9b57c)
++++ b/bill-splitter-app.iml	(date 1764617151186)
+@@ -2,8 +2,9 @@
+ <module version="4">
+   <component name="AdditionalModuleElements">
+     <content url="file://$MODULE_DIR$" dumb="true">
+-      <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
++      <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+     </content>
+   </component>
+   <component name="CheckStyle-IDEA-Module" serialisationVersion="2">
