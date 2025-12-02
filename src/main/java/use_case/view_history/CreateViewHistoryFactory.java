@@ -58,6 +58,7 @@ public class CreateViewHistoryFactory {
             String apiKey = System.getenv("SPLITWISE_API_KEY");
 
             MyGroupFrame frame = CreateViewHistoryFactory.createFrame(apiKey);
+            frame.pack();
             frame.setVisible(true);
         });
     }

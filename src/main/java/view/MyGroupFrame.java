@@ -120,6 +120,10 @@ public class MyGroupFrame extends JFrame {
             this.dispose();
         });
 
+        setPreferredSize(new Dimension(900, 600));
+        pack();
+        setLocationRelativeTo(null);
+
     }
 
     // helpers
