@@ -2,6 +2,7 @@ package view;
 
 import interface_adapter.view_history.MyGroupViewModel;
 import interface_adapter.view_history.ViewHistoryController;
+import use_case.add_expense.AddExpenseFactory;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -78,10 +79,15 @@ public class MyGroupFrame extends JFrame {
 
         // button link
 
+//        newExpenseButton.addActionListener(e -> {
+//            AddExpenseFrame expenseFrame = new AddExpenseFrame();
+//            expenseFrame.setVisible(true);
+//            this.dispose();    // close MyGroupFrame if that’s your pattern
+//        });
         newExpenseButton.addActionListener(e -> {
-            AddExpenseFrame expenseFrame = new AddExpenseFrame();
+            AddExpenseFrame expenseFrame = AddExpenseFactory.createView();
             expenseFrame.setVisible(true);
-            this.dispose();    // close MyGroupFrame if that’s your pattern
+            this.dispose();
         });
 
         settleUpButton.addActionListener(e -> {
