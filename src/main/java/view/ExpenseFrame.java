@@ -50,7 +50,7 @@ public class ExpenseFrame extends JFrame {
                 dispose();
 
                 // Open new screen
-                new ExpenseDesc().setVisible(true);
+                new AddExpenseFrame().setVisible(true);
             }
         });
 
