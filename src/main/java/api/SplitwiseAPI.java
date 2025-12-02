@@ -35,4 +35,8 @@ public interface SplitwiseAPI {
      */
     User getCurrentUser() throws JSONException;
     List<Group> getGroups() throws JSONException;
+
+    Group createGroup(String name) throws JSONException;
+
+    User getUser(long userID) throws JSONException;
 }
