@@ -23,9 +23,8 @@ public class AppBuilder {
         SwingUtilities.invokeLater(() -> {
             MyGroupViewModel vm = new MyGroupViewModel("groupView");
 //            Dotenv dotenv = Dotenv.load();
-//            String apiKey = dotenv.get("SPLITWISE_API_KEY");
+            String apiKey = dotenv.get("SPLITWISE_API_KEY");
             String groupId = "90437991";
-            String apiKey = "smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA";
 
             ViewHistoryPresenter presenter = new ViewHistoryPresenter(vm);
             ViewHistoryDataAccessObject dao = new ViewHistoryDataAccessObject(apiKey);
