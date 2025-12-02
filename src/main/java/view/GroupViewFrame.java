@@ -11,12 +11,10 @@ public class GroupViewFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 100);
 
-        JButton join = new JButton("Join Group");
         JButton create = new JButton("Create Group");
         JButton view = new JButton("View My Group");
 
         JPanel panel = new JPanel();
-        panel.add(join);
         panel.add(create);
         panel.add(view);
         this.add(panel);
