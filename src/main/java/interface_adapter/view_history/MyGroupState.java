@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class MyGroupState {
-    private List<Expense> expenses =  new ArrayList<>();
+    private List<List<Object>> expenses =  new ArrayList<>();
     private String message = "";
 
     public MyGroupState() {}
@@ -16,8 +16,10 @@ public class MyGroupState {
         this.message = other.message;
     }
 
-    public List<Expense> getExpenses() { return expenses; }
-    public void setExpenses(List<Expense> expenses) { this.expenses = new ArrayList<>(expenses); }
+    public List<List<Object>> getExpenses() { return expenses; }
+    public void setExpenses(List<?> expenses) {
+        this.expenses = new ArrayList<>((List<List<Object>>) expenses);
+    }
 
     public String getMessage() { return message; }
     public void setMessage(String message) { this.message = message; }
