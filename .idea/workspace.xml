@@ -4,9 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="fixed groups">
+    <list default="true" id="778559ff-a45f-4964-9f70-b0dd4ac61ae7" name="Changes" comment="fixed buildExpenseRequestBody">
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/AddExpenseViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/api/SplitwiseAPIImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/SplitwiseAPIImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controller/AddExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/AddExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data_access/SplitwiseDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/SplitwiseDataAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/ExpenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/ExpenseFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/GroupCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/GroupCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/TestAllEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestAllEndpoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/TestExpenseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestExpenseAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/VerifyApiKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/VerifyApiKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseDataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseDataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseInputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseOutputBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseOutputBoundary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/use_case/AddExpenseOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpenseOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/AddExpensePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/AddExpensePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/AutoSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AutoSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/CreateGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CreateGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseDesc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AddExpenseFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ExpenseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ExpenseFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/GroupViewFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GroupViewFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/JoinGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/JoinGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/SettleUpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SettleUpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Expense.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseDesc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/ExpenseFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/view/MainFrame.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +78,11 @@
   <component name="ProjectId" id="35f3DDOSX0cqY7EjtvfmyTNezfp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AddExpenseFrame.executor": "Run",
     "Application.CreateGroupFrame.executor": "Run",
     "Application.ExpenseDesc.executor": "Run",
     "Application.ExpenseFrame.executor": "Run",
@@ -56,6 +93,7 @@
     "Application.TestExpenseAPI.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "Application.VerifyApiKey.executor": "Run",
+    "Application.view.AddExpenseFrame.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -67,20 +105,14 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ExpenseDesc">
-    <configuration name="ExpenseDesc" type="Application" factoryName="Application" nameIsGenerated="true">
-      <envs>
-        <env name="SPLITWISE_API_KEY" value="smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="main.view.ExpenseDesc" />
-      <module name="bill-splitter-app" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.view.AddExpenseFrame">
     <configuration name="GroupCheck" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.test.GroupCheck" />
       <module name="bill-splitter-app" />
@@ -133,6 +165,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="view.AddExpenseFrame" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="SPLITWISE_API_KEY" value="smmaCgUHfNZ3KRPzuny1KxRqLGMYoPzlHj6ABJwA" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="view.AddExpenseFrame" />
+      <module name="bill-splitter-app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,7 +187,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ExpenseDesc" />
+      <item itemvalue="Application.view.AddExpenseFrame" />
       <item itemvalue="Application.GroupCheck" />
       <item itemvalue="Application.TestAllEndpoints" />
       <item itemvalue="Application.TestExpenseAPI" />
@@ -169,6 +211,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763487177185</updated>
       <workItem from="1763487178523" duration="5550000" />
+      <workItem from="1764557223730" duration="9345000" />
     </task>
     <task id="LOCAL-00001" summary="expense frame">
       <option name="closed" value="true" />
@@ -218,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764543217744</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed buildExpenseRequestBody">
+      <option name="closed" value="true" />
+      <created>1764545989433</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764545989434</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +295,11 @@
     <MESSAGE value="finish add expense usecase with api calls" />
     <MESSAGE value="entities" />
     <MESSAGE value="fixed groups" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed groups" />
+    <MESSAGE value="fixed buildExpenseRequestBody" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed buildExpenseRequestBody" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
