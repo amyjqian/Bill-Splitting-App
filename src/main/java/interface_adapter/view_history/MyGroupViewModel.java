@@ -15,11 +15,11 @@ public class MyGroupViewModel {
 
     public MyGroupState getState() { return this.state; }
 
-    public List<Expense> getExpenses() { return state.getExpenses(); }
+    public List<List<Object>> getExpenses() { return state.getExpenses(); }
 
     public String getMessage() { return state.getMessage();}
 
-    public void setExpenses(List<Expense> expenses) { state.setExpenses(List.copyOf(expenses));}
+    public void setExpenses(List<?> expenses) { state.setExpenses(List.copyOf(expenses));}
 
     public void setMessage(String message) {state.setMessage(message);}
 

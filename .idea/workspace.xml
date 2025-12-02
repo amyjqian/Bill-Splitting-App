@@ -4,31 +4,101 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be4f4c18-99db-4314-b4d4-fb709a476620" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="852a6bd0-1620-4b14-ab23-5e2550b8e854" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitingnore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitingnore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bill-splitter-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bill-splitter-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/group_view/GroupViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/group_view/GroupViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GroupViewFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GroupViewFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryOutputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryOutputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/MyGroupState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/MyGroupState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/MyGroupViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/MyGroupViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interface_adapter/view_history/ViewHistoryPresenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_history/ViewHistoryInteractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_history/ViewHistoryInteractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/use_case/view_history/ViewHistoryOutputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/use_case/view_history/ViewHistoryOutputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MyGroupFrame.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;angelajj465&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/amyjqian/Bill-Splitting-App.git&quot;,
+    &quot;accountId&quot;: &quot;d38f565f-d0a1-4da9-9863-f62ef233c0a2&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="35I7pYP2YvEey74h4YjfYOjs64a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppBuilder.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "pseudomain-with-view-history",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="AppBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.AppBuilder" />
+      <module name="bill-splitter-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppBuilder" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="852a6bd0-1620-4b14-ab23-5e2550b8e854" name="Changes" comment="" />
+      <created>1762785916007</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762785916007</updated>
+    </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
