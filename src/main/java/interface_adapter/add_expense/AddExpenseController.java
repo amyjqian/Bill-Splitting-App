@@ -1,8 +1,8 @@
-package interface_adapter;
+package interface_adapter.add_expense;
 
 import entities.User;
-import use_case.AddExpenseInputBoundary;
-import use_case.AddExpenseInputData;
+import use_case.add_expense.AddExpenseInputBoundary;
+import use_case.add_expense.AddExpenseInputData;
 
 public class AddExpenseController {
     private final AddExpenseInputBoundary addExpenseInteractor;

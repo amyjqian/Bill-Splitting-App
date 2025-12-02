@@ -16,7 +16,6 @@ public class AppBuilder {
             MyGroupViewModel vm = new MyGroupViewModel("groupView");
             Dotenv dotenv = Dotenv.load();
             String apiKey = dotenv.get("SPLITWISE_API_KEY");
-
             ViewHistoryPresenter presenter = new ViewHistoryPresenter(vm);
             ViewHistoryDataAccessObject dao = new ViewHistoryDataAccessObject(apiKey);
             ViewHistoryInteractor interactor = new ViewHistoryInteractor(dao, presenter);

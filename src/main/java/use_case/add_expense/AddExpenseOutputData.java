@@ -1,4 +1,4 @@
-package use_case;
+package use_case.add_expense;
 
 public class AddExpenseOutputData {
     private final String expenseName;

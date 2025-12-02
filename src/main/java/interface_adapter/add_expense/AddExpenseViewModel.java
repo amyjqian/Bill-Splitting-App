@@ -1,4 +1,4 @@
-package interface_adapter;
+package interface_adapter.add_expense;
 
 public class AddExpenseViewModel {
     private String message;

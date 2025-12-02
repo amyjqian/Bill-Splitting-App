@@ -1,4 +1,4 @@
-package use_case;
+package use_case.add_expense;
 
 import entities.User;
 import java.util.ArrayList;

@@ -3,7 +3,7 @@ package data_access;
 import entities.Expense;
 import entities.Group;
 import entities.User;
-import use_case.AddExpenseDataAccessInterface;
+import use_case.add_expense.AddExpenseDataAccessInterface;
 import api.SplitwiseAPI;
 import api.SplitwiseAPIImpl;
 

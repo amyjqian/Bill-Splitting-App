@@ -1,6 +1,6 @@
-package use_case;
+package use_case.add_expense;
 
-import interface_adapter.AddExpenseController;
+import interface_adapter.add_expense.AddExpenseController;
 import data_access.SplitwiseDataAccess;
 import entities.ExpenseFactory;
 import view.AddExpenseFrame;

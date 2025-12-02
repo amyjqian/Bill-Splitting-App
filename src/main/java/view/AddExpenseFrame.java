@@ -1,10 +1,10 @@
 package view;
 
-import interface_adapter.AddExpenseController;
+import interface_adapter.add_expense.AddExpenseController;
 import entities.User;
 import entities.Group;
 import data_access.SplitwiseDataAccess;
-import use_case.AddExpenseFactory;
+import use_case.add_expense.AddExpenseFactory;
 
 import javax.swing.*;
 import java.awt.*;
