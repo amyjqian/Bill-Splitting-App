@@ -2,7 +2,7 @@ package data_access;
 
 import java.io.*;
 
-public abstract class FileAutoSaveDataAccessObject implements AutoSaveDataAccessObject {
+public class FileAutoSaveDataAccessObject implements AutoSaveDataAccessObject {
 
     private final File file = new File("autosave.txt");
 
@@ -13,6 +13,7 @@ public abstract class FileAutoSaveDataAccessObject implements AutoSaveDataAccess
         } catch (IOException e) {
             throw new RuntimeException("Failed to save draft", e);
         }
+
     }
     @Override
     public String loadDraft() {
@@ -22,5 +23,13 @@ public abstract class FileAutoSaveDataAccessObject implements AutoSaveDataAccess
         } catch (IOException e) {
             throw new RuntimeException("Failed to load draft", e);
         }
+
     }
+
+    @Override
+    public void safeDraft(String content) {
+        // You can just delegate to saveDraft, or implement differently
+        saveDraft(content);
+    }
+
 }

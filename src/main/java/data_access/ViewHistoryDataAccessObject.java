@@ -1,3 +1,4 @@
+/*
 package data_access;
 
 import entities.Expense;
@@ -136,3 +137,5 @@ public class ViewHistoryDataAccessObject implements ViewHistoryDataAccessInterfa
     }
 
 }
+*/
+

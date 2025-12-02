@@ -1,3 +1,4 @@
+/*
 package app;
 
 import data_access.ViewHistoryDataAccessObject;
@@ -29,3 +30,4 @@ public class AppBuilder {
         });
     }
 }
+*/

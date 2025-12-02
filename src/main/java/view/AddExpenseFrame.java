@@ -1,10 +1,15 @@
 package view;
 
+import data_access.AutoSaveDataAccessObject;
+import data_access.FileAutoSaveDataAccessObject;
 import interface_adapter.AddExpenseController;
 import entities.User;
 import entities.Group;
 import data_access.SplitwiseDataAccess;
+import interface_adapter.auto_save.AutoSaveController;
+import interface_adapter.auto_save.AutoSaveStatusDisplay;
 import use_case.AddExpenseFactory;
+import use_case.auto_save.AutoSaveInteractor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +18,10 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddExpenseFrame extends JFrame {
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+
+public class AddExpenseFrame extends JFrame implements AutoSaveStatusDisplay {
     private AddExpenseController controller;
     private JTextField nameField;
     private JTextField amountField;
@@ -25,11 +33,26 @@ public class AddExpenseFrame extends JFrame {
     private Group currentGroup;
     private JComboBox<Group> groupComboBox;
 
+    private AutoSaveController autoSaveController;
+    private JLabel autosaveLabel;
+
     public AddExpenseFrame() {
         this.dataAccess = new SplitwiseDataAccess();
+
+        AutoSaveDataAccessObject dao = new FileAutoSaveDataAccessObject();
+        AutoSaveInteractor interactor = new AutoSaveInteractor(dao, responseModel -> {
+            if (responseModel.isSuccess()) {
+                showAutoSaveStatus("All changes saved.");
+            } else {
+                showAutoSaveStatus("Failed to save.");
+            }
+        });
+            autoSaveController = new AutoSaveController(interactor);
+
         initializeUI();
         initializeUI();
         loadRealGroups();
+        setupAutoSave();
     }
 
     private void initializeUI() {
@@ -37,6 +60,9 @@ public class AddExpenseFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 500);
         setLocationRelativeTo(null);
+
+        autosaveLabel = new JLabel("All changes saved.", SwingConstants.CENTER);
+        autosaveLabel.setForeground(Color.GREEN);
 
         // Initialize components
         JLabel titleLabel = new JLabel("Enter Expense Details", JLabel.CENTER);
@@ -117,6 +143,33 @@ public class AddExpenseFrame extends JFrame {
         }
     }
 
+    private void setupAutoSave() {
+        JTextField[] fields = {nameField, amountField, descField};
+        for (JTextField field : fields) {
+            field.getDocument().addDocumentListener(new DocumentListener() {
+                public void insertUpdate(DocumentEvent e) { autoSave(); }
+                public void removeUpdate(DocumentEvent e) { autoSave(); }
+                public void changedUpdate(DocumentEvent e) { autoSave(); }
+            });
+        }
+
+    }
+    private void autoSave() {
+        if (autoSaveController != null) {
+            String draftContent = String.format("Name: %s\nAmount: %s\nDesc: %s",
+                    nameField.getText(), amountField.getText(), descField.getText());
+            autoSaveController.safeDraft(draftContent);
+        }
+    }
+
+    @Override
+    public void showAutoSaveStatus(String message) {
+        if (autosaveLabel != null) {
+            autosaveLabel.setText(message);
+        }
+    }
+
+
     private void loadParticipants() {
         try {
             participantsPanel.removeAll();
@@ -147,7 +200,6 @@ public class AddExpenseFrame extends JFrame {
             System.out.println("Error loading participants: " + e.getMessage());
         }
     }
-
 
     public void setController(AddExpenseController controller) {
         this.controller = controller;

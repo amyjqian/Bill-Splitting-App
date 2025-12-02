@@ -18,4 +18,7 @@ public class AutoSaveController{
     public String loadDraft() {
         return interactor.load();
     }
+
+    public void safeDraft(String draftContent) {
+    }
 }
