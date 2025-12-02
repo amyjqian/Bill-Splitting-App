@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ede0f0b-e0f6-4497-ac7e-30adeda285c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/ExpenseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data_access/ViewHistoryDataAccessObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data_access/ViewHistoryDataAccessObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/MyGroupViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/ViewHistoryPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interface_adapter/view_history/ViewHistoryPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/use_case/view_history/ViewHistoryInteractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MyGroupFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitingnore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
